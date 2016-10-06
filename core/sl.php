@@ -73,18 +73,44 @@ class sl
 
     public function route($uri)
     {
-        if (empty($uri)) {
+        if (preg_match("/index(\/?)/", $uri)) {
+            header('HTTP/1.1 301 Moved Permanently');
+            $rootUri = preg_replace('/(\/){2,}/i', '/', (preg_replace("/index(\/?)/", '', $uri).'/'));
+            header('Location: '.$rootUri);
+            if (!@PHPUNIT_RUNNING === 1) {
+                // @codeCoverageIgnoreStart
+                exit();
+                // @codeCoverageIgnoreEnd
+            } else {
+                return '301 to: '.$rootUri;
+            }
+        }
+        if (!preg_match('/\/$/', $uri) || (preg_match('/\/\//', $uri))) {
+            header('HTTP/1.1 301 Moved Permanently');
+            header('Location: '.preg_replace('/(\/){2,}/i', '/', ($uri.'/')));
+            if (!@PHPUNIT_RUNNING === 1) {
+              // @codeCoverageIgnoreStart
+              exit();
+              // @codeCoverageIgnoreEnd
+            } else {
+                return '301 to: '.preg_replace('/(\/){2,}/i', '/', ($uri.'/'));
+            }
+        }
+
+        if (empty($uri) || ($uri == '/')) {
             $uri = 'index';
         }
-        $template = $uri.'.html';
+
         if (is_dir(SL_TEMPLATES.$uri)) {
             $template = $uri.'index.html';
         } else {
-            $template = $uri.'.html';
+            $template = preg_replace("/(\/){1}$/", '', $uri).'.html';
         }
         if (file_exists(SL_TEMPLATES.$template)) {
             return $template;
         } else {
+            header('HTTP/1.0 404 Not Found');
+
             return '404.html';
         }
     }
