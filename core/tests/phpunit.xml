@@ -1,0 +1,22 @@
+<phpunit bootstrap="./app/autoload.php" colors="true" stopOnFailure="true">
+
+    <testsuite name="Main slCMS Test Suite">
+        <directory>./</directory>
+    </testsuite>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">../</directory>
+            <exclude>
+                <directory suffix=".inc.php">../</directory>
+                <directory>../cache</directory>
+                <directory>../tests</directory>
+                <directory>../vendor</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="./coverage" charset="UTF-8" yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>
+    </logging>
+</phpunit>
