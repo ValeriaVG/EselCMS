@@ -51,3 +51,5 @@ core/vendor
 core/composer.lock
 
 core/tests/coverage
+
+core/hash

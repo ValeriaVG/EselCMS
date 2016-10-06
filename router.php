@@ -2,6 +2,7 @@
 /*
 *  This file is for php built in server routing
 */
+define ('PHPUNIT_RUNNING', 0);
   if (preg_match('/\.(?:png|jpg|jpeg|gif|html|css|js|pdf)$/', $_SERVER["REQUEST_URI"])) {
     return false;
 } else {

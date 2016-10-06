@@ -9,7 +9,17 @@ class sl
         require_once SL_CORE.'vendor/autoload.php';
         Twig_Autoloader::register();
         $loader = new Twig_Loader_Filesystem(array(SL_TEMPLATES, SL_TESTS.'tpl'));
-        $this->twig = new Twig_Environment($loader, array('cache' => SL_CACHE.'templates'));
+        $this->twig = new Twig_Environment($loader, array('cache' => SL_TEMPLATES_CACHE));
+        $this->twig->registerUndefinedFunctionCallback(function ($functionName) {
+            $tmp = null;
+            if (preg_match('/([^_]+)_(.*)/', $functionName, $tmp)) {
+                $module = $this->loadModule($tmp[1]);
+
+                return new Twig_SimpleFunction($functionName, $tmp[1].'::'.$tmp[2]);
+            }
+
+            return false;
+        });
     }
 
     public function _get($attr)
@@ -88,13 +98,9 @@ class sl
         if (!preg_match('/\/$/', $uri) || (preg_match('/\/\//', $uri))) {
             header('HTTP/1.1 301 Moved Permanently');
             header('Location: '.preg_replace('/(\/){2,}/i', '/', ($uri.'/')));
-            if (!@PHPUNIT_RUNNING === 1) {
-              // @codeCoverageIgnoreStart
+                // @codeCoverageIgnoreStart
               exit();
               // @codeCoverageIgnoreEnd
-            } else {
-                return '301 to: '.preg_replace('/(\/){2,}/i', '/', ($uri.'/'));
-            }
         }
 
         if (empty($uri) || ($uri == '/')) {
@@ -121,5 +127,21 @@ class sl
         $template = $this->route($uri);
 
         return $this->render($template);
+    }
+
+    public function module($moduleName)
+    {
+        $this->loadModule($moduleName);
+        return new $moduleName($this);
+    }
+
+    public function loadModule($moduleName)
+    {
+        require_once SL_CORE.'/classes/slmodule.php';
+        if (slModule::isSafe($moduleName)) {
+            require_once SL_MODULES.$moduleName.'/module.php';
+        } else {
+            throw new Exception($moduleName.' is not installed');
+        }
     }
 }

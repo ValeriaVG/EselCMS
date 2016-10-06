@@ -1,4 +1,16 @@
 {% extends "base.twig" %}
 {% block content %}
 <h1>Meet modules</h1>
+<p> Look, this what a  <strong>basicModule_sendGreeting()</strong> says: &laquo;<em>{{ basicModule_sendGreeting() }}</em>&raquo;</p>
+<code>
+  public static function sendGreeting(){
+    return "Basic module sends its greeting!";
+  }
+</code>
+<p> What about variables? No problem!  <strong>basicModule_addNumbers(2,2)</strong>  says: &laquo;<em>{{ basicModule_addNumbers(2,2) }}</em>&raquo;</p>
+<code>
+  public static function addNumbers($a,$b){
+    return $a+$b;
+  }
+</code>
 {% endblock %}

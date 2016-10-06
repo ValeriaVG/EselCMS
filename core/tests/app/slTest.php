@@ -15,7 +15,6 @@ class slTest extends TestCase
     {
         require_once dirname(dirname(dirname(__FILE__))).'/config.inc.php';
         $this->sl = new sl();
-
     }
 
     public function tearDown()
@@ -139,8 +138,6 @@ class slTest extends TestCase
         $badUri = 'i-dont-exist-for-sure-cause-i-am-just-too-bad-like-justin-bieber-song/';
         $pageNotFound = $this->sl->route($badUri);
         $this->assertEquals('404.html', $pageNotFound);
-
-
     }
 
     /**
@@ -153,5 +150,24 @@ class slTest extends TestCase
         $_GET['uri'] = 'docs/';
         preg_match('/<h1[^>]*>([\s\S]*?)<\/h1[^>]*>/i', $this->sl->handleRequest(), $h1);
         $this->assertEquals('<h1>Welcome to Docs!</h1>', $h1[0]);
+    }
+
+    /**
+     * Test module loading.
+     *
+     * @covers sl::module
+     */
+    public function testCanLoadModule()
+    {
+        $moduleName = 'basicModule';
+        $basicModule = $this->sl->module($moduleName);
+        $this->assertInstanceOf($moduleName, $basicModule);
+        $this->assertEquals($this->sl, $basicModule->sl);
+        try {
+            $crap = $this->sl->module('Crap');
+            $this->fail('Crap is not installed');
+        } catch (Exception $e) {
+            $this->assertEquals('Crap is not installed', $e->getMessage());
+        }
     }
 }
