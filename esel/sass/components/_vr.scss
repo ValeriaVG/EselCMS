@@ -1,0 +1,3 @@
+@function vr_to($size){
+  @return #{lines-for-font-size($size)*$ratio}em;
+}

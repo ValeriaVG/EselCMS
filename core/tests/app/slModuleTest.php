@@ -76,8 +76,9 @@ class slModuleTest extends TestCase
         $dirname = SL_CORE.'hash/';
         if (is_dir($dirname)) {
             array_map('unlink', glob("$dirname/*"));
+            rmdir($dirname);
         } else {
-            mkdir($dirname,0755);
+            mkdir($dirname, 0755);
         }
         $basicHashFile = $this->invokeMethod($this->module, 'saveHash');
         $this->assertTrue(file_exists($basicHashFile));
@@ -86,21 +87,25 @@ class slModuleTest extends TestCase
     }
     /**
      * @covers slModule::setSafe
+     *  @covers slModule::isSafe
      */
     public function testSetSafe()
     {
         $basicHashFile = slModule::setSafe('basicModule');
         $this->assertTrue(file_exists($basicHashFile));
-    }
-
-    /**
-     * @covers slModule::isSafe
-     */
-    public function testIsSafe()
-    {
-
         $this->assertTrue(slModule::isSafe('basicModule'));
     }
 
-
+    /**
+     * @covers slModule::setUnsafe
+     * @expectedException        Exception
+     * @expectedExceptionMessage basicModule is not installed
+     */
+    public function testSetUnsafe()
+    {
+        $basicHashFile = slModule::setUnsafe('basicModule');
+        $this->assertFalse($this->assertTrue(slModule::isSafe('basicModule')));
+        $this->assertEquals('basicModule is not installed', $e->getMessage());
+        slModule::setSafe('basicModule');
+    }
 }

@@ -3,10 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
     <title>Welcome to Esel</title>
     <meta name="description" content="">
     <base href="/">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="esel/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--[if lt IE 9]>
        <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -14,82 +18,142 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="/" class="brand-logo"><img src="img/tinylogo.png" alt="EselCMS"></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li {% if uri=="/" %}class="active" {% endif %}><a href="/">Mainpage</a></li>
-                <li {% if uri=="/docs/" %}class="active" {% endif %}><a href="/docs/">Documentation</a></li>
-                <li {% if uri=="/docs/meet-modules/" %}class="active" {% endif %}><a href="/docs/meet-modules/">Modules</a></li>
-            </ul>
-        </div>
-    </nav>
-
-        {% block content %} {% endblock %}
-
-    <footer class="page-footer" v-bind:class="[color, tone]">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Not sure what to do? </h5>
-                    <p class="grey-text text-lighten-4">Dont' worry. We left some useful links here.</p>
-                    <p class="grey-text text-lighten-4">All tools we use are pretty simple, we made sure they are.</p>
-                    <p class="grey-text text-lighten-4">So give it a try!</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="https://github.com/ValeriaVG/eselcms" target="_blank">EselCMS on GitHub</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://vuejs.org/" target="_blank">Vue.js -The Progressive JavaScript Framework </a></li>
-                        <li><a class="grey-text text-lighten-3" href="http://materializecss.com/" target="_blank">Materialize - A modern responsive front-end framework based on Material Design</a></li>
-                        <li><a class="grey-text text-lighten-3" href="http://twig.sensiolabs.org/" target="_blank">Twig</a></li>
-                        <li><a class="grey-text text-lighten-3" href="http://j4mie.github.io/idiormandparis/" target="_blank">Idiorm - a minimalistic database toolkit</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
+    <div id="app" v-cloak>
+        <nav class="pattern dark_matter" v-bind:class="[color, tone]">
             <div class="container">
-                &copy; 2016
-                <a class="grey-text text-lighten-4 right" href="https://sl-design.ru/" target="_blank">Made by SL-DESIGN</a>
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo"><img src="/esel/img/tinylogo.png" alt="EselCMS"></a>
+                    <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+
+                    <ul class="right hide-on-med-and-down">
+                        <li {% if uri=="/" %}class="active" {% endif %}><a href="/" v-bind:class="headfont">Mainpage</a></li>
+                        <li {% if uri=="/docs/" %}class="active" {% endif %}><a href="/docs/" v-bind:class="headfont">Documentation</a></li>
+                        <li {% if uri=="/docs/meet-modules/" %}class="active" {% endif %}><a href="/docs/meet-modules/" v-bind:class="headfont">Modules</a></li>
+                    </ul>
+                    <ul class="side-nav" v-bind:class="[color,tone]" id="mobile-nav">
+                        <li {% if uri=="/" %}class="active" {% endif %}><a href="/" v-bind:class="headfont">Mainpage</a></li>
+                        <li {% if uri=="/docs/" %}class="active" {% endif %}><a href="/docs/" v-bind:class="headfont">Documentation</a></li>
+                        <li {% if uri=="/docs/meet-modules/" %}class="active" {% endif %}><a href="/docs/meet-modules/" v-bind:class="headfont">Modules</a></li>
+                    </ul>
+
+                </div>
             </div>
+        </nav>
+
+        <div class="content-holder">
+            {% block content %} {% endblock %}
         </div>
-        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <footer class="page-footer pattern dark_matter" v-bind:class="[color, tone]">
+            <div class="container">
+                <div class="row">
+                    <div class="col l4 s12">
+                        <span class="h3" v-bind:class="headfont">Not sure still?</span>
+                        <p v-bind:class="font">Dont' worry. We left some useful links here.</p>
+                        <p v-bind:class="font">All tools we use are pretty simple, we made sure they are.</p>
+                        <p v-bind:class="font">So give it a try!</p>
+                    </div>
+                    <div class="col l4 offset-l1 s12">
+                        <span class="h3" v-bind:class="headfont">Front-End</span>
+                        <ul>
+                            <li><a v-bind:class="font" href="https://github.com/ValeriaVG/eselcms" target="_blank">EselCMS on GitHub</a></li>
+                            <li><a v-bind:class="font" href="https://vuejs.org/" target="_blank">Vue.js -The Progressive JavaScript Framework </a></li>
+                            <li><a v-bind:class="font" href="http://materializecss.com/" target="_blank">Materialize - A modern responsive front-end framework based on Material Design</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l3  s12">
+                        <span class="h3" v-bind:class="headfont">Back-End</span>
+                        <ul>
+                            <li><a v-bind:class="font" href="https://github.com/ValeriaVG/eselcms" target="_blank">EselCMS on GitHub</a></li>
+                            <li><a v-bind:class="font" href="http://twig.sensiolabs.org/" target="_blank">Twig</a></li>
+                            <li><a v-bind:class="font" href="http://j4mie.github.io/idiormandparis/" target="_blank">Idiorm - a minimalistic database toolkit</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright pattern dark_matter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s6">
+                            &copy; 2016
+                        </div>
+                        <div class="col s6">
+                            <a class="right" v-bind:class="headfont" href="https://sl-design.ru/" target="_blank">Made by SL-DESIGN</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="fixed-action-btn" style="bottom: 1.61803rem; right: 1.61803rem;">
             <a class="btn-floating btn-large white ">
                 <i class="large material-icons grey-text">invert_colors</i>
             </a>
             <ul>
-                <li><a class="btn-floating red" v-on:click="color= 'red';tone= ''"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating orange" v-on:click="color= 'orange';tone= ''"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating yellow darken-1" v-on:click="color= 'yellow';tone= 'darken-1'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating green" v-on:click="color= 'green';tone= ''"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating blue lighten-3" v-on:click="color= 'blue'; tone= 'lighten-2'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating blue" v-on:click="color= 'blue'; tone= ''"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating purple" v-on:click="color= 'purple'; tone= ''"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating pink dark_matter pattern" v-on:click="color= 'pink';"><i class="material-icons"></i></a></li>
+
+                <li><a class="btn-floating red dark_matter pattern" v-on:click="color= 'red'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating orange dark_matter pattern" v-on:click="color= 'orange'"><i class="material-icons"></i></a></li>
+
+                <li><a class="btn-floating green dark_matter pattern" v-on:click="color= 'green'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating blue dark_matter pattern" v-on:click="color= 'blue'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating purple dark_matter pattern" v-on:click="color= 'purple'"><i class="material-icons"></i></a></li>
+
+                <li><a class="btn-floating grey darken-3" v-on:click="color= 'grey'"><i class="material-icons"></i></a></li>
             </ul>
         </div>
 
-        <div class="fixed-action-btn" style="bottom: 45px; right: 100px;">
+        <div class="fixed-action-btn" style="bottom: 1.61803rem; right: 115.76140000000001px;">
             <a class="btn-floating btn-large white ">
                 <i class="large material-icons grey-text">settings_brightness</i>
             </a>
             <ul>
-                <li><a class="btn-floating lighten-3" v-bind:class="[color]" v-on:click="tone= 'lighten-3'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating lighten-2" v-bind:class="[color]" v-on:click="tone= 'lighten-2'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating lighten-1" v-bind:class="[color]" v-on:click="tone= 'lighten-1'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating " v-bind:class="[color]" v-on:click="tone= ''"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating darken-1" v-bind:class="[color]" v-on:click="tone= 'darken-1'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating darken-2" v-bind:class="[color]" v-on:click="tone= 'darken-2'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating darken-3" v-bind:class="[color]" v-on:click="tone= 'darken-3'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating lighten-3 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'lighten-3'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating lighten-2 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'lighten-2'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating lighten-1 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'lighten-1'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating dark_matter pattern" v-bind:class="[color]" v-on:click="tone= ''"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating darken-1 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'darken-1'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating darken-2 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'darken-2'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating darken-3 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'darken-3'"><i class="material-icons"></i></a></li>
 
             </ul>
         </div>
-    </footer>
+
+        <div class="fixed-action-btn" style="bottom: 1.61803rem; right: 205.6343px;">
+            <a class="btn-floating btn-large white ">
+                <i class="large material-icons grey-text">subject</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating bg-text text-lighten-1 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-lighten-1'">ABC</a></li>
+                <li><a class="btn-floating bg-text text-lighten-2 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-lighten-2'">ABC</a></li>
+                <li><a class="btn-floating bg-text text-lighten-3 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-lighten-3'">ABC</a></li>
+                <li><a class="btn-floating bg-text dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text'">ABC</a></li>
+                <li><a class="btn-floating bg-text text-darken-1 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-darken-1'">ABC</a></li>
+                <li><a class="btn-floating bg-text text-darken-2 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-darken-2'">ABC</a></li>
+                <li><a class="btn-floating bg-text text-darken-3 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-darken-3'">ABC</a></li>
+            </ul>
+        </div>
+
+        <div class="fixed-action-btn" style="bottom: 1.61803rem; right: 295.5072px;">
+            <a class="btn-floating btn-large white ">
+                <i class="large material-icons grey-text">polymer</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating bg-text text-lighten-1 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-lighten-1'">ABC</a></li>
+                <li><a class="btn-floating bg-text text-lighten-2 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text lighten-2'">ABC</a></li>
+                <li><a class="btn-floating bg-text text-lighten-3 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-lighten-3'">ABC</a></li>
+                <li><a class="btn-floating bg-text dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text '">ABC</a></li>
+                <li><a class="btn-floating bg-text text-darken-1 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-darken-1'">ABC</a></li>
+                <li><a class="btn-floating bg-text text-darken-2 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-darken-2'">ABC</a></li>
+                <li><a class="btn-floating bg-text text-darken-3 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-darken-3'">ABC</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
-<script src="/js/vue.min.js"></script>
-<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script src="/js/bin/materialize.min.js"></script>
-<script src="/js/app.js"></script>
-{% block scripts %}
-{% endblock %}
+<script src="/esel/js/bin/vue.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/esel/js/bin/materialize.min.js"></script>
+<script src="/esel/js/bin/js.cookie.js"></script>
+<script src="/esel/js/bin/app.js"></script>
+{% block scripts %} {% endblock %}
+
 </html>

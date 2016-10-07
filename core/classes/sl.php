@@ -13,7 +13,7 @@ class sl
      *
      * @var array
      */
-    public $data = array();
+    private $data = array();
 
     /**
      * Loading vendor classes.
@@ -22,7 +22,7 @@ class sl
     {
         require_once SL_CORE.'vendor/autoload.php';
         Twig_Autoloader::register();
-        $loader = new Twig_Loader_Filesystem(array(SL_TEMPLATES, SL_TESTS.'tpl'));
+        $loader = new Twig_Loader_Filesystem(array(SL_TEMPLATES, SL_PAGES, SL_TESTS.'tpl'));
         $this->twig = new Twig_Environment($loader, array('cache' => SL_TEMPLATES_CACHE));
         $this->twig->registerUndefinedFunctionCallback(function ($functionName) {
             $tmp = null;
@@ -217,12 +217,12 @@ class sl
             $uri = 'index';
         }
 
-        if (is_dir(SL_TEMPLATES.$uri)) {
+        if (is_dir(SL_PAGES.$uri)) {
             $template = $uri.'index.html';
         } else {
             $template = preg_replace("/(\/){1}$/", '', $uri).'.html';
         }
-        if (!file_exists(SL_TEMPLATES.$template)) {
+        if (!file_exists(SL_PAGES.$template)) {
             header('HTTP/1.0 404 Not Found');
             $template = '404.html';
         }
@@ -268,7 +268,32 @@ class sl
             require_once SL_MODULES.$moduleName.'/module.php';
         }
     }
-
+/**
+ * Adds data to the array that template gets
+ * @param mixed $key
+ * @param mixed $value
+ */
+    public function addData($key,$value){
+      $this->data[$key]=$value;
+    }
+/**
+ * Retuns array of data or it's element if key specified
+ * @param mixed $key
+ * @return mixed $data
+ */
+    public function getData($key = null){
+      if($key===null){
+        $data=$this->data;
+      }else{
+        $data=$this->data[$key];
+      }
+        return $data;
+    }
+/**
+ * Idiorm wrapper
+ * @param  string $table Table name
+ * @return ORM cursor
+ */
     public static function db($table)
     {
         if (!class_exists('ORM')) {

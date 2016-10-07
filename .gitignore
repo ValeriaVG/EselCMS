@@ -53,5 +53,6 @@ core/composer.lock
 core/tests/coverage
 
 core/hash
-.sass-cache
+esel/.sass-cache
+esel/sass/.sass-cache
 tools/.sass-cache

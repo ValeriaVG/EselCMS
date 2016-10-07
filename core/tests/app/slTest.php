@@ -166,11 +166,13 @@ class slTest extends TestCase
      * Test module loading.
      *
      * @covers sl::loadModule
+     * @covers slModule::isSafe
      * @expectedException        Exception
      * @expectedExceptionMessage Crapp is not installed
      */
     public function testCanLoadModule()
     {
+        slModule::setSafe('basicModule');
         $moduleName = 'basicModule';
         $this->sl->loadModule($moduleName);
         $this->assertTrue(class_exists($moduleName));
@@ -189,5 +191,27 @@ class slTest extends TestCase
             $basicModule = $this->sl->module($moduleName);
             $this->assertInstanceOf($moduleName, $basicModule);
             $this->assertEquals($this->sl, $basicModule->sl);
+        }
+        /**
+         * Tesing data adding.
+         *
+         * @covers sl::addData
+         * @covers sl::getData
+         */
+        public function testCanAddData()
+        {
+          $this->sl->addData("test","data");
+          $data=$this->sl->getData("test");
+          $this->assertEquals("data",$data);
+          $this->assertEquals(array("test"=>"data"),$this->sl->getData());
+
+        }
+        /**
+         * Testing database connection
+         * @covers sl::db
+         */
+        public function testCanDB(){
+          $data=$this->sl->db("test")->find_one()->data;
+          $this->assertEquals("test",$data);
         }
 }
