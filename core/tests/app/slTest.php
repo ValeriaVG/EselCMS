@@ -53,7 +53,9 @@ class slTest extends TestCase
     {
         $_GET['test'] = '<script>alert("test");</script>';
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_get('test'));
-        $this->assertEquals(false, $this->sl->_get('unknown'));
+        $this->assertEquals('', $this->sl->_get('unknown'));
+        $get = $this->sl->_get();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $get['test']);
     }
 
     /**
@@ -65,7 +67,9 @@ class slTest extends TestCase
     {
         $_POST['test'] = '<script>alert("test");</script>';
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_post('test'));
-        $this->assertEquals(false, $this->sl->_post('unknown'));
+        $this->assertEquals('', $this->sl->_post('unknown'));
+        $post = $this->sl->_post();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $post['test']);
     }
 
     /**
@@ -77,7 +81,9 @@ class slTest extends TestCase
     {
         $_REQUEST['test'] = '<script>alert("test");</script>';
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_request('test'));
-        $this->assertEquals(false, $this->sl->_request('unknown'));
+        $this->assertEquals('', $this->sl->_request('unknown'));
+        $request = $this->sl->_request();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $request['test']);
     }
 
     /**
@@ -89,7 +95,9 @@ class slTest extends TestCase
     {
         $_COOKIE['test'] = '<script>alert("test");</script>';
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_cookie('test'));
-        $this->assertEquals(false, $this->sl->_cookie('unknown'));
+        $this->assertEquals('', $this->sl->_cookie('unknown'));
+        $cookie = $this->sl->_cookie();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $cookie['test']);
     }
 
     /**
@@ -101,7 +109,7 @@ class slTest extends TestCase
     {
         $_SERVER['test'] = '<script>alert("test");</script>';
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_server('test'));
-        $this->assertEquals(false, $this->sl->_server('unknown'));
+        $this->assertEquals('', $this->sl->_server('unknown'));
     }
 
     /**
@@ -113,7 +121,9 @@ class slTest extends TestCase
     {
         $_SESSION['test'] = '<script>alert("test");</script>';
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_session('test'));
-        $this->assertEquals(false, $this->sl->_session('unknown'));
+        $this->assertEquals('', $this->sl->_session('unknown'));
+        $session = $this->sl->_session();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $session['test']);
     }
     /**
      * Test router.
@@ -130,11 +140,11 @@ class slTest extends TestCase
         $dirUri = 'docs/';
         $this->assertEquals('docs/index.html', $this->sl->route($dirUri));
         $indexUri = 'index';
-        $this->assertEquals('301 to: /', $this->sl->route($indexUri));
+        $this->assertEquals('index.html', $this->sl->route($indexUri));
         $noSlashUri = 'docs';
-        $this->assertEquals('301 to: docs/', $this->sl->route($noSlashUri));
+        $this->assertEquals('docs/index.html', $this->sl->route($noSlashUri));
         $twoOrMoreSlashesUri = 'docs///////';
-        $this->assertEquals('301 to: docs/', $this->sl->route($twoOrMoreSlashesUri));
+        $this->assertEquals('docs/index.html', $this->sl->route($twoOrMoreSlashesUri));
         $badUri = 'i-dont-exist-for-sure-cause-i-am-just-too-bad-like-justin-bieber-song/';
         $pageNotFound = $this->sl->route($badUri);
         $this->assertEquals('404.html', $pageNotFound);
@@ -155,19 +165,29 @@ class slTest extends TestCase
     /**
      * Test module loading.
      *
-     * @covers sl::module
+     * @covers sl::loadModule
+     * @expectedException        Exception
+     * @expectedExceptionMessage Crapp is not installed
      */
     public function testCanLoadModule()
     {
         $moduleName = 'basicModule';
-        $basicModule = $this->sl->module($moduleName);
-        $this->assertInstanceOf($moduleName, $basicModule);
-        $this->assertEquals($this->sl, $basicModule->sl);
-        try {
-            $crap = $this->sl->module('Crap');
-            $this->fail('Crap is not installed');
-        } catch (Exception $e) {
-            $this->assertEquals('Crap is not installed', $e->getMessage());
-        }
+        $this->sl->loadModule($moduleName);
+        $this->assertTrue(class_exists($moduleName));
+        $this->sl->loadModule('Crapp');
+        $this->assertEquals('Crapp is not installed', $e->getMessage());
     }
+
+        /**
+         * Test module object.
+         *
+         * @covers sl::module
+         */
+        public function testCanModule()
+        {
+            $moduleName = 'basicModule';
+            $basicModule = $this->sl->module($moduleName);
+            $this->assertInstanceOf($moduleName, $basicModule);
+            $this->assertEquals($this->sl, $basicModule->sl);
+        }
 }

@@ -41,7 +41,7 @@ All of the rest are full of features that may be used one day, just like my moth
   No more bloated databases! Content is stored in **FILES** and database has it's index if it's needed for search!:astonished:
 
 6. __It's secure__ :ok_hand:
-  Esel uses [Twig](http://twig.sensiolabs.org/) as it's template engine and [Idiorm](https://github.com/j4mie/idiorm) as it's database layer. Also Esel has super global variables escaping via `$sl->_get("name")`, `$sl->_session('name')` etc. And every module is checked before loading to prevent code injections. :bangbang:
+  Esel uses [Twig](http://twig.sensiolabs.org/) as it's template engine and [Idiorm](https://github.com/j4mie/idiorm) as it's database layer. Also Esel has super global variables escaping via `sl::_get("name")`, `sl::_session('name')` etc. And every module is checked before loading to prevent code injections. :bangbang:
 
 ##Now to the bad part: Esel is currently under development
 
@@ -53,7 +53,7 @@ Current stage: *Alpha*
 - [x] Core: web testing setup
 - [x] Core: redirects
 - [x] Core: modules system
-- [ ] Core: database support
+- [x] Core: database support
 
 - [ ] Module: admin panel
 - [ ] Module: mailer

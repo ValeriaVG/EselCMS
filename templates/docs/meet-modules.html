@@ -1,16 +1,33 @@
-{% extends "base.twig" %}
-{% block content %}
+{% extends "docs/index.html" %}
+{% block textcontent %}
 <h1>Meet modules</h1>
-<p> Look, this what a  <strong>basicModule_sendGreeting()</strong> says: &laquo;<em>{{ basicModule_sendGreeting() }}</em>&raquo;</p>
-<code>
+<p> This is what a  <code class="php">basicModule_sendGreeting()</code> says: &laquo;<em>{{ basicModule_sendGreeting() }}</em>&raquo;</p>
+<pre>
+<code class="php">
   public static function sendGreeting(){
     return "Basic module sends its greeting!";
   }
 </code>
-<p> What about variables? No problem!  <strong>basicModule_addNumbers(2,2)</strong>  says: &laquo;<em>{{ basicModule_addNumbers(2,2) }}</em>&raquo;</p>
-<code>
+</pre>
+<p> What about variables? No problem!  <code class="php">basicModule_addNumbers(2,2)</code>  says: &laquo;<em>{{ basicModule_addNumbers(2,2) }}</em>&raquo;</p>
+<pre>
+<code class="php">
   public static function addNumbers($a,$b){
     return $a+$b;
   }
 </code>
+</pre>
+<p> And what about some dangerous stuff?! Click <a href="/docs/meet-modules/?name=hello get">here</a> and <a href="/docs/meet-modules/?name=<script>alert('Hey, i'm a hacker')</script>">here</a> <code class="php">basicModule_usesGet()</code>  says: &laquo;<em>{{ basicModule_usesGet() }}</em>&raquo;</p>
+<pre>
+<code class="php">
+  public static function usesGet(){
+    return sl::_get("name");
+  }
+</code>
+</pre>
+{% endblock %}
+{% block scripts %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 {% endblock %}

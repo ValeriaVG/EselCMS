@@ -1,0 +1,1 @@
+cmd /k "sass  ../sass/materialize.scss:../css/style.css && sass --watch ../sass/materialize.scss:../css/style.css"

@@ -1,22 +1,95 @@
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-     <meta charset="UTF-8">
-     <title>Welcome to Esel</title>
-     <meta name="description" content="">
-    <link rel="stylesheet" href="PATH">
-
-     <!--[if lt IE 9]>
+    <meta charset="UTF-8">
+    <title>Welcome to Esel</title>
+    <meta name="description" content="">
+    <base href="/">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--[if lt IE 9]>
        <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
      <![endif]-->
- </head>
+</head>
 
- <body>
-    {% block content %}
-    {% endblock %}
-	<hr>
-	<p>Hey! I'm a footer</p>
- </body>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><img src="img/tinylogo.png" alt="EselCMS"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li {% if uri=="/" %}class="active" {% endif %}><a href="/">Mainpage</a></li>
+                <li {% if uri=="/docs/" %}class="active" {% endif %}><a href="/docs/">Documentation</a></li>
+                <li {% if uri=="/docs/meet-modules/" %}class="active" {% endif %}><a href="/docs/meet-modules/">Modules</a></li>
+            </ul>
+        </div>
+    </nav>
 
- </html>
+        {% block content %} {% endblock %}
+
+    <footer class="page-footer" v-bind:class="[color, tone]">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Not sure what to do? </h5>
+                    <p class="grey-text text-lighten-4">Dont' worry. We left some useful links here.</p>
+                    <p class="grey-text text-lighten-4">All tools we use are pretty simple, we made sure they are.</p>
+                    <p class="grey-text text-lighten-4">So give it a try!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/ValeriaVG/eselcms" target="_blank">EselCMS on GitHub</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://vuejs.org/" target="_blank">Vue.js -The Progressive JavaScript Framework </a></li>
+                        <li><a class="grey-text text-lighten-3" href="http://materializecss.com/" target="_blank">Materialize - A modern responsive front-end framework based on Material Design</a></li>
+                        <li><a class="grey-text text-lighten-3" href="http://twig.sensiolabs.org/" target="_blank">Twig</a></li>
+                        <li><a class="grey-text text-lighten-3" href="http://j4mie.github.io/idiormandparis/" target="_blank">Idiorm - a minimalistic database toolkit</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; 2016
+                <a class="grey-text text-lighten-4 right" href="https://sl-design.ru/" target="_blank">Made by SL-DESIGN</a>
+            </div>
+        </div>
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large white ">
+                <i class="large material-icons grey-text">invert_colors</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating red" v-on:click="color= 'red';tone= ''"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating orange" v-on:click="color= 'orange';tone= ''"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating yellow darken-1" v-on:click="color= 'yellow';tone= 'darken-1'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating green" v-on:click="color= 'green';tone= ''"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating blue lighten-3" v-on:click="color= 'blue'; tone= 'lighten-2'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating blue" v-on:click="color= 'blue'; tone= ''"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating purple" v-on:click="color= 'purple'; tone= ''"><i class="material-icons"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="fixed-action-btn" style="bottom: 45px; right: 100px;">
+            <a class="btn-floating btn-large white ">
+                <i class="large material-icons grey-text">settings_brightness</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating lighten-3" v-bind:class="[color]" v-on:click="tone= 'lighten-3'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating lighten-2" v-bind:class="[color]" v-on:click="tone= 'lighten-2'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating lighten-1" v-bind:class="[color]" v-on:click="tone= 'lighten-1'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating " v-bind:class="[color]" v-on:click="tone= ''"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating darken-1" v-bind:class="[color]" v-on:click="tone= 'darken-1'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating darken-2" v-bind:class="[color]" v-on:click="tone= 'darken-2'"><i class="material-icons"></i></a></li>
+                <li><a class="btn-floating darken-3" v-bind:class="[color]" v-on:click="tone= 'darken-3'"><i class="material-icons"></i></a></li>
+
+            </ul>
+        </div>
+    </footer>
+</body>
+<script src="/js/vue.min.js"></script>
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="/js/bin/materialize.min.js"></script>
+<script src="/js/app.js"></script>
+{% block scripts %}
+{% endblock %}
+</html>

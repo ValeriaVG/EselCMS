@@ -2,8 +2,22 @@
 
 class sl
 {
+    /**
+     * Twig Enviroment variable.
+     *
+     * @var Twig_Environment
+     */
     private $twig = null;
+    /**
+     * Data that goes to template.
+     *
+     * @var array
+     */
+    public $data = array();
 
+    /**
+     * Loading vendor classes.
+     */
     public function __construct()
     {
         require_once SL_CORE.'vendor/autoload.php';
@@ -21,66 +35,157 @@ class sl
             return false;
         });
     }
-
-    public function _get($attr)
+    /**
+     * $_GET sanitizing.
+     *
+     * @param string $attr Variable name
+     *
+     * @return string $var Sanitized data or array of sanitized data
+     */
+    public static function _get($attr = '')
     {
-        if (isset($_GET[$attr])) {
-            return htmlspecialchars($_GET[$attr]);
+        if (empty($attr)) {
+            $var = array();
+            foreach ($_GET as $key => $value) {
+                $var[$key] = self::_get($key);
+            }
         } else {
-            return false;
+            $var = '';
+            if (isset($_GET[$attr])) {
+                $var = htmlspecialchars($_GET[$attr]);
+            }
         }
-    }
 
-    public function _post($attr)
+        return $var;
+    }
+    /**
+     * $_POST sanitizing.
+     *
+     * @param string $attr Variable name
+     *
+     * @return string $var Sanitized data or array of sanitized data
+     */
+    public static function _post($attr = '')
     {
-        if (isset($_POST[$attr])) {
-            return htmlspecialchars($_POST[$attr]);
+        if (empty($attr)) {
+            $var = array();
+            foreach ($_POST as $key => $value) {
+                $var[$key] = self::_post($key);
+            }
         } else {
-            return false;
+            $var = '';
+            if (isset($_POST[$attr])) {
+                $var = htmlspecialchars($_POST[$attr]);
+            }
         }
-    }
 
-    public function _request($attr)
+        return $var;
+    }
+    /**
+     * $_REQUEST sanitizing.
+     *
+     * @param string $attr Variable name
+     *
+     * @return string $var Sanitized data or array of sanitized data
+     */
+    public static function _request($attr = '')
     {
-        if (isset($_REQUEST[$attr])) {
-            return htmlspecialchars($_REQUEST[$attr]);
+        if (empty($attr)) {
+            $var = array();
+            foreach ($_REQUEST as $key => $value) {
+                $var[$key] = self::_request($key);
+            }
         } else {
-            return false;
+            $var = '';
+            if (isset($_REQUEST[$attr])) {
+                $var = htmlspecialchars($_REQUEST[$attr]);
+            }
         }
-    }
 
-    public function _cookie($attr)
+        return $var;
+    }
+    /**
+     * $_SESSION sanitizing.
+     *
+     * @param string $attr Variable name
+     *
+     * @return string $var Sanitized data or array of sanitized data
+     */
+    public static function _session($attr = '')
     {
-        if (isset($_COOKIE[$attr])) {
-            return htmlspecialchars($_COOKIE[$attr]);
+        if (empty($attr)) {
+            $var = array();
+            foreach ($_SESSION as $key => $value) {
+                $var[$key] = self::_session($key);
+            }
         } else {
-            return false;
+            $var = '';
+            if (isset($_SESSION[$attr])) {
+                $var = htmlspecialchars($_SESSION[$attr]);
+            }
         }
-    }
 
-    public function _server($attr)
+        return $var;
+    }
+    /**
+     * $_COOKIE sanitizing.
+     *
+     * @param string $attr Variable name
+     *
+     * @return string $var Sanitized data or array of sanitized data
+     */
+    public static function _cookie($attr = '')
     {
+        if (empty($attr)) {
+            $var = array();
+            foreach ($_COOKIE as $key => $value) {
+                $var[$key] = self::_cookie($key);
+            }
+        } else {
+            $var = '';
+            if (isset($_COOKIE[$attr])) {
+                $var = htmlspecialchars($_COOKIE[$attr]);
+            }
+        }
+
+        return $var;
+    }
+    /**
+     * $_SERVER sanitizing.
+     *
+     * @param string $attr Variable name
+     *
+     * @return string $var Sanitized data
+     */
+    public static function _server($attr)
+    {
+        $var = '';
         if (isset($_SERVER[$attr])) {
-            return htmlspecialchars($_SERVER[$attr]);
-        } else {
-            return false;
+            $var = htmlspecialchars($_SERVER[$attr]);
         }
-    }
 
-    public function _session($attr)
-    {
-        if (isset($_SESSION[$attr])) {
-            return htmlspecialchars($_SESSION[$attr]);
-        } else {
-            return false;
-        }
+        return $var;
     }
-
+    /**
+     * Renders given template file.
+     *
+     * @param string $filename
+     *
+     * @return string $output
+     */
     public function render($filename)
     {
-        return $this->twig->render($filename);
-    }
+        $output = $this->twig->render($filename, $this->data);
 
+        return $output;
+    }
+    /**
+     * Basic SEO routing following page files structure.
+     *
+     * @param string $uri Requested uri
+     *
+     * @return string $template Template file
+     */
     public function route($uri)
     {
         if (preg_match("/index(\/?)/", $uri)) {
@@ -92,17 +197,22 @@ class sl
                 exit();
                 // @codeCoverageIgnoreEnd
             } else {
-                return '301 to: '.$rootUri;
+                $uri = $rootUri;
             }
         }
         if (!preg_match('/\/$/', $uri) || (preg_match('/\/\//', $uri))) {
             header('HTTP/1.1 301 Moved Permanently');
-            header('Location: '.preg_replace('/(\/){2,}/i', '/', ($uri.'/')));
+            $realUri = preg_replace('/(\/){2,}/i', '/', ($uri.'/'));
+            header('Location: '.$realUri);
+            if (!@PHPUNIT_RUNNING === 1) {
                 // @codeCoverageIgnoreStart
-              exit();
-              // @codeCoverageIgnoreEnd
+                exit();
+                // @codeCoverageIgnoreEnd
+            } else {
+                $uri = $realUri;
+            }
         }
-
+        $this->data['uri'] = $uri;
         if (empty($uri) || ($uri == '/')) {
             $uri = 'index';
         }
@@ -112,36 +222,62 @@ class sl
         } else {
             $template = preg_replace("/(\/){1}$/", '', $uri).'.html';
         }
-        if (file_exists(SL_TEMPLATES.$template)) {
-            return $template;
-        } else {
+        if (!file_exists(SL_TEMPLATES.$template)) {
             header('HTTP/1.0 404 Not Found');
-
-            return '404.html';
+            $template = '404.html';
         }
-    }
 
+        return $template;
+    }
+    /**
+     * Request processor.
+     *
+     * @return string $output
+     */
     public function handleRequest()
     {
         $uri = $this->_get('uri');
         $template = $this->route($uri);
+        $output = $this->render($template);
 
-        return $this->render($template);
+        return $output;
     }
-
+    /**
+     * Initialize and access module object.
+     *
+     * @param slModule $moduleName
+     *
+     * @return moduleName $module
+     */
     public function module($moduleName)
     {
         $this->loadModule($moduleName);
-        return new $moduleName($this);
-    }
+        $module = new $moduleName($this);
 
+        return $module;
+    }
+    /**
+     * Including a module if it passes md5 sum verification.
+     *
+     * @param string $moduleName
+     */
     public function loadModule($moduleName)
     {
         require_once SL_CORE.'/classes/slmodule.php';
         if (slModule::isSafe($moduleName)) {
             require_once SL_MODULES.$moduleName.'/module.php';
-        } else {
-            throw new Exception($moduleName.' is not installed');
         }
+    }
+
+    public static function db($table)
+    {
+        if (!class_exists('ORM')) {
+            require_once SL_CORE.'vendor/idiorm.php';
+        }
+        ORM::configure(SL_DB_TYPE.':host='.SL_DB_HOST.';dbname='.SL_DB_NAME);
+        ORM::configure('username', SL_DB_USER);
+        ORM::configure('password', SL_DB_PASS);
+
+        return ORM::for_table(SL_DB_PREFIX.$table);
     }
 }

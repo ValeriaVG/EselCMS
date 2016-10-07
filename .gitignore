@@ -53,3 +53,5 @@ core/composer.lock
 core/tests/coverage
 
 core/hash
+.sass-cache
+tools/.sass-cache
