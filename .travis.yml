@@ -1,6 +1,6 @@
 language: php
 install:
-- composer install --path core/vendor/bundle
+- composer install --path core/
 php:
   - '5.4'
   - '5.5'
