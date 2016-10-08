@@ -297,7 +297,7 @@ class sl
     public static function db($table)
     {
         if (!class_exists('ORM')) {
-            require_once SL_CORE.'vendor/idiorm.php';
+            require_once SL_CORE.'lib/idiorm.php';
         }
         ORM::configure(SL_DB_TYPE.':host='.SL_DB_HOST.';dbname='.SL_DB_NAME);
         ORM::configure('username', SL_DB_USER);
