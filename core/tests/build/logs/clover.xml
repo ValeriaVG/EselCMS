@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1475884409">
-  <project timestamp="1475884409">
+<coverage generated="1475892133">
+  <project timestamp="1475892133">
     <file name="D:\WORK\ESEL\slCMS\core/classes/sl.php">
       <class name="sl" namespace="global">
         <metrics complexity="46" methods="16" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="96" coveredstatements="96" elements="112" coveredelements="112"/>
@@ -166,12 +166,62 @@
       <line num="75" type="stmt" count="2"/>
       <metrics loc="78" ncloc="78" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="34" elements="40" coveredelements="40"/>
     </file>
+    <file name="D:\WORK\ESEL\slCMS\core/modules/adminPanel/module.php">
+      <class name="adminPanel" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+      </class>
+      <line num="3" type="method" name="isLoggedIn" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="4" type="stmt" count="0"/>
+      <line num="5" type="stmt" count="0"/>
+      <metrics loc="7" ncloc="7" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+    </file>
     <file name="D:\WORK\ESEL\slCMS\core/modules/basicModule/module.php">
       <class name="basicModule" namespace="global">
         <metrics complexity="3" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </class>
       <metrics loc="14" ncloc="14" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="3" loc="400" ncloc="291" classes="3" methods="22" coveredmethods="22" conditionals="0" coveredconditionals="0" statements="131" coveredstatements="131" elements="153" coveredelements="153"/>
+    <file name="D:\WORK\ESEL\slCMS\core/modules/slMailer/module.php">
+      <class name="slMailer" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+      </class>
+      <line num="3" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="5" type="stmt" count="0"/>
+      <line num="6" type="stmt" count="0"/>
+      <metrics loc="7" ncloc="7" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+    </file>
+    <file name="D:\WORK\ESEL\slCMS\core/modules/webAction/module.php">
+      <class name="webAction" namespace="global">
+        <metrics complexity="4" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="0" elements="26" coveredelements="0"/>
+      </class>
+      <line num="5" type="method" name="handleRequest" visibility="public" complexity="4" crap="20" count="0"/>
+      <line num="6" type="stmt" count="0"/>
+      <line num="7" type="stmt" count="0"/>
+      <line num="8" type="stmt" count="0"/>
+      <line num="9" type="stmt" count="0"/>
+      <line num="10" type="stmt" count="0"/>
+      <line num="11" type="stmt" count="0"/>
+      <line num="12" type="stmt" count="0"/>
+      <line num="13" type="stmt" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="15" type="stmt" count="0"/>
+      <line num="16" type="stmt" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="18" type="stmt" count="0"/>
+      <line num="19" type="stmt" count="0"/>
+      <line num="20" type="stmt" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <metrics loc="32" ncloc="32" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="0" elements="26" coveredelements="0"/>
+    </file>
+    <metrics files="6" loc="446" ncloc="337" classes="6" methods="25" coveredmethods="22" conditionals="0" coveredconditionals="0" statements="160" coveredstatements="131" elements="185" coveredelements="153"/>
   </project>
 </coverage>

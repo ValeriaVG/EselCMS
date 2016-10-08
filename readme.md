@@ -57,7 +57,7 @@ Current stage: *Alpha*
 
 - [ ] Module: admin panel
 - [ ] Module: mailer
-- [ ] Module: web actions
+- [x] Module: web actions
 - [ ] Module: goods
 - [ ] Module: filter
 - [ ] Module: search

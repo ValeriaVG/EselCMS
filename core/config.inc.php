@@ -9,6 +9,7 @@ define("SL_MODULES",SL_CORE."/modules/");
 define("SL_SECRET","Change me to something else");
 //define("SL_TEMPLATES_CACHE",SL_CACHE.'templates');
 define("SL_TEMPLATES_CACHE",false);
+
 define("SL_DB_TYPE","mysql");
 define("SL_DB_HOST","localhost:3306");
 define("SL_DB_USER","esel");

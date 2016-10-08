@@ -1,1 +1,1 @@
-cmd /k php signthemall.php 
+php signthemall.php 

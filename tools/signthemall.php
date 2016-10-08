@@ -5,13 +5,14 @@
 */
 
 require_once dirname(dirname(__FILE__)).'/core/config.inc.php';
-require_once SL_CORE."classes/slmodule.php";
-$dir=str_replace("/","\\",(str_replace("//","/",SL_MODULES)));
-$modules=scandir($dir);
-printf("scanning ".$dir."\n");
-foreach($modules as $module){
-
-    printf("Signing ".$module.": ".slModule::setSafe($module)."\n");
-
+require_once SL_CORE.'classes/slmodule.php';
+$dir = str_replace('/', '\\', (str_replace('//', '/', SL_MODULES)));
+$dirname = SL_CORE.'hash/';
+array_map('unlink', glob("$dirname/*"));
+$modules = scandir($dir);
+printf('scanning '.$dir."\n");
+foreach ($modules as $module) {
+    if (($module != '.') && ($module != '..')) {
+        printf('Signing '.$module.': '.slModule::setSafe($module)."\n");
+    }
 }
- ?>

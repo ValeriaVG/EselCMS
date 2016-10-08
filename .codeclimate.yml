@@ -6,9 +6,7 @@ engines:
     enabled: true
     config:
       languages:
-      - ruby
       - javascript
-      - python
       - php
   eslint:
     enabled: true
@@ -17,15 +15,11 @@ engines:
   phpmd:
     enabled: true
   rubocop:
-    enabled: true
+    enabled: false
 ratings:
   paths:
   - "**.css"
-  - "**.inc"
   - "**.js"
-  - "**.jsx"
-  - "**.module"
   - "**.php"
-  - "**.py"
-  - "**.rb"
-exclude_paths: []
+
+exclude_paths: [core/tests/coverage, core/vendor]

@@ -2,14 +2,14 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for D:\WORK\ESEL\slCMS\core/modules</title>
+  <title>Dashboard for D:\WORK\ESEL\slCMS\core/modules/slMailer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/nv.d3.min.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet">
   <!--[if lt IE 9]>
-  <script src="../js/html5shiv.min.js"></script>
-  <script src="../js/respond.min.js"></script>
+  <script src="../../js/html5shiv.min.js"></script>
+  <script src="../../js/respond.min.js"></script>
   <![endif]-->
  </head>
  <body>
@@ -18,8 +18,9 @@
     <div class="row">
      <div class="col-md-12">
       <ol class="breadcrumb">
-        <li><a href="../index.html">D:\WORK\ESEL\slCMS\core</a></li>
-        <li><a href="index.html">modules</a></li>
+        <li><a href="../../index.html">D:\WORK\ESEL\slCMS\core</a></li>
+        <li><a href="../index.html">modules</a></li>
+        <li><a href="index.html">slMailer</a></li>
         <li class="active">(Dashboard)</li>
 
       </ol>
@@ -59,9 +60,7 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="adminPanel/module.php.html#2">adminPanel</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="slMailer/module.php.html#2">slMailer</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="webAction/module.php.html#3">webAction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="module.php.html#2">slMailer</a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -78,7 +77,6 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="webAction/module.php.html#3">webAction</a></td><td class="text-right">20</td></tr>
 
        </tbody>
       </table>
@@ -116,9 +114,7 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="adminPanel/module.php.html#3"><abbr title="adminPanel::isLoggedIn">isLoggedIn</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="slMailer/module.php.html#3"><abbr title="slMailer::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="webAction/module.php.html#5"><abbr title="webAction::handleRequest">handleRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="module.php.html#3"><abbr title="slMailer::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -135,7 +131,6 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="webAction/module.php.html#5"><abbr title="webAction::handleRequest">handleRequest</abbr></a></td><td class="text-right">20</td></tr>
 
        </tbody>
       </table>
@@ -149,11 +144,11 @@
     </p>
    </footer>
   </div>
-  <script src="../js/jquery.min.js" type="text/javascript"></script>
-  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="../js/holder.min.js" type="text/javascript"></script>
-  <script src="../js/d3.min.js" type="text/javascript"></script>
-  <script src="../js/nv.d3.min.js" type="text/javascript"></script>
+  <script src="../../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../js/holder.min.js" type="text/javascript"></script>
+  <script src="../../js/d3.min.js" type="text/javascript"></script>
+  <script src="../../js/nv.d3.min.js" type="text/javascript"></script>
   <script type="text/javascript">
 $(document).ready(function() {
   nv.addGraph(function() {
@@ -166,7 +161,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([3,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
+      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -184,7 +179,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([3,0,0,0,0,0,0,0,0,0,0,3], "Method Coverage"))
+      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -234,7 +229,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[0,1,"<a href=\"adminPanel\/module.php.html#2\">adminPanel<\/a>"],[100,3,"<a href=\"basicModule\/module.php.html#2\">basicModule<\/a>"],[0,1,"<a href=\"slMailer\/module.php.html#2\">slMailer<\/a>"],[0,4,"<a href=\"webAction\/module.php.html#3\">webAction<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[0,1,"<a href=\"module.php.html#2\">slMailer<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -258,7 +253,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[0,1,"<a href=\"adminPanel\/module.php.html#3\">adminPanel::isLoggedIn<\/a>"],[100,1,"<a href=\"basicModule\/module.php.html#3\">basicModule::sendGreeting<\/a>"],[100,1,"<a href=\"basicModule\/module.php.html#7\">basicModule::addNumbers<\/a>"],[100,1,"<a href=\"basicModule\/module.php.html#11\">basicModule::usesGet<\/a>"],[0,1,"<a href=\"slMailer\/module.php.html#3\">slMailer::__construct<\/a>"],[0,4,"<a href=\"webAction\/module.php.html#5\">webAction::handleRequest<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[0,1,"<a href=\"module.php.html#3\">slMailer::__construct<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);

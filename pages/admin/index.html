@@ -1,4 +1,8 @@
-{% extends "base.twig" %}
+{% extends "admin/base.twig" %}
 {% block wrapper %}
-Hello, i'm admin panel!
+{% if adminPanel_isLoggedIn() %}
+Wow, user is logged in
+{% else %}
+Go away you are not welcome
+{% endif %}
 {% endblock %}
