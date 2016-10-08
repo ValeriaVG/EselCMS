@@ -3,7 +3,7 @@ engines:
   csslint:
     enabled: false
   duplication:
-    enabled: true
+    enabled: false
     config:
       languages:
       - php
@@ -15,6 +15,8 @@ engines:
     enabled: true
     checks:
       Controversial/Superglobals:
+        enabled: false
+      Identical code:
         enabled: false
   rubocop:
     enabled: false
