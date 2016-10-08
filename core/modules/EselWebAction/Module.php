@@ -1,6 +1,6 @@
 <?php
 
-class WebAction extends EselModule
+class EselWebAction extends EselModule
 {
     public function handleRequest()
     {

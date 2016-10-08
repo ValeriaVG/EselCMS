@@ -91,21 +91,21 @@ class EselModuleTest extends TestCase
      */
     public function testSetSafe()
     {
-        $basicHashFile = EselModule::setSafe('BasicEselModule');
+        $basicHashFile = EselModule::setSafe('EselBasicModule');
         $this->assertTrue(file_exists($basicHashFile));
-        $this->assertTrue(EselModule::isSafe('BasicEselModule'));
+        $this->assertTrue(EselModule::isSafe('EselBasicModule'));
     }
 
     /**
      * @covers EselModule::setUnsafe
      * @expectedException        Exception
-     * @expectedExceptionMessage BasicEselModule is not installed
+     * @expectedExceptionMessage EselBasicModule is not installed
      */
     public function testSetUnsafe()
     {
-        $basicHashFile = EselModule::setUnsafe('BasicEselModule');
-        $this->assertFalse($this->assertTrue(EselModule::isSafe('BasicEselModule')));
-        $this->assertEquals('BasicEselModule is not installed', $e->getMessage());
-        EselModule::setSafe('BasicEselModule');
+        $basicHashFile = EselModule::setUnsafe('EselBasicModule');
+        $this->assertFalse($this->assertTrue(EselModule::isSafe('EselBasicModule')));
+        $this->assertEquals('EselBasicModule is not installed', $e->getMessage());
+        EselModule::setSafe('EselBasicModule');
     }
 }

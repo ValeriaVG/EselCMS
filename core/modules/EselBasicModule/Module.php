@@ -1,5 +1,5 @@
 <?php
-class BasicEselModule extends EselModule{
+class EselBasicModule extends EselModule{
   public static function sendGreeting(){
     return "Basic module sends its greeting!";
   }

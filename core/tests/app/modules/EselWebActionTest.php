@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-class WebActionTest extends TestCase
+class EselWebActionTest extends TestCase
 {
     /**
      * God object Esel.
@@ -22,7 +22,7 @@ class WebActionTest extends TestCase
     {
         require_once dirname(dirname(dirname(dirname(__FILE__)))).'/config.inc.php';
         $this->Esel = new Esel();
-        $this->module=$this->Esel->module("WebAction");
+        $this->module=$this->Esel->module("EselWebAction");
 
     }
 
@@ -33,10 +33,10 @@ class WebActionTest extends TestCase
 
     /**
      *
-     * @covers WebAction::handleRequest
+     * @covers EselWebAction::handleRequest
      */
     public function testCanHandleRequest(){
-      $_GET['uri']="/actions/BasicEselModule/sendGreeting";
+      $_GET['uri']="/actions/EselBasicModule/sendGreeting";
       $output=$this->module->handleRequest();
       $this->assertEquals('{"success":true,"data":"Basic module sends its greeting!"}',$output);
 

@@ -130,8 +130,8 @@ class EselTest extends TestCase
      */
     public function testCanLoadModule()
     {
-        EselModule::setSafe('BasicEselModule');
-        $moduleName = 'BasicEselModule';
+        EselModule::setSafe('EselBasicModule');
+        $moduleName = 'EselBasicModule';
         $this->Esel->loadModule($moduleName);
         $this->assertTrue(class_exists($moduleName));
         $this->Esel->loadModule('Crapp');
@@ -145,10 +145,10 @@ class EselTest extends TestCase
          */
         public function testCanModule()
         {
-            $moduleName = 'BasicEselModule';
-            $BasicEselModule = $this->Esel->module($moduleName);
-            $this->assertInstanceOf($moduleName, $BasicEselModule);
-            $this->assertEquals($this->Esel, $BasicEselModule->Esel);
+            $moduleName = 'EselBasicModule';
+            $EselBasicModule = $this->Esel->module($moduleName);
+            $this->assertInstanceOf($moduleName, $EselBasicModule);
+            $this->assertEquals($this->Esel, $EselBasicModule->Esel);
         }
         /**
          * Tesing data adding.

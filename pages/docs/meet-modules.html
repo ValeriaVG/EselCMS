@@ -1,7 +1,7 @@
 {% extends "docs/index.html" %}
 {% block textcontent %}
 <h1>Meet modules</h1>
-<p> This is what a  <code class="php">BasicModule_sendGreeting()</code> says: &laquo;<em>{{ BasicModule_sendGreeting() }}</em>&raquo;</p>
+<p> This is what a  <code class="php">EselBasicModule_sendGreeting()</code> says: &laquo;<em>{{ EselBasicModule_sendGreeting() }}</em>&raquo;</p>
 <pre>
 <code class="php">
   public static function sendGreeting(){
@@ -9,7 +9,7 @@
   }
 </code>
 </pre>
-<p> What about variables? No problem!  <code class="php">BasicModule_addNumbers(2,2)</code>  says: &laquo;<em>{{ BasicModule_addNumbers(2,2) }}</em>&raquo;</p>
+<p> What about variables? No problem!  <code class="php">EselBasicModule_addNumbers(2,2)</code>  says: &laquo;<em>{{ EselBasicModule_addNumbers(2,2) }}</em>&raquo;</p>
 <pre>
 <code class="php">
   public static function addNumbers($a,$b){
@@ -17,7 +17,7 @@
   }
 </code>
 </pre>
-<p> And what about some dangerous stuff?! Click <a href="/docs/meet-modules/?name=hello get">here</a> and <a href="/docs/meet-modules/?name=<script>alert('Hey, i'm a hacker')</script>">here</a> <code class="php">BasicModule_usesGet()</code>  says: &laquo;<em>{{ BasicModule_usesGet() }}</em>&raquo;</p>
+<p> And what about some dangerous stuff?! Click <a href="/docs/meet-modules/?name=hello get">here</a> and <a href="/docs/meet-modules/?name=<script>alert('Hey, i'm a hacker')</script>">here</a> <code class="php">EselBasicModule_usesGet()</code>  says: &laquo;<em>{{ EselBasicModule_usesGet() }}</em>&raquo;</p>
 <pre>
 <code class="php">
   public static function usesGet(){
