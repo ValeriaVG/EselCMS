@@ -2,13 +2,13 @@
 /**
  * Basic class all modules showl extend
  */
-class slModule
+class EselModule
 {
-    public $sl;
+    public $Esel;
     private $inTemplates;
-    public function __construct($sl,$inTemplates = false)
+    public function __construct($Esel,$inTemplates = false)
     {
-        $this->sl = &$sl;
+        $this->Esel = &$Esel;
         $this->inTemplates=$inTemplates;
     }
 

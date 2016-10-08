@@ -1,6 +1,6 @@
 <?php
 
-class sl
+class Esel
 {
     /**
      * Twig Enviroment variable.
@@ -15,11 +15,11 @@ class sl
      */
     private $data = array();
 
-/**
- * Setting constants for global array names
- * GET,POST,REQUEST,COOKIE,SESSION,SERVER.
- */
-const GET = 0;
+    /**
+     * Setting constants for global array names
+     * GET,POST,REQUEST,COOKIE,SESSION,SERVER.
+     */
+    const GET = 0;
     const POST = 1;
     const REQUEST = 2;
     const COOKIE = 3;
@@ -194,7 +194,7 @@ const GET = 0;
         if (!empty($uri)) {
             header('Location: '.$uri);
             if (!@PHPUNIT_RUNNING === 1) {
-            // @codeCoverageIgnoreStart
+                // @codeCoverageIgnoreStart
               exit();
             // @codeCoverageIgnoreEnd
             }
@@ -243,7 +243,7 @@ const GET = 0;
      */
     public function handleRequest()
     {
-        $uri = $this->g(self::GET,'uri');
+        $uri = $this->g(self::GET, 'uri');
         $template = $this->route($uri);
         $output = $this->render($template);
 
@@ -252,7 +252,7 @@ const GET = 0;
     /**
      * Initialize and access module object.
      *
-     * @param slModule $moduleName
+     * @param EselModule $moduleName
      *
      * @return moduleName $module
      */
@@ -270,9 +270,9 @@ const GET = 0;
      */
     public function loadModule($moduleName)
     {
-        require_once SL_CORE.'/classes/slModule.php';
-        if (slModule::isSafe($moduleName)) {
-            require_once SL_MODULES.$moduleName.'/module.php';
+        require_once SL_CORE.'/classes/EselModule.php';
+        if (EselModule::isSafe($moduleName)) {
+            require_once SL_MODULES.$moduleName.'/Module.php';
         }
     }
     /**
@@ -309,7 +309,7 @@ const GET = 0;
      *
      * @return ORM cursor
      */
-    public static function db($table)
+    public static function for_table($table)
     {
         if (!class_exists('ORM')) {
             require_once SL_CORE.'lib/idiorm.php';

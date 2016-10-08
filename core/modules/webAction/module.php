@@ -1,18 +1,18 @@
 <?php
 
-class webAction extends slModule
+class WebAction extends EselModule
 {
     public function handleRequest()
     {
         header('Content-Type: application/json');
         ob_start();
         $output = null;
-        if (preg_match('/actions\/([^\/]+)\/([^\/]+)(\/?)$/', sl::_get('uri'), $tmp)) {
+        if (preg_match('/actions\/([^\/]+)\/([^\/]+)(\/?)$/', Esel::g(Esel::GET,'uri'), $tmp)) {
             $module = $tmp[1];
             $action = $tmp[2];
             try {
-                sl::loadModule($module);
-                $params=sl::_post();
+                Esel::loadModule($module);
+                $params=Esel::_post();
                 if(empty($params)){
                   $output=array('success' => true, 'data'=>call_user_func($module."::".$action));
                 }else{

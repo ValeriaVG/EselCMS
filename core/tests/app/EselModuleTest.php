@@ -2,14 +2,14 @@
 
 use PHPUnit\Framework\TestCase;
 
-class slModuleTest extends TestCase
+class EselModuleTest extends TestCase
 {
     /**
-     * God object sl.
+     * God object Esel.
      *
-     * @var sl
+     * @var Esel
      */
-    private $sl;
+    private $Esel;
 
     /**
      * Module object.
@@ -21,21 +21,21 @@ class slModuleTest extends TestCase
     public function setUp()
     {
         require_once dirname(dirname(dirname(__FILE__))).'/config.inc.php';
-        $this->sl = new sl();
-        $this->module = new slModule($this->sl);
+        $this->Esel = new Esel();
+        $this->module = new EselModule($this->Esel);
     }
 
     public function tearDown()
     {
-        $this->sl = null;
+        $this->Esel = null;
     }
     /**
-     * @covers slModule::__construct
+     * @covers EselModule::__construct
      */
     public function testCanCreateSlmoduleInstance()
     {
-        $this->assertInstanceOf('slModule', $this->module);
-        $this->assertEquals($this->sl, $this->module->sl);
+        $this->assertInstanceOf('EselModule', $this->module);
+        $this->assertEquals($this->Esel, $this->module->Esel);
     }
     /**
      * Call protected/private method of a class.
@@ -56,7 +56,7 @@ class slModuleTest extends TestCase
     }
 
     /**
-     * @covers slModule::calculateHash
+     * @covers EselModule::calculateHash
      */
     public function testCanCalculateHash()
     {
@@ -69,7 +69,7 @@ class slModuleTest extends TestCase
     }
 
     /**
-     * @covers slModule::saveHash
+     * @covers EselModule::saveHash
      */
     public function testCanSaveHash()
     {
@@ -80,32 +80,32 @@ class slModuleTest extends TestCase
         } else {
             mkdir($dirname, 0755);
         }
-        $basicHashFile = $this->invokeMethod($this->module, 'saveHash');
-        $this->assertTrue(file_exists($basicHashFile));
-        $basicHashFileWithData = $this->invokeMethod($this->module, 'saveHash', array('test'));
-        $this->assertEquals('test', file_get_contents($basicHashFileWithData));
+        $hashFile = $this->invokeMethod($this->module, 'saveHash');
+        $this->assertTrue(file_exists($hashFile));
+        $hashWithData = $this->invokeMethod($this->module, 'saveHash', array('test'));
+        $this->assertEquals('test', file_get_contents($hashWithData));
     }
     /**
-     * @covers slModule::setSafe
-     *  @covers slModule::isSafe
+     * @covers EselModule::setSafe
+     *  @covers EselModule::isSafe
      */
     public function testSetSafe()
     {
-        $basicHashFile = slModule::setSafe('basicModule');
+        $basicHashFile = EselModule::setSafe('BasicEselModule');
         $this->assertTrue(file_exists($basicHashFile));
-        $this->assertTrue(slModule::isSafe('basicModule'));
+        $this->assertTrue(EselModule::isSafe('BasicEselModule'));
     }
 
     /**
-     * @covers slModule::setUnsafe
+     * @covers EselModule::setUnsafe
      * @expectedException        Exception
-     * @expectedExceptionMessage basicModule is not installed
+     * @expectedExceptionMessage BasicEselModule is not installed
      */
     public function testSetUnsafe()
     {
-        $basicHashFile = slModule::setUnsafe('basicModule');
-        $this->assertFalse($this->assertTrue(slModule::isSafe('basicModule')));
-        $this->assertEquals('basicModule is not installed', $e->getMessage());
-        slModule::setSafe('basicModule');
+        $basicHashFile = EselModule::setUnsafe('BasicEselModule');
+        $this->assertFalse($this->assertTrue(EselModule::isSafe('BasicEselModule')));
+        $this->assertEquals('BasicEselModule is not installed', $e->getMessage());
+        EselModule::setSafe('BasicEselModule');
     }
 }

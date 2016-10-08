@@ -1,5 +1,5 @@
 <?php
-class basicModule extends slModule{
+class BasicEselModule extends EselModule{
   public static function sendGreeting(){
     return "Basic module sends its greeting!";
   }
@@ -9,6 +9,6 @@ class basicModule extends slModule{
   }
 
   public static function usesGet(){
-    return sl::g(sl::GET,"name");
+    return Esel::g(Esel::GET,"name");
   }
 }

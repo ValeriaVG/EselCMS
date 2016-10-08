@@ -5,7 +5,7 @@
 */
 
 require_once dirname(dirname(__FILE__)).'/core/config.inc.php';
-require_once SL_CORE.'classes/slModule.php';
+require_once SL_CORE.'classes/EselModule.php';
 $dir = str_replace('//', '/', SL_MODULES);
 $dirname = SL_CORE.'hash/';
 if(!is_dir($dirname)){
@@ -16,6 +16,6 @@ $modules = scandir($dir);
 printf('scanning '.$dir."\n");
 foreach ($modules as $module) {
     if (($module != '.') && ($module != '..')) {
-        printf('Signing '.$module.': '.slModule::setSafe($module)."\n");
+        printf('Signing '.$module.': '.EselModule::setSafe($module)."\n");
     }
 }
