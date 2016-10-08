@@ -1,0 +1,1 @@
+cmd /k "php  core/vendor/codeclimate/php-test-reporter/composer/bin/test-reporter"

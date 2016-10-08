@@ -50,7 +50,7 @@ core/cache
 core/vendor
 core/composer.lock
 
-
+build
 core/tests/coverage
 core/hash
 esel/.sass-cache
