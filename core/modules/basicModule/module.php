@@ -9,6 +9,6 @@ class basicModule extends slModule{
   }
 
   public static function usesGet(){
-    return sl::_get("name");
+    return sl::g(sl::GET,"name");
   }
 }

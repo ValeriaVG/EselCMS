@@ -15,10 +15,21 @@ class sl
      */
     private $data = array();
 
+/**
+ * Setting constants for global array names
+ * GET,POST,REQUEST,COOKIE,SESSION,SERVER.
+ */
+const GET = 0;
+    const POST = 1;
+    const REQUEST = 2;
+    const COOKIE = 3;
+    const SESSION = 4;
+    const SERVER = 5;
+
     /**
      * Loading vendor classes.
      */
-    public function __construct()
+    private function init()
     {
         require_once SL_CORE.'vendor/autoload.php';
         Twig_Autoloader::register();
@@ -35,137 +46,121 @@ class sl
             return false;
         });
     }
+    public function __construct()
+    {
+        $this->init();
+    }
     /**
-     * $_GET sanitizing.
+     * Global arrays sanitizing.
      *
+     * @param int    $var  GET,POST,REQUEST,COOKIE,SESSION,SERVER
      * @param string $attr Variable name
      *
      * @return string $var Sanitized data or array of sanitized data
      */
-    public static function _get($attr = '')
+    public static function g($var, $attr = '')
     {
-        if (empty($attr)) {
-            $var = array();
-            foreach ($_GET as $key => $value) {
-                $var[$key] = self::_get($key);
+        switch ($var) {
+          case self::GET:
+            if (empty($attr)) {
+                $var = array();
+                foreach ($_GET as $key => $value) {
+                    $var[$key] = self::g(self::GET, $key);
+                }
+
+                return $var;
             }
-        } else {
             $var = '';
             if (isset($_GET[$attr])) {
                 $var = htmlspecialchars($_GET[$attr]);
             }
-        }
 
-        return $var;
-    }
-    /**
-     * $_POST sanitizing.
-     *
-     * @param string $attr Variable name
-     *
-     * @return string $var Sanitized data or array of sanitized data
-     */
-    public static function _post($attr = '')
-    {
-        if (empty($attr)) {
-            $var = array();
-            foreach ($_POST as $key => $value) {
-                $var[$key] = self::_post($key);
+            return $var;
+          break;
+
+          case self::POST:
+            if (empty($attr)) {
+                $var = array();
+                foreach ($_POST as $key => $value) {
+                    $var[$key] = self::g(self::POST, $key);
+                }
+
+                return $var;
             }
-        } else {
             $var = '';
             if (isset($_POST[$attr])) {
                 $var = htmlspecialchars($_POST[$attr]);
             }
-        }
 
-        return $var;
-    }
-    /**
-     * $_REQUEST sanitizing.
-     *
-     * @param string $attr Variable name
-     *
-     * @return string $var Sanitized data or array of sanitized data
-     */
-    public static function _request($attr = '')
-    {
-        if (empty($attr)) {
-            $var = array();
-            foreach ($_REQUEST as $key => $value) {
-                $var[$key] = self::_request($key);
+            return $var;
+          break;
+
+          case self::REQUEST:
+            if (empty($attr)) {
+                $var = array();
+                foreach ($_REQUEST as $key => $value) {
+                    $var[$key] = self::g(self::REQUEST, $key);
+                }
+
+                return $var;
             }
-        } else {
             $var = '';
             if (isset($_REQUEST[$attr])) {
                 $var = htmlspecialchars($_REQUEST[$attr]);
             }
-        }
 
-        return $var;
-    }
-    /**
-     * $_SESSION sanitizing.
-     *
-     * @param string $attr Variable name
-     *
-     * @return string $var Sanitized data or array of sanitized data
-     */
-    public static function _session($attr = '')
-    {
-        if (empty($attr)) {
-            $var = array();
-            foreach ($_SESSION as $key => $value) {
-                $var[$key] = self::_session($key);
-            }
-        } else {
-            $var = '';
-            if (isset($_SESSION[$attr])) {
-                $var = htmlspecialchars($_SESSION[$attr]);
-            }
-        }
+            return $var;
+          break;
 
-        return $var;
-    }
-    /**
-     * $_COOKIE sanitizing.
-     *
-     * @param string $attr Variable name
-     *
-     * @return string $var Sanitized data or array of sanitized data
-     */
-    public static function _cookie($attr = '')
-    {
-        if (empty($attr)) {
-            $var = array();
-            foreach ($_COOKIE as $key => $value) {
-                $var[$key] = self::_cookie($key);
+          case self::COOKIE:
+            if (empty($attr)) {
+                $var = array();
+                foreach ($_COOKIE as $key => $value) {
+                    $var[$key] = self::g(self::COOKIE, $key);
+                }
+
+                return $var;
             }
-        } else {
             $var = '';
             if (isset($_COOKIE[$attr])) {
                 $var = htmlspecialchars($_COOKIE[$attr]);
             }
-        }
 
-        return $var;
-    }
-    /**
-     * $_SERVER sanitizing.
-     *
-     * @param string $attr Variable name
-     *
-     * @return string $var Sanitized data
-     */
-    public static function _server($attr)
-    {
-        $var = '';
-        if (isset($_SERVER[$attr])) {
-            $var = htmlspecialchars($_SERVER[$attr]);
-        }
+            return $var;
+          break;
 
-        return $var;
+          case self::SESSION:
+            if (empty($attr)) {
+                $var = array();
+                foreach ($_SESSION as $key => $value) {
+                    $var[$key] = self::g(self::SESSION, $key);
+                }
+
+                return $var;
+            }
+            $var = '';
+            if (isset($_SESSION[$attr])) {
+                $var = htmlspecialchars($_SESSION[$attr]);
+            }
+
+            return $var;
+          break;
+
+          case self::SERVER:
+            $var = '';
+            if (isset($_SERVER[$attr])) {
+                $var = htmlspecialchars($_SERVER[$attr]);
+            }
+
+            return $var;
+          break;
+
+          default:
+           return null;
+
+      }
     }
+
     /**
      * Renders given template file.
      *
@@ -180,6 +175,32 @@ class sl
         return $output;
     }
     /**
+     * Sets up corresponding header and redirects to sprecified url.
+     *
+     * @param int    $code
+     * @param strong $uri
+     */
+    public static function respondWithCode($code, $uri = null)
+    {
+        switch ($code) {
+        case 301:
+          header('HTTP/1.1 301 Moved Permanently');
+        break;
+        case 404:
+          header('HTTP/1.0 404 Not Found');
+        break;
+      }
+
+        if (!empty($uri)) {
+            header('Location: '.$uri);
+            if (!@PHPUNIT_RUNNING === 1) {
+            // @codeCoverageIgnoreStart
+              exit();
+            // @codeCoverageIgnoreEnd
+            }
+        }
+    }
+    /**
      * Basic SEO routing following page files structure.
      *
      * @param string $uri Requested uri
@@ -189,28 +210,14 @@ class sl
     public function route($uri)
     {
         if (preg_match("/index(\/?)/", $uri)) {
-            header('HTTP/1.1 301 Moved Permanently');
             $rootUri = preg_replace('/(\/){2,}/i', '/', (preg_replace("/index(\/?)/", '', $uri).'/'));
-            header('Location: '.$rootUri);
-            if (!@PHPUNIT_RUNNING === 1) {
-                // @codeCoverageIgnoreStart
-                exit();
-                // @codeCoverageIgnoreEnd
-            } else {
-                $uri = $rootUri;
-            }
+            self::respondWithCode(301, $rootUri);
+            $uri = $rootUri;
         }
         if (!preg_match('/\/$/', $uri) || (preg_match('/\/\//', $uri))) {
-            header('HTTP/1.1 301 Moved Permanently');
             $realUri = preg_replace('/(\/){2,}/i', '/', ($uri.'/'));
-            header('Location: '.$realUri);
-            if (!@PHPUNIT_RUNNING === 1) {
-                // @codeCoverageIgnoreStart
-                exit();
-                // @codeCoverageIgnoreEnd
-            } else {
-                $uri = $realUri;
-            }
+            self::respondWithCode(301, $realUri);
+            $uri = $realUri;
         }
         $this->data['uri'] = $uri;
         if (empty($uri) || ($uri == '/')) {
@@ -223,7 +230,7 @@ class sl
             $template = preg_replace("/(\/){1}$/", '', $uri).'.html';
         }
         if (!file_exists(SL_PAGES.$template)) {
-            header('HTTP/1.0 404 Not Found');
+            self::respondWithCode(404);
             $template = '404.html';
         }
 
@@ -236,7 +243,7 @@ class sl
      */
     public function handleRequest()
     {
-        $uri = $this->_get('uri');
+        $uri = $this->g(self::GET,'uri');
         $template = $this->route($uri);
         $output = $this->render($template);
 
@@ -268,32 +275,40 @@ class sl
             require_once SL_MODULES.$moduleName.'/module.php';
         }
     }
-/**
- * Adds data to the array that template gets
- * @param mixed $key
- * @param mixed $value
- */
-    public function addData($key,$value){
-      $this->data[$key]=$value;
+    /**
+     * Adds data to the array that template gets.
+     *
+     * @param mixed $key
+     * @param mixed $value
+     */
+    public function addData($key, $value)
+    {
+        $this->data[$key] = $value;
     }
-/**
- * Retuns array of data or it's element if key specified
- * @param mixed $key
- * @return mixed $data
- */
-    public function getData($key = null){
-      if($key===null){
-        $data=$this->data;
-      }else{
-        $data=$this->data[$key];
-      }
+    /**
+     * Retuns array of data or it's element if key specified.
+     *
+     * @param mixed $key
+     *
+     * @return mixed $data
+     */
+    public function getData($key = null)
+    {
+        if ($key === null) {
+            $data = $this->data;
+        } else {
+            $data = $this->data[$key];
+        }
+
         return $data;
     }
-/**
- * Idiorm wrapper
- * @param  string $table Table name
- * @return ORM cursor
- */
+    /**
+     * Idiorm wrapper.
+     *
+     * @param string $table Table name
+     *
+     * @return ORM cursor
+     */
     public static function db($table)
     {
         if (!class_exists('ORM')) {

@@ -9,9 +9,13 @@
             <directory suffix=".php">.</directory>
             <exclude>
                 <directory suffix=".inc.php">../</directory>
+                <file>./index.php</file>
+                <file>./actions/index.php</file>
                 <directory>./core/cache</directory>
                 <directory>./core/tests</directory>
                 <directory>./core/vendor</directory>
+                <directory>./core/lib</directory>
+                <directory>./tools</directory>
             </exclude>
         </whitelist>
     </filter>

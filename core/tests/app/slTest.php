@@ -25,6 +25,7 @@ class slTest extends TestCase
      * Test constructor.
      *
      * @covers sl::__construct
+     * @covers sl::init
      */
     public function testCanCreateSlInstance()
     {
@@ -47,88 +48,45 @@ class slTest extends TestCase
     /**
      * Test superglobal getter.
      *
-     * @covers sl::_get
+     * @covers sl::g
      */
-    public function testCanGetGet()
+    public function testCanGetGlobal()
     {
         $_GET['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_get('test'));
-        $this->assertEquals('', $this->sl->_get('unknown'));
-        $get = $this->sl->_get();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->g(sl::GET,'test'));
+        $this->assertEquals('', $this->sl->g(sl::GET,'unknown'));
+        $get = $this->sl->g(sl::GET);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $get['test']);
-    }
-
-    /**
-     * Test superglobal getter.
-     *
-     * @covers sl::_post
-     */
-    public function testCanGetPost()
-    {
         $_POST['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_post('test'));
-        $this->assertEquals('', $this->sl->_post('unknown'));
-        $post = $this->sl->_post();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->g(sl::POST,'test'));
+        $this->assertEquals('', $this->sl->g(sl::POST,'unknown'));
+        $post = $this->sl->g(sl::POST);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $post['test']);
-    }
-
-    /**
-     * Test superglobal getter.
-     *
-     * @covers sl::_request
-     */
-    public function testCanGetRequest()
-    {
         $_REQUEST['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_request('test'));
-        $this->assertEquals('', $this->sl->_request('unknown'));
-        $request = $this->sl->_request();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->g(sl::REQUEST,'test'));
+        $this->assertEquals('', $this->sl->g(sl::REQUEST,'unknown'));
+        $request = $this->sl->g(sl::REQUEST);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $request['test']);
-    }
-
-    /**
-     * Test superglobal getter.
-     *
-     * @covers sl::_cookie
-     */
-    public function testCanGetCookie()
-    {
         $_COOKIE['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_cookie('test'));
-        $this->assertEquals('', $this->sl->_cookie('unknown'));
-        $cookie = $this->sl->_cookie();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->g(sl::COOKIE,'test'));
+        $this->assertEquals('', $this->sl->g(sl::COOKIE,'unknown'));
+        $cookie = $this->sl->g(sl::COOKIE);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $cookie['test']);
-    }
-
-    /**
-     * Test superglobal getter.
-     *
-     * @covers sl::_server
-     */
-    public function testCanGetServer()
-    {
         $_SERVER['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_server('test'));
-        $this->assertEquals('', $this->sl->_server('unknown'));
-    }
-
-    /**
-     * Test superglobal getter.
-     *
-     * @covers sl::_session
-     */
-    public function testCanGetSession()
-    {
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->g(sl::SERVER,'test'));
+        $this->assertEquals('', $this->sl->g(sl::SERVER,'unknown'));
         $_SESSION['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->_session('test'));
-        $this->assertEquals('', $this->sl->_session('unknown'));
-        $session = $this->sl->_session();
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->sl->g(sl::SESSION,'test'));
+        $this->assertEquals('', $this->sl->g(sl::SESSION,'unknown'));
+        $session = $this->sl->g(sl::SESSION);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $session['test']);
+        $this->assertEquals(null, $this->sl->g(-1,'unknown'));
     }
     /**
      * Test router.
      *
      * @covers sl::route
+     * @covers sl::respondWithCode
      * @runInSeparateProcess
      */
     public function testCanRoute()
