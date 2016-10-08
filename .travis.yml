@@ -1,7 +1,7 @@
 language: php
 install:
 - cd core
-- composer install
+- composer install --dev
 addons:
   code_climate:
     repo_token: d83a1d4c39f3dffb4ee19512b9d1358dcc91c20778654e5ea3c671043497f467

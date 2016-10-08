@@ -10,8 +10,8 @@ define ('PHPUNIT_RUNNING', 0);
 } else {
 $_GET["uri"]=htmlspecialchars(preg_replace('/\?(.*)$/',"",$_SERVER["REQUEST_URI"]));
   if(preg_match('/^\/actions\//', $_SERVER["REQUEST_URI"])){
-    include __DIR__."/actions/". 'index.php';
+    include dirname(__DIR__)."/actions/". 'index.php';
   }
 
-    include __DIR__ . '/index.php';
+    include dirname(__DIR__) . '/index.php';
 }
