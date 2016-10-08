@@ -58,14 +58,14 @@ class Esel
      *
      * @return string $var Sanitized data or array of sanitized data
      */
-    public static function g($var, $attr = '')
+    public static function sga($var, $attr = '')
     {
         switch ($var) {
           case self::GET:
             if (empty($attr)) {
                 $var = array();
                 foreach ($_GET as $key => $value) {
-                    $var[$key] = self::g(self::GET, $key);
+                    $var[$key] = self::sga(self::GET, $key);
                 }
 
                 return $var;
@@ -82,7 +82,7 @@ class Esel
             if (empty($attr)) {
                 $var = array();
                 foreach ($_POST as $key => $value) {
-                    $var[$key] = self::g(self::POST, $key);
+                    $var[$key] = self::sga(self::POST, $key);
                 }
 
                 return $var;
@@ -99,7 +99,7 @@ class Esel
             if (empty($attr)) {
                 $var = array();
                 foreach ($_REQUEST as $key => $value) {
-                    $var[$key] = self::g(self::REQUEST, $key);
+                    $var[$key] = self::sga(self::REQUEST, $key);
                 }
 
                 return $var;
@@ -116,7 +116,7 @@ class Esel
             if (empty($attr)) {
                 $var = array();
                 foreach ($_COOKIE as $key => $value) {
-                    $var[$key] = self::g(self::COOKIE, $key);
+                    $var[$key] = self::sga(self::COOKIE, $key);
                 }
 
                 return $var;
@@ -133,7 +133,7 @@ class Esel
             if (empty($attr)) {
                 $var = array();
                 foreach ($_SESSION as $key => $value) {
-                    $var[$key] = self::g(self::SESSION, $key);
+                    $var[$key] = self::sga(self::SESSION, $key);
                 }
 
                 return $var;
@@ -194,9 +194,9 @@ class Esel
         if (!empty($uri)) {
             header('Location: '.$uri);
             if (!@PHPUNIT_RUNNING === 1) {
-                // @codeCoverageIgnoreStart
+              // @codeCoverageIgnoreStart
               exit();
-            // @codeCoverageIgnoreEnd
+              // @codeCoverageIgnoreEnd
             }
         }
     }
@@ -243,7 +243,7 @@ class Esel
      */
     public function handleRequest()
     {
-        $uri = $this->g(self::GET, 'uri');
+        $uri = $this->sga(self::GET, 'uri');
         $template = $this->route($uri);
         $output = $this->render($template);
 

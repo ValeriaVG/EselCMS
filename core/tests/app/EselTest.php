@@ -48,39 +48,39 @@ class EselTest extends TestCase
     /**
      * Test superglobal getter.
      *
-     * @covers Esel::g
+     * @covers Esel::sga
      */
     public function testCanGetGlobal()
     {
         $_GET['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->g(Esel::GET,'test'));
-        $this->assertEquals('', $this->Esel->g(Esel::GET,'unknown'));
-        $get = $this->Esel->g(Esel::GET);
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::GET,'test'));
+        $this->assertEquals('', $this->Esel->sga(Esel::GET,'unknown'));
+        $get = $this->Esel->sga(Esel::GET);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $get['test']);
         $_POST['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->g(Esel::POST,'test'));
-        $this->assertEquals('', $this->Esel->g(Esel::POST,'unknown'));
-        $post = $this->Esel->g(Esel::POST);
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::POST,'test'));
+        $this->assertEquals('', $this->Esel->sga(Esel::POST,'unknown'));
+        $post = $this->Esel->sga(Esel::POST);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $post['test']);
         $_REQUEST['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->g(Esel::REQUEST,'test'));
-        $this->assertEquals('', $this->Esel->g(Esel::REQUEST,'unknown'));
-        $request = $this->Esel->g(Esel::REQUEST);
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::REQUEST,'test'));
+        $this->assertEquals('', $this->Esel->sga(Esel::REQUEST,'unknown'));
+        $request = $this->Esel->sga(Esel::REQUEST);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $request['test']);
         $_COOKIE['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->g(Esel::COOKIE,'test'));
-        $this->assertEquals('', $this->Esel->g(Esel::COOKIE,'unknown'));
-        $cookie = $this->Esel->g(Esel::COOKIE);
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::COOKIE,'test'));
+        $this->assertEquals('', $this->Esel->sga(Esel::COOKIE,'unknown'));
+        $cookie = $this->Esel->sga(Esel::COOKIE);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $cookie['test']);
         $_SERVER['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->g(Esel::SERVER,'test'));
-        $this->assertEquals('', $this->Esel->g(Esel::SERVER,'unknown'));
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::SERVER,'test'));
+        $this->assertEquals('', $this->Esel->sga(Esel::SERVER,'unknown'));
         $_SESSION['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->g(Esel::SESSION,'test'));
-        $this->assertEquals('', $this->Esel->g(Esel::SESSION,'unknown'));
-        $session = $this->Esel->g(Esel::SESSION);
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::SESSION,'test'));
+        $this->assertEquals('', $this->Esel->sga(Esel::SESSION,'unknown'));
+        $session = $this->Esel->sga(Esel::SESSION);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $session['test']);
-        $this->assertEquals(null, $this->Esel->g(-1,'unknown'));
+        $this->assertEquals(null, $this->Esel->sga(-1,'unknown'));
     }
     /**
      * Test router.

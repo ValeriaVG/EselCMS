@@ -4,15 +4,15 @@ class WebAction extends EselModule
 {
     public function handleRequest()
     {
-        header('Content-Type: application/json');
+
         ob_start();
         $output = null;
-        if (preg_match('/actions\/([^\/]+)\/([^\/]+)(\/?)$/', Esel::g(Esel::GET,'uri'), $tmp)) {
+        if (preg_match('/actions\/([^\/]+)\/([^\/]+)(\/?)$/', Esel::sga(Esel::GET,'uri'), $tmp)) {
             $module = $tmp[1];
             $action = $tmp[2];
             try {
-                Esel::loadModule($module);
-                $params=Esel::_post();
+                $this->Esel->loadModule($module);
+                $params=Esel::sga(Esel::POST);
                 if(empty($params)){
                   $output=array('success' => true, 'data'=>call_user_func($module."::".$action));
                 }else{
@@ -26,7 +26,16 @@ class WebAction extends EselModule
             $output = array('success' => false, 'message' => 'No action specified');
         }
         ob_end_clean();
+
+        if (@PHPUNIT_RUNNING === 1) {
+
+          return json_encode($output);
+
+        }
+        // @codeCoverageIgnoreStart
+        header('Content-Type: application/json');
         echo json_encode($output);
         exit();
+        // @codeCoverageIgnoreEnd
     }
 }

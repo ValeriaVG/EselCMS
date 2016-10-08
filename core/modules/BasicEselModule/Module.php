@@ -9,6 +9,6 @@ class BasicEselModule extends EselModule{
   }
 
   public static function usesGet(){
-    return Esel::g(Esel::GET,"name");
+    return Esel::sga(Esel::GET,"name");
   }
 }
