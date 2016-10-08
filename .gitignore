@@ -51,7 +51,7 @@ core/vendor
 core/composer.lock
 
 
-
+core/tests/coverage
 core/hash
 esel/.sass-cache
 esel/sass/.sass-cache

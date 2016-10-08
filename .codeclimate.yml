@@ -1,25 +1,25 @@
 ---
 engines:
   csslint:
-    enabled: true
+    enabled: false
   duplication:
     enabled: true
     config:
       languages:
-      - javascript
       - php
   eslint:
-    enabled: true
+    enabled: false
   fixme:
     enabled: true
   phpmd:
     enabled: true
+    checks:
+      Controversial/Superglobals:
+        enabled: false
   rubocop:
     enabled: false
 ratings:
   paths:
-  - "**.css"
-  - "**.js"
   - "**.php"
 
 exclude_paths: [core/tests/coverage, core/vendor]
