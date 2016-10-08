@@ -1,0 +1,22 @@
+<phpunit bootstrap="./core/tests/app/bootstrap.php" colors="true" stopOnFailure="true">
+
+    <testsuite name="Main slCMS Test Suite">
+        <directory>./core/tests/</directory>
+    </testsuite>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">.</directory>
+            <exclude>
+                <directory suffix=".inc.php">../</directory>
+                <directory>./core/cache</directory>
+                <directory>./core/tests</directory>
+                <directory>./core/vendor</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="./core/tests/coverage" charset="UTF-8" yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>
+    </logging>
+</phpunit>

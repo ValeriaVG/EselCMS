@@ -2,8 +2,5 @@
     "require": {
         "twig/twig": "~1.0",
         "swiftmailer/swiftmailer": "^5.4"
-    },
-    "require-dev": {
-        "codeclimate/php-test-reporter": "dev-master"
     }
 }

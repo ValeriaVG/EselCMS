@@ -1,1 +1,1 @@
-cmd /k "cd ../core/tests/ && phpunit --coverage-clover ../../build/logs/clover.xml"
+cmd /k "cd ../ && phpunit"
