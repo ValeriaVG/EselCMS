@@ -5,7 +5,7 @@
 */
 
 require_once dirname(dirname(__FILE__)).'/core/config.inc.php';
-require_once SL_CORE.'classes/slmodule.php';
+require_once SL_CORE.'classes/slModule.php';
 $dir = str_replace('//', '/', SL_MODULES);
 $dirname = SL_CORE.'hash/';
 if(!is_dir($dirname)){

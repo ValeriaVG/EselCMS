@@ -263,7 +263,7 @@ class sl
      */
     public function loadModule($moduleName)
     {
-        require_once SL_CORE.'/classes/slmodule.php';
+        require_once SL_CORE.'/classes/slModule.php';
         if (slModule::isSafe($moduleName)) {
             require_once SL_MODULES.$moduleName.'/module.php';
         }
