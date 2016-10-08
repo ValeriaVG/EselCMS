@@ -4,7 +4,6 @@
         "swiftmailer/swiftmailer": "^5.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "*",
-        "codeclimate/php-test-reporter": "dev-master"
+        "phpunit/phpunit": "*"
     }
 }

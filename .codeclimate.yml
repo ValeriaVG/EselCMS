@@ -24,4 +24,4 @@ ratings:
   paths:
   - "**.php"
 
-exclude_paths: [core/tests/coverage, core/vendor]
+exclude_paths: [core/tests/coverage, core/vendor, core/lib]
