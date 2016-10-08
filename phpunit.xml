@@ -10,6 +10,7 @@
             <exclude>
                 <directory suffix=".inc.php">../</directory>
                 <file>./index.php</file>
+                <file>./router.php</file>
                 <file>./actions/index.php</file>
                 <directory>./core/cache</directory>
                 <directory>./core/tests</directory>
