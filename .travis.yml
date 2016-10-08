@@ -6,12 +6,7 @@ addons:
   code_climate:
     repo_token: d83a1d4c39f3dffb4ee19512b9d1358dcc91c20778654e5ea3c671043497f467
 php:
-  - '5.4'
-  - '5.5'
-  - '5.6'
   - '7.0'
-  - hhvm
-  - nightly
 services:
   - mysql
 before_script:
