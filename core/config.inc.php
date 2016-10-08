@@ -11,9 +11,9 @@ define("SL_SECRET","Change me to something else");
 define("SL_TEMPLATES_CACHE",false);
 
 define("SL_DB_TYPE","mysql");
-define("SL_DB_HOST","localhost:3306");
-define("SL_DB_USER","esel");
-define("SL_DB_PASS","test");
+define("SL_DB_HOST","127.0.0.1");
+define("SL_DB_USER","travis");
+define("SL_DB_PASS","");
 define("SL_DB_NAME","esel");
 define("SL_DB_PREFIX","sl_");
 
