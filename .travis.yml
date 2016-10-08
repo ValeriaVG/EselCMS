@@ -15,3 +15,4 @@ before_script:
   - mysql -e 'create database IF NOT EXISTS esel;'
   - mysql -e 'CREATE TABLE `esel`.`sl_test` (  `id` INT NULL AUTO_INCREMENT,  `data` VARCHAR(45) NULL,  PRIMARY KEY (`id`));'
   - mysql -e 'insert into `esel`.`sl_test` values(null,"test")';
+  - cd ..
