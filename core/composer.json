@@ -4,6 +4,6 @@
         "swiftmailer/swiftmailer": "^5.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "4.8.*"
     }
 }
