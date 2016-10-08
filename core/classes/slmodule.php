@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Basic class all modules showl extend
+ */
 class slModule
 {
     public $sl;
