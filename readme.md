@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/ValeriaVG/eselcms/badges/gpa.svg)](https://codeclimate.com/github/ValeriaVG/eselcms)
+
+[![Test Coverage](https://codeclimate.com/github/ValeriaVG/eselcms/badges/coverage.svg)](https://codeclimate.com/github/ValeriaVG/eselcms/coverage)
+
 #Esel - PHP 5.4+ TDD based atomic content management system
 
 > Everything should be made as simple as possible, but not simpler - *Albert Einstein*
