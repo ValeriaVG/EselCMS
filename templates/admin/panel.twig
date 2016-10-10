@@ -1,0 +1,66 @@
+{% extends "admin/base.twig" %}
+{% block wrapper %}
+<style>
+[v-cloak]{
+visibility:hidden;
+}
+</style>
+    <div >
+    <nav class="pattern dark_matter" id="header">
+
+            <div class="nav-wrapper">
+                  <a href="/admin/" class="brand-logo"><img src="/esel/img/tinylogo.png" alt="EselCMS"> v 1.0.0</a>
+                  <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+
+                  <ul class="right hide-on-med-and-down">
+                      <li class="active" ><a href="/" >Mainpage</a></li>
+                      <li ><a href="/docs/" >Documentation</a></li>
+                      <li ><a href="/docs/meet-modules/" >Modules</a></li>
+                  </ul>
+                  <ul class="side-nav" id="mobile-nav">
+                      <li class="active" ><a href="/" >Mainpage</a></li>
+                      <li ><a href="/docs/" >Documentation</a></li>
+                      <li ><a href="/docs/meet-modules/" >Modules</a></li>
+                  </ul>
+
+          </div>
+      </nav>
+        <div class="row" style="margin-bottom:0">
+            <div class="col l2 m4 s12 grey lighten-4 fullheight" style="padding:0" id="app">
+                <div class="valign-wrapper col s12 section grey lighten-2" v-cloak >
+{% verbatim %}
+                    <a v-for="page in crumbs"
+                    v-bind:text="page.name"
+                    v-bind:href="page.url"
+                    v-on:click.prevent="setFolder(page.path)"
+
+                    class="breadcrumb valign breadcrumb valign bg-text text-darken-3" v-bind:text="$index">
+<i v-if="page.name=='/'" class="fa fa-home" aria-hidden="true"></i>
+                        <span v-if="page.name!='/'">{{ page.name }}</span>
+                    </a>
+{% endverbatim %}
+                </div>
+
+                <div class="section" style="padding-left:15px;paddibg-right:15px">
+                    <pages :pages="pages" :current_page="current_page"></pages>
+                </div>
+            </div>
+            <div class="col l10 m8 s12 lighten-3 pattern white norwegian_rose fullheight">
+            {% block panel %}
+    Dashboard
+{% endblock %}
+
+            </div>
+        </div>
+        <footer class="page-footer pattern dark_matter" id="footer" style="margin-top:0;">
+
+</footer>
+{% endblock %}
+{% block scripts %}
+<script src="/esel/js/admin/components/tinymce/tinymce.min.js"></script>
+    <script src="/esel/js/vendor/vue.min.js"></script>
+    <script src="/esel/js/admin/components/tree.js"></script>
+    <script src="https://use.fontawesome.com/31e6fde098.js"></script>
+    <script src="/esel/js/admin/app.js"></script>
+
+{% endblock %}

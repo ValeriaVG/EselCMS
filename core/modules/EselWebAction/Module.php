@@ -16,7 +16,7 @@ class EselWebAction extends EselModule
                 if(empty($params)){
                   $output=array('success' => true, 'data'=>call_user_func($module."::".$action));
                 }else{
-                  $output=array('success' => true, 'data'=>call_user_func_array($module."::".$action,$params));
+                  $output=array('success' => true, 'data'=>call_user_func_array($module."::".$action,$params),'params'=>$params);
                 }
 
             } catch (Exception $e) {
@@ -29,12 +29,12 @@ class EselWebAction extends EselModule
 
         if (@PHPUNIT_RUNNING === 1) {
 
-          return json_encode($output);
+          return json_encode($output, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
 
         }
         // @codeCoverageIgnoreStart
         header('Content-Type: application/json');
-        echo json_encode($output);
+        echo json_encode($output, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
         exit();
         // @codeCoverageIgnoreEnd
     }

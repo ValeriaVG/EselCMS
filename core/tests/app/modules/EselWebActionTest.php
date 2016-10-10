@@ -40,6 +40,12 @@ class EselWebActionTest extends TestCase
       $output=$this->module->handleRequest();
       $this->assertEquals('{"success":true,"data":"Basic module sends its greeting!"}',$output);
 
+
+      $_GET['uri']="/actions/EselBasicModule/sendWithSlash";
+      $_POST['text']="йэфи";
+      $output=$this->module->handleRequest();
+      $this->assertEquals('{"success":true,"data":"/йэфи","params":{"text":"йэфи"}}',$output);
+
       $_GET['uri']="/actions/Crap";
       $output=$this->module->handleRequest();
       $this->assertEquals('{"success":false,"message":"No action specified"}',$output);

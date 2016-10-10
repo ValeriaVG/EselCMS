@@ -1,8 +1,5 @@
-{% extends "admin/base.twig" %}
-{% block wrapper %}
-{% if AdminPanel_isLoggedIn() %}
-Wow, user is logged in
+{% if EselAdminPanel_isLoggedIn() %}
+{% include "admin/panel.twig" %}
 {% else %}
-Go away you are not welcome
+{% include "admin/login.twig" %}
 {% endif %}
-{% endblock %}

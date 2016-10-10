@@ -1,0 +1,12 @@
+{% extends "admin/panel.twig" %}
+{% block panel %}
+{% set page=EselAdminPanel_getPageData() %}
+<h1>{{page.template}}</h1>
+{% if page.fields|length==0 %}
+<p>This page template ({{page.template|default('no template')}}) has no editor fields set</p>
+{% endif %}
+{% for name,type in page.fields %}
+<textarea name="{{ name }}" class="{{ type }}"> {{ page.blocks[name] }} </textarea>
+{% endfor %}
+
+{% endblock %}

@@ -4,65 +4,64 @@
 
 > Everything should be made as simple as possible, but not simpler - *Albert Einstein*
 
-##Why yet another CMS?!
-
 *Because there isn't anything like __THIS__ one.*
 
-All of the rest are full of features that may be used one day, just like my mother's room.
+All others are full of features that may be used one day, just like my mother's room.
 
-###Why is it bad?
+### Why is it bad?
 
-1. __It makes things much more complicated for both developers and CMS users.__
-   Days and months you'll spend trying to master a CMS, being sure you'd do it faster in vanilla PHP
+1.  **It makes things much more complicated both for developers and CMS user:** You spend days, months trying to master a CMS, but being sure you'd do it faster in vanilla PHP
 
-2. __It's perfomance is much lower than it should be__
-   Not much to add: CPU and DB are working hard to maintain unused features
+2.  **It's perfomance is much lower than it should be:** Not much to add: CPU and DB are working hard to maintain unused features
 
-3. __It's practically impossible to test automatically__
-   Most of the popular systems were made way before unit-tests became a mainstream.
-   And its much easier to create well-tested app from ground up than cover existing one made without TDD
+3.  **It's practically impossible to test automatically:** Most of the popular systems were made way before unit-tests turned to be mainstream. And its much easier to create well-tested app from ground up than cover existing one made without TDD
 
-4. __It's not secure__
-   In most cases it's so complex and huge that you will not be able to predict vulnerabilities before you bump into it.
+4.  **It's not secure:** In most cases it's so complex and huge that you will not be able to predict vulnerabilities before you bump into it.
 
-##So what Esel offers?
+So what Esel offers?
+--------------------
 
-1. __It always suits needs of your project__
-   Basically Esel doesn't even needs admin panel!
+1.  **It always suits needs of your project:** Basically Esel doesn't even needs admin panel!
 
-2. __It can be extended to ANYTHING__
-   Module system allows you to bring any functionality you need
+2.  **It can be extended to ANYTHING** Module system allows you to bring any functionality you need.
 
-3. __It is DRY__
-  Make a module once and reuse it anytime
+3.  **It is DRY:** Make a module once and reuse it anytime
 
-4. __It's made using (T)est (D)riven (D)evelopment__
-  So you can be sure your brand new module broke nothing!
+4.  **It's made using (T)est (D)riven (D)evelopment:** So you can be sure your brand new module broke nothing!
 
-5. __Is uses database as it suppose to be used__
-  No more bloated databases! Content is stored in **FILES** and database has it's index if it's needed for search!:astonished:
+5.  **Is uses database as it supposed to be used:** No more bloated databases! Content is stored in **FILES** and database has it's index if it's needed for search!:astonished:
 
-6. __It's secure__ :ok_hand:
-  Esel uses [Twig](http://twig.sensiolabs.org/) as it's template engine and [Idiorm](https://github.com/j4mie/idiorm) as it's database layer. Also Esel has super global variables escaping via `Esel::sga(Esel::GET,"test")`, `Esel::sga(Esel::POST,"test")` etc. And every module is checked before loading to prevent code injections. :bangbang:
+6.  **It's secure** :ok_hand: Esel uses [Twig](http://twig.sensiolabs.org/) as it's template engine and [Idiorm](https://github.com/j4mie/idiorm) as it's database layer. Also Esel has super global variables escaping via `Esel::sga(Esel::GET,"test")`, `Esel::sga(Esel::POST,"test")` etc. And every module is checked before loading to prevent code injections. :bangbang:
 
-##Now to the bad part: Esel is currently under development
+Now to the bad part: Esel is currently under development
+--------------------------------------------------------
 
 Current stage: *Alpha*
 
-- [x] Core: unit testing setup
-- [x] Core: template support
-- [x] Core: routing
-- [x] Core: web testing setup
-- [x] Core: redirects
-- [x] Core: modules system
-- [x] Core: database support
+Roadmap
+=======
+- [x] Core functionality
+  - [x] Unit testing setup
+  - [x] Template support
+  - [x] Routing
+  - [x] Web testing setup
+  - [x] Redirects
+  - [x] Modules system
+  - [x] Database support
 
-- [ ] Module: admin panel
-- [ ] Module: mailer
-- [x] Module: web actions
-- [ ] Module: goods
-- [ ] Module: filter
-- [ ] Module: search
+- [ ] Modules
+  - [ ] Admin panel
+    - [x] Resources tree
+    - [ ] CRUD pages
+    - [ ] CRUD templates
+    - [ ] Custom widgets support
+  - [x] Mailer
+  - [x] Web actions
+  - [ ] Goods
+  - [ ] Gallery
+  - [ ] Cart
+  - [ ] Filter
+  - [ ] Search
 
 
 *But stay tuned! It won't take long!*

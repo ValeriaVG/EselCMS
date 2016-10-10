@@ -194,27 +194,27 @@ video.responsive-video {
 
 // Breadcrumbs
 .breadcrumb {
-  @include adjust-font-size-to(18px);
-  color: rgba(255,255,255, .7);
+  @include adjust-font-size-to(12px);
+  //color: rgba(255,255,255, .7);
 
   i,
   [class^="mdi-"], [class*="mdi-"],
   i.material-icons {
     display: inline-block;
     float: left;
-      @include adjust-font-size-to(18px);
+      @include adjust-font-size-to(12px);
   }
 
   &:before {
     content: '\E5CC';
-    color: rgba(255,255,255, .7);
+    //color: rgba(255,255,255, .7);
     vertical-align: top;
     display: inline-block;
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
     font-size: 25px;
-    margin: 0 10px 0 8px;
+    margin: 0 -4px 0 0px;
     -webkit-font-smoothing: antialiased;
   }
 

@@ -118,6 +118,10 @@ class EselTest extends TestCase
         $_GET['uri'] = 'docs/';
         preg_match('/<h1[^>]*>([\s\S]*?)<\/h1[^>]*>/i', $this->Esel->handleRequest(), $h1);
         $this->assertEquals('<h1>Welcome to Docs!</h1>', $h1[0]);
+
+        $_GET['uri'] = '';
+        preg_match('/<h1[^>]*>([\s\S]*?)<\/h1[^>]*>/i', $this->Esel->handleRequest(), $h1);
+        $this->assertEquals('<h1>Congratulations! It works!</h1>', $h1[0]);
     }
 
     /**

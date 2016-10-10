@@ -1,1 +1,1 @@
-cmd /k "compass compile && compass watch"
+cmd /k "compass compile"

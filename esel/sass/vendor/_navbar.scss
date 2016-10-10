@@ -44,18 +44,21 @@ nav {
     }
     // Logo
     .brand-logo {
-        position: absolute;
+      //  position: absolute;
         color: $navbar-font-color;
         display: inline-block;
         font-size: $navbar-brand-font-size*$base-font-size;
+        vertical-align: middle;
+        line-height: 1;
         padding: 0;
         white-space: nowrap;
         margin-left: 15px;
         margin-right: 15px;
-
+        text-decoration: none;
         img {
-            height: $navbar-brand-font-size*$base-font-size*0.75;
+            height: $navbar-brand-font-size*$base-font-size*2;
             display: inline;
+              vertical-align: middle;
         }
 
         &.center {

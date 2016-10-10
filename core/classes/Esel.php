@@ -34,12 +34,12 @@ class Esel
         require_once SL_CORE.'vendor/autoload.php';
         Twig_Autoloader::register();
         $loader = new Twig_Loader_Filesystem(array(SL_TEMPLATES, SL_PAGES, SL_TESTS.'tpl'));
-        $this->twig = new Twig_Environment($loader, array('cache' => SL_TEMPLATES_CACHE));
+        $this->twig = new Twig_Environment($loader, array('cache' => SL_TEMPLATES_CACHE,'debug' => true));
+        $this->twig->addExtension(new Twig_Extension_Debug());
         $this->twig->registerUndefinedFunctionCallback(function ($functionName) {
             $tmp = null;
             if (preg_match('/([^_]+)_(.*)/', $functionName, $tmp)) {
                 $module = $this->loadModule($tmp[1]);
-
                 return new Twig_SimpleFunction($functionName, $tmp[1].'::'.$tmp[2]);
             }
 
@@ -192,9 +192,9 @@ class Esel
       }
 
         if (!empty($uri)) {
-            header('Location: '.$uri);
+            header('Location: '.str_replace("//","/",("/".$uri)));
             if (!@PHPUNIT_RUNNING === 1) {
-              // @codeCoverageIgnoreStart
+                // @codeCoverageIgnoreStart
               exit();
               // @codeCoverageIgnoreEnd
             }
@@ -207,16 +207,20 @@ class Esel
      *
      * @return string $template Template file
      */
-    public function route($uri)
+    public function route($uri, $sendHeaders = true)
     {
         if (preg_match("/index(\/?)/", $uri)) {
             $rootUri = preg_replace('/(\/){2,}/i', '/', (preg_replace("/index(\/?)/", '', $uri).'/'));
-            self::respondWithCode(301, $rootUri);
+            if ($sendHeaders) {
+                self::respondWithCode(301, $rootUri);
+            }
             $uri = $rootUri;
         }
         if (!preg_match('/\/$/', $uri) || (preg_match('/\/\//', $uri))) {
             $realUri = preg_replace('/(\/){2,}/i', '/', ($uri.'/'));
-            self::respondWithCode(301, $realUri);
+            if ($sendHeaders) {
+                self::respondWithCode(301, $realUri);
+            }
             $uri = $realUri;
         }
         $this->data['uri'] = $uri;
@@ -230,7 +234,9 @@ class Esel
             $template = preg_replace("/(\/){1}$/", '', $uri).'.html';
         }
         if (!file_exists(SL_PAGES.$template)) {
-            self::respondWithCode(404);
+            if ($sendHeaders) {
+                self::respondWithCode(404);
+            }
             $template = '404.html';
         }
 
@@ -244,6 +250,9 @@ class Esel
     public function handleRequest()
     {
         $uri = $this->sga(self::GET, 'uri');
+        if (empty($uri)) {
+            $uri = '/';
+        }
         $template = $this->route($uri);
         $output = $this->render($template);
 
