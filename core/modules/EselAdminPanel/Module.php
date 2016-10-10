@@ -2,10 +2,6 @@
 
 class EselAdminPanel extends EselModule
 {
-    public function __construct($Esel, $inTemplates = false)
-    {
-        parent::__construct($Esel, $inTemplates);
-    }
 
     public static function beforeLoad()
     {
@@ -45,11 +41,11 @@ class EselAdminPanel extends EselModule
     public static function getPageData($page=null){
       self::beforeLoad();
       if(empty($page)){
-        if(empty(Esel::sga(Esel::GET,"page"))){
+        if(empty(Esel::clear($_GET["page"]))){
           throw new Exception("You must define a page");
-        }else{
-          $page=Esel::sga(Esel::GET,"page");
         }
+        $page=Esel::clear($_GET["page"]);
+
       }
       $pageData=new stdClass();
       $pageData->template=EselPage::getTemplate($page);

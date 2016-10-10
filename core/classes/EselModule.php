@@ -5,11 +5,10 @@
 class EselModule
 {
     public $Esel;
-    private $inTemplates;
-    public function __construct($Esel,$inTemplates = false)
+
+    public function __construct($Esel)
     {
         $this->Esel = &$Esel;
-        $this->inTemplates=$inTemplates;
     }
 
     private static function calculateHash($directory = '')
