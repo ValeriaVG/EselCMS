@@ -229,10 +229,10 @@ class Esel
         }
 
         if (is_dir(SL_PAGES.$uri)) {
-            $template = $uri.'index.html';
-        } else {
-            $template = preg_replace("/(\/){1}$/", '', $uri).'.html';
+            return $uri.'index.html';
         }
+        $template = preg_replace("/(\/){1}$/", '', $uri).'.html';
+
         if (!file_exists(SL_PAGES.$template)) {
             if ($sendHeaders) {
                 self::respondWithCode(404);
@@ -304,12 +304,9 @@ class Esel
     public function getData($key = null)
     {
         if ($key === null) {
-            $data = $this->data;
-        } else {
-            $data = $this->data[$key];
+            return $this->data;
         }
-
-        return $data;
+          return $this->data[$key];
     }
     /**
      * Idiorm wrapper.
