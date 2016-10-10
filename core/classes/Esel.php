@@ -16,17 +16,6 @@ class Esel
     private $data = array();
 
     /**
-     * Setting constants for global array names
-     * GET,POST,REQUEST,COOKIE,SESSION,SERVER.
-     */
-    const GET = 0;
-    const POST = 1;
-    const REQUEST = 2;
-    const COOKIE = 3;
-    const SESSION = 4;
-    const SERVER = 5;
-
-    /**
      * Loading vendor classes.
      */
     private function init()
@@ -34,12 +23,13 @@ class Esel
         require_once SL_CORE.'vendor/autoload.php';
         Twig_Autoloader::register();
         $loader = new Twig_Loader_Filesystem(array(SL_TEMPLATES, SL_PAGES, SL_TESTS.'tpl'));
-        $this->twig = new Twig_Environment($loader, array('cache' => SL_TEMPLATES_CACHE,'debug' => true));
+        $this->twig = new Twig_Environment($loader, array('cache' => SL_TEMPLATES_CACHE, 'debug' => true));
         $this->twig->addExtension(new Twig_Extension_Debug());
         $this->twig->registerUndefinedFunctionCallback(function ($functionName) {
             $tmp = null;
             if (preg_match('/([^_]+)_(.*)/', $functionName, $tmp)) {
                 $module = $this->loadModule($tmp[1]);
+
                 return new Twig_SimpleFunction($functionName, $tmp[1].'::'.$tmp[2]);
             }
 
@@ -51,114 +41,24 @@ class Esel
         $this->init();
     }
     /**
-     * Global arrays sanitizing.
+     * Shorthand for htmlspecialchars.
      *
-     * @param int    $var  GET,POST,REQUEST,COOKIE,SESSION,SERVER
-     * @param string $attr Variable name
+     * @param int $var Variable to escape or Array
      *
-     * @return string $var Sanitized data or array of sanitized data
+     * @return string $var Sanitized data or Array of it
      */
-    public static function sga($var, $attr = '')
+    public static function clear($var)
     {
-        switch ($var) {
-          case self::GET:
-            if (empty($attr)) {
-                $var = array();
-                foreach ($_GET as $key => $value) {
-                    $var[$key] = self::sga(self::GET, $key);
-                }
-
-                return $var;
-            }
-            $var = '';
-            if (isset($_GET[$attr])) {
-                $var = htmlspecialchars($_GET[$attr]);
+        if (is_array($var)) {
+            $tmp = array();
+            foreach ($var as $key => $value) {
+                $tmp[self::clear($key)] = self::clear($value);
             }
 
-            return $var;
-          break;
+            return $tmp;
+        }
 
-          case self::POST:
-            if (empty($attr)) {
-                $var = array();
-                foreach ($_POST as $key => $value) {
-                    $var[$key] = self::sga(self::POST, $key);
-                }
-
-                return $var;
-            }
-            $var = '';
-            if (isset($_POST[$attr])) {
-                $var = htmlspecialchars($_POST[$attr]);
-            }
-
-            return $var;
-          break;
-
-          case self::REQUEST:
-            if (empty($attr)) {
-                $var = array();
-                foreach ($_REQUEST as $key => $value) {
-                    $var[$key] = self::sga(self::REQUEST, $key);
-                }
-
-                return $var;
-            }
-            $var = '';
-            if (isset($_REQUEST[$attr])) {
-                $var = htmlspecialchars($_REQUEST[$attr]);
-            }
-
-            return $var;
-          break;
-
-          case self::COOKIE:
-            if (empty($attr)) {
-                $var = array();
-                foreach ($_COOKIE as $key => $value) {
-                    $var[$key] = self::sga(self::COOKIE, $key);
-                }
-
-                return $var;
-            }
-            $var = '';
-            if (isset($_COOKIE[$attr])) {
-                $var = htmlspecialchars($_COOKIE[$attr]);
-            }
-
-            return $var;
-          break;
-
-          case self::SESSION:
-            if (empty($attr)) {
-                $var = array();
-                foreach ($_SESSION as $key => $value) {
-                    $var[$key] = self::sga(self::SESSION, $key);
-                }
-
-                return $var;
-            }
-            $var = '';
-            if (isset($_SESSION[$attr])) {
-                $var = htmlspecialchars($_SESSION[$attr]);
-            }
-
-            return $var;
-          break;
-
-          case self::SERVER:
-            $var = '';
-            if (isset($_SERVER[$attr])) {
-                $var = htmlspecialchars($_SERVER[$attr]);
-            }
-
-            return $var;
-          break;
-
-          default:
-           return null;
-
-      }
+        return htmlspecialchars($var);
     }
 
     /**
@@ -192,7 +92,7 @@ class Esel
       }
 
         if (!empty($uri)) {
-            header('Location: '.str_replace("//","/",("/".$uri)));
+            header('Location: '.str_replace('//', '/', ('/'.$uri)));
             if (!@PHPUNIT_RUNNING === 1) {
                 // @codeCoverageIgnoreStart
               exit();
@@ -249,10 +149,11 @@ class Esel
      */
     public function handleRequest()
     {
-        $uri = $this->sga(self::GET, 'uri');
-        if (empty($uri)) {
-            $uri = '/';
+        $uri = '/';
+        if (!empty($_GET['uri'])) {
+            $uri = $this->clear($_GET['uri']);
         }
+
         $template = $this->route($uri);
         $output = $this->render($template);
 
@@ -268,9 +169,8 @@ class Esel
     public function module($moduleName)
     {
         $this->loadModule($moduleName);
-        $module = new $moduleName($this);
 
-        return $module;
+        return new $moduleName($this);
     }
     /**
      * Including a module if it passes md5 sum verification.
@@ -306,7 +206,8 @@ class Esel
         if ($key === null) {
             return $this->data;
         }
-          return $this->data[$key];
+
+        return $this->data[$key];
     }
     /**
      * Idiorm wrapper.

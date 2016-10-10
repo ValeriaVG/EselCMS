@@ -9,7 +9,9 @@ class EselBasicModule extends EselModule{
   }
 
   public static function usesGet(){
-    return Esel::sga(Esel::GET,"name");
+    if(!empty($_GET["name"])){
+      return Esel::clear($_GET["name"]);
+    }
   }
 
   public static function sendWithSlash($text){

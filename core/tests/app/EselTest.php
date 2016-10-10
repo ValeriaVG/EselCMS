@@ -46,41 +46,17 @@ class EselTest extends TestCase
     }
 
     /**
-     * Test superglobal getter.
+     * Test sanitizer
      *
-     * @covers Esel::sga
+     * @covers Esel::clear
      */
     public function testCanGetGlobal()
     {
         $_GET['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::GET,'test'));
-        $this->assertEquals('', $this->Esel->sga(Esel::GET,'unknown'));
-        $get = $this->Esel->sga(Esel::GET);
+        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->clear($_GET['test']));
+        $get = $this->Esel->clear($_GET);
         $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $get['test']);
-        $_POST['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::POST,'test'));
-        $this->assertEquals('', $this->Esel->sga(Esel::POST,'unknown'));
-        $post = $this->Esel->sga(Esel::POST);
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $post['test']);
-        $_REQUEST['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::REQUEST,'test'));
-        $this->assertEquals('', $this->Esel->sga(Esel::REQUEST,'unknown'));
-        $request = $this->Esel->sga(Esel::REQUEST);
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $request['test']);
-        $_COOKIE['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::COOKIE,'test'));
-        $this->assertEquals('', $this->Esel->sga(Esel::COOKIE,'unknown'));
-        $cookie = $this->Esel->sga(Esel::COOKIE);
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $cookie['test']);
-        $_SERVER['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::SERVER,'test'));
-        $this->assertEquals('', $this->Esel->sga(Esel::SERVER,'unknown'));
-        $_SESSION['test'] = '<script>alert("test");</script>';
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $this->Esel->sga(Esel::SESSION,'test'));
-        $this->assertEquals('', $this->Esel->sga(Esel::SESSION,'unknown'));
-        $session = $this->Esel->sga(Esel::SESSION);
-        $this->assertEquals('&lt;script&gt;alert(&quot;test&quot;);&lt;/script&gt;', $session['test']);
-        $this->assertEquals(null, $this->Esel->sga(-1,'unknown'));
+
     }
     /**
      * Test router.

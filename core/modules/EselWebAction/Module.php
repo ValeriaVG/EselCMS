@@ -7,12 +7,12 @@ class EselWebAction extends EselModule
 
         ob_start();
         $output = null;
-        if (preg_match('/actions\/([^\/]+)\/([^\/]+)(\/?)$/', Esel::sga(Esel::GET,'uri'), $tmp)) {
+        if (preg_match('/actions\/([^\/]+)\/([^\/]+)(\/?)$/', Esel::clear($_GET['uri']), $tmp)) {
             $module = $tmp[1];
             $action = $tmp[2];
             try {
                 $this->Esel->loadModule($module);
-                $params=Esel::sga(Esel::POST);
+                $params=Esel::clear($_POST);
                 if(empty($params)){
                   $output=array('success' => true, 'data'=>call_user_func($module."::".$action));
                 }else{

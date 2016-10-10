@@ -20,9 +20,11 @@
 <p> And what about some dangerous stuff?! Click <a href="/docs/meet-modules/?name=hello get">here</a> or <a href="/docs/meet-modules/?name=%3Cscript%3Ealert%28%22hey%2Ci%27m+a+hacker%22%29%3C%2Fscript%3E">here</a> <code class="php">EselBasicModule_usesGet()</code>  says: &laquo;<em>{{ EselBasicModule_usesGet() }}</em>&raquo;</p>
 <pre>
 <code class="php">
-  public static function usesGet(){
-    return Esel::g(Esel::GET,"name");
-  }
+    public static function usesGet(){
+      if(!empty($_GET["name"])){
+        return Esel::clear($_GET["name"]);
+      }
+    }
 </code>
 </pre>
 {% endblock %}
