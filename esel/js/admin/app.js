@@ -1,13 +1,5 @@
-Array.prototype.clean = function(deleteValue) {
-  for (var i = 0; i < this.length; i++) {
-    if (this[i] == deleteValue) {
-      this.splice(i, 1);
-      i--;
-    }
-  }
-  return this;
-};
-
+var offset=0;
+var limit=5;
 function buildCrumbs(){
   var $_get=[];
   var folder="";
@@ -38,10 +30,10 @@ var path=$_get['page'].split("/");
   }
   app.crumbs=crumbs;
   app.current_page=page;
-  getPages(folder);
+  getPages(folder,offset,limit);
 }catch(e){
 
-getPages("");
+getPages("",offset,limit);
 }
 }
 var app=new Vue({
@@ -49,7 +41,10 @@ var app=new Vue({
   data: {
         pages: [],
         crumbs: [{name:"/",path:"/",url:"/"}],
-        current_page:""
+        current_page:"",
+        offset:offset,
+        limit:limit,
+        count:0,
     },
 });
 buildCrumbs();
@@ -62,6 +57,6 @@ function fixFullHeight(){
   $(".fullheight").innerHeight($(window).innerHeight()-$("#header").innerHeight()-$("#footer").innerHeight());
 }
 fixFullHeight();
-  $(".button-collapse").sideNav();
+
 
   tinymce.init({ selector:'.richText' });

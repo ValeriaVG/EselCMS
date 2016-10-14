@@ -1,33 +1,9 @@
 {% extends "admin/base.twig" %}
 {% block wrapper %}
-<style>
-[v-cloak]{
-visibility:hidden;
-}
-</style>
-    <div >
-    <nav class="pattern dark_matter" id="header">
 
-            <div class="nav-wrapper">
-                  <a href="/admin/" class="brand-logo"><img src="/esel/img/tinylogo.png" alt="EselCMS"> v 1.0.0</a>
-                  <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
-
-                  <ul class="right hide-on-med-and-down">
-                      <li class="active" ><a href="/" >Mainpage</a></li>
-                      <li ><a href="/docs/" >Documentation</a></li>
-                      <li ><a href="/docs/meet-modules/" >Modules</a></li>
-                  </ul>
-                  <ul class="side-nav" id="mobile-nav">
-                      <li class="active" ><a href="/" >Mainpage</a></li>
-                      <li ><a href="/docs/" >Documentation</a></li>
-                      <li ><a href="/docs/meet-modules/" >Modules</a></li>
-                  </ul>
-
-          </div>
-      </nav>
-        <div class="row" style="margin-bottom:0">
-            <div class="col l2 m4 s12 grey lighten-4 fullheight" style="padding:0" id="app">
-                <div class="valign-wrapper col s12 section grey lighten-2" v-cloak >
+        <div class="nomargin row" style="margin-bottom:0;">
+            <div class="col desktop-2 tablet-4 phone-12 fullheight bg-blue-gray-50" id="app">
+                <div>
 {% verbatim %}
                     <a v-for="page in crumbs"
                     v-bind:text="page.name"
@@ -41,26 +17,23 @@ visibility:hidden;
 {% endverbatim %}
                 </div>
 
-                <div class="section" style="padding-left:15px;paddibg-right:15px">
+                <div class="section">
                     <pages :pages="pages" :current_page="current_page"></pages>
                 </div>
             </div>
-            <div class="col l10 m8 s12 lighten-3 pattern white norwegian_rose fullheight">
+
+            <div class="col desktop-10 tablet-8 phone-12 fullheight">
             {% block panel %}
-    Dashboard
-{% endblock %}
-
+            {% endblock %}
             </div>
-        </div>
-        <footer class="page-footer pattern dark_matter" id="footer" style="margin-top:0;">
+</div>
 
-</footer>
+
 {% endblock %}
 {% block scripts %}
 <script src="/esel/js/admin/components/tinymce/tinymce.min.js"></script>
     <script src="/esel/js/vendor/vue.min.js"></script>
     <script src="/esel/js/admin/components/tree.js"></script>
-    <script src="https://use.fontawesome.com/31e6fde098.js"></script>
     <script src="/esel/js/admin/app.js"></script>
 
 {% endblock %}

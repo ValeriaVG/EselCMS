@@ -12,6 +12,7 @@
                 <file>./index.php</file>
                 <file>./router.php</file>
                 <file>./actions/index.php</file>
+                <directory>./pages</directory>
                 <directory>./core/cache</directory>
                 <directory>./core/tests</directory>
                 <directory>./core/vendor</directory>

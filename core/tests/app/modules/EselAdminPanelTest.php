@@ -50,7 +50,7 @@ class EselAdminPanelTest extends TestCase
     public function testCanGetPagesList()
     {
       $list = $this->module->getPagesList();
-      $this->assertEquals('404.html', $list[0]->name);
+      $this->assertEquals('404.html', $list["pages"][0]->name);
     }
 
     /**
