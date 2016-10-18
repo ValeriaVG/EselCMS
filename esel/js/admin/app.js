@@ -1,60 +1,68 @@
-var offset=0;
-var limit=5;
-function buildCrumbs(){
-  var $_get=[];
-  var folder="";
-  var page="";
+
+var $_get=[];
+
 var tmp=document.location.search.replace("?","").split("&");
 $(tmp).each(function(){
-  var v=this.split("=");
-  $_get[v[0]]=v[1];
+var v=this.split("=");
+
+$_get[v[0]]=v[1];
 
 });
 
-var crumbs=[{name:"/",path:"/",url:"/"}];
-try{
-page=$_get['page'];
-var path=$_get['page'].split("/");
-  path.clean("");
-  path.pop();
-
-  folder=path.join("/")+"/";
-
-  var i=path.length-1;
-  var j=1;
-  while(path.length>0){
-    crumbs[j]={name:path[i],path:(path.join("/")+"/").replace(/\/\//,"/"),url:"/"+path.join("/")};
-    j++;
-    i--;
-    path.shift();
-  }
-  app.crumbs=crumbs;
-  app.current_page=page;
-  getPages(folder,offset,limit);
-}catch(e){
-
-getPages("",offset,limit);
-}
-}
 var app=new Vue({
   el:"#app",
   data: {
         pages: [],
-        crumbs: [{name:"/",path:"/",url:"/"}],
-        current_page:"",
-        offset:offset,
-        limit:limit,
+        path:(undefined!==$_get['page'])?cutPath($_get['page']):"/",
+        offset:0,
+        limit:5,
         count:0,
     },
+  created: function(){
+    getPages(this.path,this.offset,this.limit);
+    this.$on("selectNode",function(node){
+      this.path=node.url;
+    });
+    this.$on("openFolder",function(page){
+      if(page.folder){
+        this.path=page.path;
+      }});
+    this.$on("pageChanged",function(page){
+      this.offset=(page-1)*this.limit;
+      getPages(this.path,this.offset,this.limit);
+    });
+    this.$on("limitChanged",function(limit){
+      this.limit=limit;
+      getPages(this.path,this.offset,this.limit);
+    });
+  },
+  computed:{
+    current_page:function(){return Math.floor(this.offset/this.limit)+1;}
+  },
+  watch:{
+    path:function(val){
+      this.offset=0;
+      getPages(val,this.offset,this.limit);
+    },
+    offset:function(val){
+      getPages(this.path,val,this.limit);
+    },
+    limit:function(val){
+      getPages(this.path,this.offset,val);
+    }
+  }
+
 });
-buildCrumbs();
+
+
+
 
 
 $(window).resize(function(){
   fixFullHeight();
 });
-function fixFullHeight(){
-  $(".fullheight").innerHeight($(window).innerHeight()-$("#header").innerHeight()-$("#footer").innerHeight());
+function fixFullHeight() {
+    $(".fullheight").innerHeight($(window).innerHeight() - $("#header").innerHeight() - $("#footer").innerHeight());
 }
 fixFullHeight();
 

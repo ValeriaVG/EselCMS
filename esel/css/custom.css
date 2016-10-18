@@ -1,0 +1,7 @@
+.in-loading{
+  opacity:0;
+  transition: 500ms;
+}
+.tiny-input{
+  width:25px;
+}

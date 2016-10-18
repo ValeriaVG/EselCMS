@@ -1,39 +1,36 @@
 {% extends "admin/base.twig" %}
 {% block wrapper %}
 
-        <div class="nomargin row" style="margin-bottom:0;">
-            <div class="col desktop-2 tablet-4 phone-12 fullheight bg-blue-gray-50" id="app">
-                <div>
-{% verbatim %}
-                    <a v-for="page in crumbs"
-                    v-bind:text="page.name"
-                    v-bind:href="page.url"
-                    v-on:click.prevent="setFolder(page.path)"
-
-                    class="breadcrumb valign breadcrumb valign bg-text text-darken-3" v-bind:text="$index">
-<i v-if="page.name=='/'" class="fa fa-home" aria-hidden="true"></i>
-                        <span v-if="page.name!='/'">{{ page.name }}</span>
-                    </a>
-{% endverbatim %}
-                </div>
-
-                <div class="section">
-                    <pages :pages="pages" :current_page="current_page"></pages>
-                </div>
+    <div class="nomargin row" style="margin-bottom:0;">
+        <div class="col desktop-2 tablet-4 phone-12 fullheight bg-blue-gray-50" id="app">
+            <div>
+                {% verbatim %}
+                    <div class="leader">
+                        <crumbs :wrp-class="'breadcrumbs'" :path="path"></crumbs>
+                    </div>
+                    <pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
+                {% endverbatim %}
             </div>
 
-            <div class="col desktop-10 tablet-8 phone-12 fullheight">
-            {% block panel %}
-            {% endblock %}
+            <div class="section">
+                <pages :pages="pages" :current_page="current_page"></pages>
             </div>
-</div>
+              <pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
+        </div>
 
+        <div class="col desktop-10 tablet-8 phone-12 fullheight">
+            {% block panel %}{% endblock %}
+        </div>
+    </div>
 
 {% endblock %}
 {% block scripts %}
-<script src="/esel/js/admin/components/tinymce/tinymce.min.js"></script>
+    <script src="/esel/js/admin/components/tinymce/tinymce.min.js"></script>
     <script src="/esel/js/vendor/vue.min.js"></script>
+    <script src="/esel/js/admin/components/crumbs.js"></script>
     <script src="/esel/js/admin/components/tree.js"></script>
+    <script src="/esel/js/admin/components/pagination.js"></script>
+    <script src="/esel/js/admin/utils.js"></script>
     <script src="/esel/js/admin/app.js"></script>
 
 {% endblock %}
