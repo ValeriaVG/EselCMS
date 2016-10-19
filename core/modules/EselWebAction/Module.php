@@ -10,17 +10,30 @@ class EselWebAction extends EselModule
         if (preg_match('/actions\/([^\/]+)\/([^\/]+)(\/?)$/', Esel::clear($_GET['uri']), $tmp)) {
             $module = $tmp[1];
             $action = $tmp[2];
+            $params=Esel::clear($_POST);
             try {
                 $this->Esel->loadModule($module);
-                $params=Esel::clear($_POST);
-                if(empty($params)){
+                $parameters=array();
+                $r = new ReflectionMethod($module, $action);
+                $args = $r->getParameters();
+
+                foreach ($args as $arg) {
+
+                  $parameters[$arg->getName()]=null;
+                  if(isset($params[$arg->getName()])){
+                    $parameters[$arg->getName()]=$params[$arg->getName()];
+                  }
+
+                }
+                if(empty($parameters)){
                   $output=array('success' => true, 'data'=>call_user_func($module."::".$action));
                 }else{
-                  $output=array('success' => true, 'data'=>call_user_func_array($module."::".$action,$params),'params'=>$params);
+
+                  $output=array('success' => true, 'data'=>call_user_func_array($module."::".$action,$parameters),'params'=>$parameters);
                 }
 
             } catch (Exception $e) {
-                $output = array('success' => false, 'message' => $e->getMessage());
+                $output = array('success' => false, 'message' => $e->getMessage(),'errors'=>error_get_last(),'params'=>$params);
             }
         } else {
             $output = array('success' => false, 'message' => 'No action specified');

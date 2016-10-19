@@ -37,7 +37,10 @@ var app=new Vue({
     });
   },
   computed:{
-    current_page:function(){return Math.floor(this.offset/this.limit)+1;}
+    current_page:function(){return Math.floor(this.offset/this.limit)+1;},
+    new_page_url:function(){
+      return "pages/?page="+this.path;
+    }
   },
   watch:{
     path:function(val){
@@ -56,6 +59,126 @@ var app=new Vue({
 
 
 
+var pEdit=new Vue({
+  el: "#page-edit",
+  data: {
+    name:$("#page-edit [name=name]").val(),
+    url:$("#page-edit [name=url]").val().replace(/\/\//,"/"),
+    saving:false
+  },
+  computed:{
+    path:function(){
+      return this.url.replace(/(\/|)$/,'.html');
+    }
+  },
+  methods:{
+    savePage:function(btn){
+    this.saving=true;
+      window.blocks={};
+      $('[name^="blocks["]').each(function(){
+        var tmp=$(this).attr("id").split("_");
+
+        var name=tmp[1];
+        var value=$(this).val();
+        if( $(this).hasClass("richText")){
+          value=tinymce.get("block_content").getContent();
+        }
+        window.blocks[name]=value;
+
+      });
+      var data={
+        "path":$('[name=path]').val(),
+        "template":$('[name=template]').val(),
+        "name":$('[name=name]').val(),
+        "blocks":window.blocks,
+        "fields":[],
+        "old_path":window.old_path
+      };
+
+
+        $.ajax({
+            url:"/actions/EselAdminPanel/savePage",
+            data:data,
+            method:"POST",
+            success:function(res){
+              pEdit.saving=false;
+              if((data.old_path!=data.path)&&(res.success)){
+                document.location.href=document.location.href.replace(/\?page=(.*)/,"?page="+data.path);
+              }
+            }
+
+        }
+      ).always(function(res){
+        console.log(res);
+        pEdit.saving=false;
+      });
+      return true;
+    },
+    copyPage:function(btn){
+      this.saving=true;
+        window.blocks={};
+        $('[name^="blocks["]').each(function(){
+          var tmp=$(this).attr("id").split("_");
+
+          var name=tmp[1];
+          var value=$(this).val();
+          if( $(this).hasClass("richText")){
+            value=tinymce.get("block_content").getContent();
+          }
+          window.blocks[name]=value;
+          console.log(blocks);
+        });
+        var data={
+          "path":$('[name=path]').val(),
+          "template":$('[name=template]').val(),
+          "name":$('[name=name]').val()!=""?$('[name=name]').val():'New page',
+          "blocks":window.blocks
+        };
+
+          $.ajax({
+              url:"/actions/EselAdminPanel/savePage",
+              data:data,
+              method:"POST",
+              success:function(res){
+                pEdit.saving=false;
+                if(data.old_path!=data.path){
+                  document.location.href=document.location.href.replace(/\?page=(.*)/,"?page="+data.path);
+                }
+              }
+
+          }
+        ).always(function(res){
+          pEdit.saving=false;
+        });
+        return true;
+    },
+    deletePage:function(btn){
+      pEdit.saving=true;
+      $.ajax({
+          url:"/actions/EselAdminPanel/deletePage",
+          data:{"path":window.old_path},
+          method:"POST",
+          success:function(res){
+            pEdit.saving=false;
+            if(res.success){
+            document.location.href=document.location.href.replace(/[^\/]+\.html$/,"");
+            }
+
+          }
+
+      }
+      ).always(function(res){
+      pEdit.saving=false;
+      console.log(res);
+      });
+    },
+
+    changeTemplate:function(){
+      document.location.href=updateQueryStringParameter(document.location.href,"template",$('[name=template]').val());
+    }
+  }
+});
+
 
 
 $(window).resize(function(){
@@ -68,3 +191,4 @@ fixFullHeight();
 
 
   tinymce.init({ selector:'.richText' });
+  $(".dropdown").dropdown();

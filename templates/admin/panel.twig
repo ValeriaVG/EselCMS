@@ -1,14 +1,37 @@
 {% extends "admin/base.twig" %}
+{# @hidden #}
 {% block wrapper %}
+<nav class="bg-blue-gray-800">
 
+                <button class=" light-primary btn transparent tablet-and-less-show" data-toggle="slide" data-target="#menu"><i class="fa fa-bars"></i></button>
+
+                <ul class="inline-menu nav light bordered tablet-to-list tablet-and-less-hide" id="menu">
+                      <li><a href="/admin/">Dashboard</a></li>
+                      <li class="dropdown"><a href="/admin/">Some other stuff</a>
+                        <ul><li><a href="#">More stuff</a></li>
+                          <li><a href="#">More stuff</a></li>
+                          <li><a href="#">More stuff</a></li></ul>
+                      </li>
+                </ul>
+
+</nav>
     <div class="nomargin row" style="margin-bottom:0;">
         <div class="col desktop-2 tablet-4 phone-12 fullheight bg-blue-gray-50" id="app">
             <div>
                 {% verbatim %}
                     <div class="leader">
+                      <div class="trailer">
+                        <a class="btn btn-teal" title="Create new page in current folder" :href="new_page_url">
+    <i class="fa fa-file-text-o"></i></a>
+    <button class="btn btn-orange" title="Create new subfolder in current folder">
+  <i class="fa fa-folder-o"></i></button>
+                      </div>
                         <crumbs :wrp-class="'breadcrumbs'" :path="path"></crumbs>
                     </div>
+
+
                     <pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
+
                 {% endverbatim %}
             </div>
 
@@ -31,6 +54,7 @@
     <script src="/esel/js/admin/components/tree.js"></script>
     <script src="/esel/js/admin/components/pagination.js"></script>
     <script src="/esel/js/admin/utils.js"></script>
+    <script src="/esel/js/esel.js"></script>
     <script src="/esel/js/admin/app.js"></script>
 
 {% endblock %}

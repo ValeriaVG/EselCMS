@@ -35,3 +35,16 @@ function getPages(dir,start,limit){
 function cutPath(url){
 return url.replace(/[^\/]+\.html$/,"");
 }
+/**
+ * http://stackoverflow.com/a/6021027/2010837
+ */
+function updateQueryStringParameter(uri, key, value) {
+  var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+  var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+  if (uri.match(re)) {
+    return uri.replace(re, '$1' + key + "=" + value + '$2');
+  }
+  else {
+    return uri + separator + key + "=" + value;
+  }
+}

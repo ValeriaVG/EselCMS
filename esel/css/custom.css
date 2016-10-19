@@ -3,5 +3,10 @@
   transition: 500ms;
 }
 .tiny-input{
-  width:25px;
+  width:40px;
+}
+input{
+  width: 100%;
+font-size: inherit;
+box-sizing: border-box;
 }

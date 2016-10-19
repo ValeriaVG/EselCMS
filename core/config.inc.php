@@ -18,4 +18,4 @@ define("SL_DB_NAME","esel");
 define("SL_DB_PREFIX","sl_");
 
 define("SL_ADMIN_NAME","esel");
-define("SL_ADMIN_PASSWORD","sl_");
+define("SL_ADMIN_PASSWORD","password");

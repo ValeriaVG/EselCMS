@@ -1,7 +1,14 @@
 Vue.component 'pagination',
   template: '
-  <div>
-  Page # <input type="number" v-model="page" class="tiny-input"> of {{Math.ceil(count/limit)}} by <input type="number" v-model="limit" class="tiny-input">
+  <div class="row dark-secondary smaller">
+  <div class="col phone-6">
+  <label>Page:</label>
+  <input type="number" v-model="page" class="tiny-input"> of {{ Math.ceil(this.count/this.limit) }}
+  </div>
+  <div class="col phone-6">
+  <label>Per page:</label>
+    <input type="number" v-model="limit" class="tiny-input">
+  </div>
   </div>
   '
   props: ['page','limit','count']

@@ -23,20 +23,23 @@ class EselAdminPanelTest extends TestCase
         require_once dirname(dirname(dirname(dirname(__FILE__)))).'/config.inc.php';
         $this->Esel = new Esel();
         $this->module = $this->Esel->module('EselAdminPanel');
+        if(!is_dir(SL_PAGES."__test")){
+          mkdir(SL_PAGES."__test",0755);
+        }
     }
 
     public function tearDown()
     {
         $this->Esel = null;
     }
-    /**
-     * @covers EselAdminPanel::__construct
-     */
+
     public function testInit()
     {
 
         $this->assertEquals($this->module->Esel, $this->Esel);
     }
+
+
     /**
      * @covers EselAdminPanel::beforeLoad
      */
@@ -44,13 +47,30 @@ class EselAdminPanelTest extends TestCase
       EselAdminPanel::beforeLoad();
       $this->assertTrue(class_exists("EselPage"));
     }
+
+
+    public function testCanSavePage(){
+      //savePage($path,$template,$name,$fields=array(),$blocks=array())
+      $this->assertEquals(EselAdminPanel::savePage('/__test/__test.html','base.twig','Test Page'),file_get_contents(SL_PAGES.'__test/__test.html'));
+    }
+
     /**
      * @covers EselAdminPanel::getPagesList
      */
     public function testCanGetPagesList()
     {
-      $list = $this->module->getPagesList();
-      $this->assertEquals('404.html', $list["pages"][0]->name);
+      $list = $this->module->getPagesList('__test/');
+      $this->assertEquals('Test Page', $list["pages"][0]->name);
+    }
+
+    /**
+     * @covers EselAdminPanel::getTplList
+     */
+    public function testCanGetTplList()
+    {
+      $list = $this->module->getTplList();
+      $this->assertEquals('Base Layout', $list["templates"][0]->name);
+      $this->assertEquals('base.twig', $list["templates"][0]->path);
     }
 
     /**

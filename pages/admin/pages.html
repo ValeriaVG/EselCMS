@@ -1,12 +1,55 @@
-{% extends "admin/panel.twig" %}
-{% block panel %}
-{% set page=EselAdminPanel_getPageData() %}
-<h1>{{page.template}}</h1>
-{% if page.fields|length==0 %}
-<p>This page template ({{page.template|default('no template')}}) has no editor fields set</p>
-{% endif %}
-{% for name,type in page.fields %}
-<textarea name="{{ name }}" class="{{ type }}"> {{ page.blocks[name] }} </textarea>
-{% endfor %}
+{% extends "admin/panel.twig" %} {% block panel %} {% set page=EselAdminPanel_getPageData() %} {% set tpls=EselAdminPanel_getTplList() %}
 
+<div id="page-edit">
+  <div class="row">
+    <div class="col tablet-8">
+      <a href="{{ page.url }}" target="_blank" v-text="name" class="h1" title="View page">{{page.name}}</a>
+    </div>
+<div class="col tablet-4 ">
+  <div class="rhythm text-right">
+  <button class="btn big btn-teal uppercase" v-on:click="savePage()" :disabled="saving"><i :class="saving?'fa fa-spinner fa-spin fa-fw':'fa fa-save'" ></i> Save </button>
+{% if not page.new %}
+  <button class="btn big btn-blue-gray uppercase" v-on:click="copyPage()" :disabled="saving"><i class="fa fa-copy"></i> Copy </button>
+  <button class="btn big btn-red uppercase" v-on:click="deletePage()" :disabled="saving"><i class="fa fa-trash"></i> Delete </button>
+{% endif %}
+</div>
+</div>
+
+</div>
+<form class="form" id="page-form" method="POST" action="/actions/EselAdminPanel/savePage">
+    <div class="row rhythm">
+      <div class="col tablet-4">
+          <label> Page name: </label>
+          <input type="text" v-model="name" value="{{ page.name }}" name="name">
+      </div>
+        <div class="col tablet-4">
+            <label> Page address: </label>
+            <input type="text" name="url" v-model="url" value="{{ page.url }}">
+            <input type="hidden" name="path" v-model="path" value="{{ page.path }}">
+        </div>
+        {% if tpls.templates|length!=0 %}
+        <div class="col tablet-4">
+            <label> Page template:</label>
+            <select name="template" v-on:change="changeTemplate()">
+            <option value="">No template</option>
+            {% for tpl in tpls.templates %}
+            <option value="{{ tpl.path }}" {% if tpl.path == page.template %}selected{% endif %}>{{ tpl.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        {% endif %}
+    </div>
+
+
+    {% if page.fields|length==0 %}
+    <p>This page template ({{page.template|default('no template')}}) has no editor fields set</p>
+    {% endif %} {% for name,type in page.fields %}
+    <textarea name="blocks[{{ name }}]" class="{{ type }}" rows="10" id="block_{{ name }}" v-pre> {{ page.blocks[name]|raw }} </textarea> {% endfor %}
+</form>
+</div>
+<script>
+//To prevent firefox from filling it
+document.getElementById("page-form").reset();
+window.old_path="{{ page.path }}";
+</script>
 {% endblock %}

@@ -52,9 +52,9 @@ Roadmap
 - [ ] Modules
   - [ ] Admin panel
     - [x] Resources tree
-    - [ ] CRUD pages
+    - [x] CRUD pages
     - [ ] CRUD templates
-    - [ ] Custom widgets support
+    - [x] Custom widgets support
   - [x] Mailer
   - [x] Web actions
   - [ ] Goods

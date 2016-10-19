@@ -3,6 +3,7 @@ class EselPage{
   public $name;
   public $folder;
   public $url;
+  public $new=false;
 
   public static function makeUrl($relativePath){
     if(!file_exists(SL_PAGES.$relativePath)){
@@ -45,6 +46,7 @@ class EselPage{
     }
     return $blocks;
   }
+
 
 
 }
