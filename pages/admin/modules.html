@@ -1,0 +1,25 @@
+{% extends "admin/panel.twig" %} {% block panel %}
+<h1>Modules management</h1>
+<p>Here you can enable and disable currently installed modules</p>
+<p><strong>WARNING!</strong> There's SL_DEV variable in Esel config. While it's set to true all modules pass check.
+  DO NOT leave it "true" in production</p>
+{% set mods=EselAdminPanel_getModulesList() %}
+
+<table class="table">
+  <thead><tr><th>Module</th><th>Description</th><th>Status</th><th>Toggle</th></tr></thead>
+  <tbody>
+    {% for module in mods['modules'] %}
+    <tr><td>{{module.name}}</td><td>{{module.description}}</td><td>{% if module.status %}<span class="green">Installed</span>{% else %}<span class="gray">Not installed</span>{% endif %}</td>
+<td>
+{% if module.status %}<button class="btn btn-red" onclick="uninstall('{{module.name}}')"><i class="fa fa-power-off"></i></button>{% else %}
+<button class="btn btn-teal" onclick="install('{{module.name}}')"><i class="fa fa-power-off"></i></button>{% endif %}
+
+
+
+</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

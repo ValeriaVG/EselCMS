@@ -48,3 +48,34 @@ function updateQueryStringParameter(uri, key, value) {
     return uri + separator + key + "=" + value;
   }
 }
+
+
+/**
+ * Istall modules
+ */
+
+function install(module){
+  $.ajax({
+    url:"/actions/EselAdminPanel/setSafe",
+    method:"POST",
+    data:{"moduleName":module},
+    success:function(res){
+      if(res.success){
+        document.location.href=document.location.href;
+      }
+    }
+  });
+}
+
+function uninstall(module){
+  $.ajax({
+    url:"/actions/EselAdminPanel/setUnsafe",
+    method:"POST",
+    data:{"moduleName":module},
+    success:function(res){
+      if(res.success){
+        document.location.href=document.location.href;
+      }
+    }
+  });
+}

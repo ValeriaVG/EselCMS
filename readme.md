@@ -55,6 +55,7 @@ Roadmap
     - [x] CRUD pages
     - [ ] CRUD templates
     - [x] Custom widgets support
+  - [ ] Events
   - [x] Mailer
   - [x] Web actions
   - [ ] Goods

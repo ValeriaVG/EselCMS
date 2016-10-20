@@ -1,5 +1,4 @@
 {% extends "admin/panel.twig" %} {% block panel %} {% set page=EselAdminPanel_getPageData() %} {% set tpls=EselAdminPanel_getTplList() %}
-
 <div id="page-edit">
   <div class="row">
     <div class="col tablet-8">
@@ -43,7 +42,12 @@
 
     {% if page.fields|length==0 %}
     <p>This page template ({{page.template|default('no template')}}) has no editor fields set</p>
-    {% endif %} {% for name,type in page.fields %}
+
+    {% endif %}
+    <div v-pre>
+
+</div>
+     {% for name,type in page.fields %}
     <textarea name="blocks[{{ name }}]" class="{{ type }}" rows="10" id="block_{{ name }}" v-pre> {{ page.blocks[name]|raw }} </textarea> {% endfor %}
 </form>
 </div>

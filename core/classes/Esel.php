@@ -180,7 +180,7 @@ class Esel
     public function loadModule($moduleName)
     {
         require_once SL_CORE.'/classes/EselModule.php';
-        if (EselModule::isSafe($moduleName)) {
+        if (SL_DEV||EselModule::isSafe($moduleName)) {
             require_once SL_MODULES.$moduleName.'/Module.php';
         }
     }
@@ -218,13 +218,35 @@ class Esel
      */
     public static function for_table($table)
     {
-        if (!class_exists('ORM')) {
-            require_once SL_CORE.'lib/idiorm.php';
-        }
-        ORM::configure(SL_DB_TYPE.':host='.SL_DB_HOST.';dbname='.SL_DB_NAME);
-        ORM::configure('username', SL_DB_USER);
-        ORM::configure('password', SL_DB_PASS);
 
-        return ORM::for_table(SL_DB_PREFIX.$table);
+            self::connect();
+            return ORM::for_table(SL_DB_PREFIX.$table);
+
+    }
+
+    public static function connect(){
+      if (!class_exists('ORM')) {
+          require_once SL_CORE.'lib/idiorm.php';
+      }
+      ORM::configure(SL_DB_TYPE.':host='.SL_DB_HOST.';dbname='.SL_DB_NAME);
+      ORM::configure('username', SL_DB_USER);
+      ORM::configure('password', SL_DB_PASS);
+    }
+
+    public static function create_table($table, $columns)
+    {
+        if(empty($columns)){
+          throw new Exception("Cannot create table '.$table.'- no columns provived");
+        }
+        $sql = '
+        CREATE TABLE IF NOT EXISTS `'.SL_DB_PREFIX.$table.'` (
+        `id` int(11) NOT NULL auto_increment, ';
+        foreach ($columns as $column=>$properties) {
+          $sql.='`'.$column.'` '.$properties.', ';
+        }
+        $sql .= 'PRIMARY KEY  (`id`));';
+        self::connect();
+        ORM::raw_execute($sql);
+
     }
 }

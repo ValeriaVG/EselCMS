@@ -54,12 +54,15 @@ class EselAdminPanelTest extends TestCase
       $this->assertEquals(EselAdminPanel::savePage('/__test/__test.html','base.twig','Test Page'),file_get_contents(SL_PAGES.'__test/__test.html'));
     }
 
+
+
+
     /**
      * @covers EselAdminPanel::getPagesList
      */
     public function testCanGetPagesList()
     {
-      $list = $this->module->getPagesList('__test/');
+      $list = EselAdminPanel::getPagesList('__test/');
       $this->assertEquals('Test Page', $list["pages"][0]->name);
     }
 
@@ -68,7 +71,7 @@ class EselAdminPanelTest extends TestCase
      */
     public function testCanGetTplList()
     {
-      $list = $this->module->getTplList();
+      $list = EselAdminPanel::getTplList();
       $this->assertEquals('Base Layout', $list["templates"][0]->name);
       $this->assertEquals('base.twig', $list["templates"][0]->path);
     }
@@ -78,7 +81,13 @@ class EselAdminPanelTest extends TestCase
      */
     public function testCanGetPageData()
     {
-      $data = $this->module->getPageData('404.html');
+      $data = EselAdminPanel::getPageData('404.html');
       $this->assertEquals('docs.twig', $data->template);
+    }
+
+
+    public function testCanDeletePage(){
+    EselAdminPanel::deletePage("__test/__test.html");
+    $this->assertFalse(file_exists(SL_PAGES.'__test/__test.html'));
     }
 }

@@ -26,7 +26,6 @@ class EselAdminPanel extends EselModule
         }
 
         $iterator = new GlobIterator($path.$pattern, FilesystemIterator::SKIP_DOTS);
-
         $list['count'] = $iterator->count();
         $iterator->seek($start);
 
@@ -187,4 +186,27 @@ class EselAdminPanel extends EselModule
 
         return $page;
     }
+
+
+    public static function getModulesList(){
+      $list=array();
+      $modules = scandir(SL_MODULES);
+      $list['count']=0;
+      $list['modules']=array();
+      foreach ($modules as $module) {
+          if (($module != '.') && ($module != '..')) {
+            $item=new stdClass();
+            $item->name=$module;
+            $item->status=EselModule::isSafe($module,false);
+            $item->description="";
+            if(file_exists(SL_MODULES.$module."/description.txt")){
+              $item->description=file_get_contents(SL_MODULES.$module."/description.txt");
+            }
+            $list['count']++;
+            array_push($list['modules'],$item);
+
+          }
+    }
+    return $list;
+  }
 }

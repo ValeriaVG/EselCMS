@@ -1,4 +1,5 @@
 <?php
+define("SL_START",microtime(true));
 define("SL_BASE",dirname(dirname(__FILE__)));
 define("SL_CORE",SL_BASE."/core/");
 define("SL_TEMPLATES",SL_BASE."/templates/");
@@ -19,3 +20,5 @@ define("SL_DB_PREFIX","sl_");
 
 define("SL_ADMIN_NAME","esel");
 define("SL_ADMIN_PASSWORD","password");
+
+define("SL_DEV",false);

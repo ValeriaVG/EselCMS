@@ -7,6 +7,7 @@
 
                 <ul class="inline-menu nav light bordered tablet-to-list tablet-and-less-hide" id="menu">
                       <li><a href="/admin/">Dashboard</a></li>
+                      <li><a href="/admin/modules/">Modules</a></li>
                       <li class="dropdown"><a href="/admin/">Some other stuff</a>
                         <ul><li><a href="#">More stuff</a></li>
                           <li><a href="#">More stuff</a></li>
@@ -42,7 +43,28 @@
         </div>
 
         <div class="col desktop-10 tablet-8 phone-12 fullheight">
-            {% block panel %}{% endblock %}
+            {% block panel %}
+              <div id="dashboard" class="leader row">
+                <div class="col tablet-4">
+                  <div class="segment bg-amber-50">
+                    <h2>Welcome to Esel</h2>
+                    <p>There suppose to be some useful information</p>
+                  </div>
+                </div>
+                <div class="col tablet-4">
+                  <div class="segment bg-blue-50">
+                    <h2>Welcome to Esel</h2>
+                    <p>There suppose to be some useful information</p>
+                  </div>
+                </div>
+                <div class="col tablet-4">
+                  <div class="segment bg-teal-50">
+                    <h2>Welcome to Esel</h2>
+                    <p>There suppose to be some useful information</p>
+                  </div>
+                </div>
+              </div>
+            {% endblock %}
         </div>
     </div>
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Basic class all modules showl extend
+ * Basic class all modules showl extend.
  */
 class EselModule
 {
@@ -55,8 +55,12 @@ class EselModule
 
     public static function setSafe($moduleName)
     {
-        $hash = self::calculateHash(SL_MODULES.$moduleName.'/');
 
+        $hash = self::calculateHash(SL_MODULES.$moduleName.'/');
+        require_once SL_CORE."classes/Esel.php";
+        require_once(SL_MODULES.$moduleName.'/Module.php');
+        $module=new $moduleName(new Esel());
+        $module->install();
         return self::saveHash(md5($moduleName.SL_SECRET.$hash), $hash);
     }
 
@@ -66,14 +70,23 @@ class EselModule
         unlink(SL_CORE.'hash/'.$hash);
     }
 
-    public static function isSafe($moduleName)
+    public static function isSafe($moduleName,$throw=true)
     {
         $hash = self::calculateHash(SL_MODULES.$moduleName.'/');
-        if ((!$hash)||(!file_exists(SL_CORE.'hash/'.$hash))) {
+        if ((!$hash) || (!file_exists(SL_CORE.'hash/'.$hash))) {
+          if(!$throw){
+            return false;
+          }
             throw new Exception($moduleName.' is not installed');
         }
-            $result = file_get_contents(SL_CORE.'hash/'.$hash);
-            return md5($moduleName.SL_SECRET.$hash) === $result;
+        $result = file_get_contents(SL_CORE.'hash/'.$hash);
 
+        return md5($moduleName.SL_SECRET.$hash) === $result;
+    }
+
+
+    public function install()
+    {
+        //If needed
     }
 }

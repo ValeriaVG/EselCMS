@@ -58,7 +58,7 @@ var app=new Vue({
 });
 
 
-
+if($("#page-edit").size==1){
 var pEdit=new Vue({
   el: "#page-edit",
   data: {
@@ -68,6 +68,11 @@ var pEdit=new Vue({
   },
   computed:{
     path:function(){
+      var same_folder=(this.url.split("/").length==(window.old_path.split("/").length));
+
+      if((/\/index\.html$/).test(window.old_path)&&(same_folder)){
+        return this.url.replace(/(\/|)$/,'/index.html');
+      }
       return this.url.replace(/(\/|)$/,'.html');
     }
   },
@@ -81,7 +86,7 @@ var pEdit=new Vue({
         var name=tmp[1];
         var value=$(this).val();
         if( $(this).hasClass("richText")){
-          value=tinymce.get("block_content").getContent();
+          value=tinymce.get("block_"+name).getContent();
         }
         window.blocks[name]=value;
 
@@ -179,7 +184,7 @@ var pEdit=new Vue({
   }
 });
 
-
+}
 
 $(window).resize(function(){
   fixFullHeight();
