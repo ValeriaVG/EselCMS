@@ -14,6 +14,7 @@ class EselPaginator extends EselModule
         try {
             $list['count'] = $iterator->count();
         } catch (Exception $e) {
+          print_r($e->getMessage());
             return $list;
         }
         if ($list['count'] == 0) {

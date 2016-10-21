@@ -36,6 +36,7 @@ class EselAdminPanel extends EselModule
         self::beforeLoad();
         $pattern = '*.html';
         if ($all == 1) {
+
             $pattern = '*';
         }
 

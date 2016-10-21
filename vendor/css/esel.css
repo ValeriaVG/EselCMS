@@ -90,237 +90,237 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #f44336;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-red {
+/* line 328, ../sass/components/_colors.scss */
+.bg-red, .bg-red .dropdown ul {
   background-color: #f44336 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-red {
   border-color: #f44336;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-red:hover, ul.hover-border-red > li > a:hover {
   border-color: #f44336;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-red:hover, ul.hover-red > li > a:hover {
   color: #f44336;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-red:hover, ul.bg-hover-red > li > a:hover {
   background: #f44336 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-50 {
   color: #ffebee;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-50, .bg-red-50 .dropdown ul {
   background-color: #ffebee;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-50 {
   border-color: #ffebee;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-100 {
   color: #ffcdd2;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-100, .bg-red-100 .dropdown ul {
   background-color: #ffcdd2;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-100 {
   border-color: #ffcdd2;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-200 {
   color: #ef9a9a;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-200, .bg-red-200 .dropdown ul {
   background-color: #ef9a9a;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-200 {
   border-color: #ef9a9a;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-300 {
   color: #e57373;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-300, .bg-red-300 .dropdown ul {
   background-color: #e57373;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-300 {
   border-color: #e57373;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-400 {
   color: #ef5350;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-400, .bg-red-400 .dropdown ul {
   background-color: #ef5350;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-400 {
   border-color: #ef5350;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-500 {
   color: #f44336;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-500, .bg-red-500 .dropdown ul {
   background-color: #f44336;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-500 {
   border-color: #f44336;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-600 {
   color: #e53935;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-600, .bg-red-600 .dropdown ul {
   background-color: #e53935;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-600 {
   border-color: #e53935;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-700 {
   color: #d32f2f;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-700, .bg-red-700 .dropdown ul {
   background-color: #d32f2f;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-700 {
   border-color: #d32f2f;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-800 {
   color: #c62828;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-800, .bg-red-800 .dropdown ul {
   background-color: #c62828;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-800 {
   border-color: #c62828;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-900 {
   color: #b71c1c;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-900, .bg-red-900 .dropdown ul {
   background-color: #b71c1c;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-900 {
   border-color: #b71c1c;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-A100 {
   color: #ff8f80;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-A100, .bg-red-A100 .dropdown ul {
   background-color: #ff8f80;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-A100 {
   border-color: #ff8f80;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-A200 {
   color: #ff5252;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-A200, .bg-red-A200 .dropdown ul {
   background-color: #ff5252;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-A200 {
   border-color: #ff5252;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-A400 {
   color: #ff1744;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-A400, .bg-red-A400 .dropdown ul {
   background-color: #ff1744;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-A400 {
   border-color: #ff1744;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .red-A700 {
   color: #d50000;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-red-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-red-A700, .bg-red-A700 .dropdown ul {
   background-color: #d50000;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-red-A700 {
   border-color: #d50000;
 }
@@ -330,237 +330,237 @@ a.bg-hover-red:hover, ul.bg-hover-red > li > a:hover {
   color: #E91E63;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-pink {
+/* line 328, ../sass/components/_colors.scss */
+.bg-pink, .bg-pink .dropdown ul {
   background-color: #E91E63 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-pink {
   border-color: #E91E63;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-pink:hover, ul.hover-border-pink > li > a:hover {
   border-color: #E91E63;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-pink:hover, ul.hover-pink > li > a:hover {
   color: #E91E63;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-pink:hover, ul.bg-hover-pink > li > a:hover {
   background: #E91E63 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-50 {
   color: #FCE4EC;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-50, .bg-pink-50 .dropdown ul {
   background-color: #FCE4EC;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-50 {
   border-color: #FCE4EC;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-100 {
   color: #F8BBD0;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-100, .bg-pink-100 .dropdown ul {
   background-color: #F8BBD0;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-100 {
   border-color: #F8BBD0;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-200 {
   color: #F48FB1;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-200, .bg-pink-200 .dropdown ul {
   background-color: #F48FB1;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-200 {
   border-color: #F48FB1;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-300 {
   color: #F06292;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-300, .bg-pink-300 .dropdown ul {
   background-color: #F06292;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-300 {
   border-color: #F06292;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-400 {
   color: #EC407A;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-400, .bg-pink-400 .dropdown ul {
   background-color: #EC407A;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-400 {
   border-color: #EC407A;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-500 {
   color: #E91E63;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-500, .bg-pink-500 .dropdown ul {
   background-color: #E91E63;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-500 {
   border-color: #E91E63;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-600 {
   color: #D81B60;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-600, .bg-pink-600 .dropdown ul {
   background-color: #D81B60;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-600 {
   border-color: #D81B60;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-700 {
   color: #C2185B;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-700, .bg-pink-700 .dropdown ul {
   background-color: #C2185B;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-700 {
   border-color: #C2185B;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-800 {
   color: #AD1457;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-800, .bg-pink-800 .dropdown ul {
   background-color: #AD1457;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-800 {
   border-color: #AD1457;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-900 {
   color: #880E4F;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-900, .bg-pink-900 .dropdown ul {
   background-color: #880E4F;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-900 {
   border-color: #880E4F;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-A100 {
   color: #FF80AB;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-A100, .bg-pink-A100 .dropdown ul {
   background-color: #FF80AB;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-A100 {
   border-color: #FF80AB;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-A200 {
   color: #FF4081;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-A200, .bg-pink-A200 .dropdown ul {
   background-color: #FF4081;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-A200 {
   border-color: #FF4081;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-A400 {
   color: #F50057;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-A400, .bg-pink-A400 .dropdown ul {
   background-color: #F50057;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-A400 {
   border-color: #F50057;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .pink-A700 {
   color: #C51162;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-pink-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-pink-A700, .bg-pink-A700 .dropdown ul {
   background-color: #C51162;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-pink-A700 {
   border-color: #C51162;
 }
@@ -570,237 +570,237 @@ a.bg-hover-pink:hover, ul.bg-hover-pink > li > a:hover {
   color: #9C27B0;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-purple {
+/* line 328, ../sass/components/_colors.scss */
+.bg-purple, .bg-purple .dropdown ul {
   background-color: #9C27B0 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-purple {
   border-color: #9C27B0;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-purple:hover, ul.hover-border-purple > li > a:hover {
   border-color: #9C27B0;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-purple:hover, ul.hover-purple > li > a:hover {
   color: #9C27B0;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-purple:hover, ul.bg-hover-purple > li > a:hover {
   background: #9C27B0 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-50 {
   color: #F3E5F5;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-50, .bg-purple-50 .dropdown ul {
   background-color: #F3E5F5;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-50 {
   border-color: #F3E5F5;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-100 {
   color: #E1BEE7;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-100, .bg-purple-100 .dropdown ul {
   background-color: #E1BEE7;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-100 {
   border-color: #E1BEE7;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-200 {
   color: #CE93D8;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-200, .bg-purple-200 .dropdown ul {
   background-color: #CE93D8;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-200 {
   border-color: #CE93D8;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-300 {
   color: #BA68C8;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-300, .bg-purple-300 .dropdown ul {
   background-color: #BA68C8;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-300 {
   border-color: #BA68C8;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-400 {
   color: #AB47BC;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-400, .bg-purple-400 .dropdown ul {
   background-color: #AB47BC;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-400 {
   border-color: #AB47BC;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-500 {
   color: #9C27B0;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-500, .bg-purple-500 .dropdown ul {
   background-color: #9C27B0;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-500 {
   border-color: #9C27B0;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-600 {
   color: #8E24AA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-600, .bg-purple-600 .dropdown ul {
   background-color: #8E24AA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-600 {
   border-color: #8E24AA;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-700 {
   color: #7B1FA2;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-700, .bg-purple-700 .dropdown ul {
   background-color: #7B1FA2;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-700 {
   border-color: #7B1FA2;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-800 {
   color: #6A1B9A;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-800, .bg-purple-800 .dropdown ul {
   background-color: #6A1B9A;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-800 {
   border-color: #6A1B9A;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-900 {
   color: #4A148C;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-900, .bg-purple-900 .dropdown ul {
   background-color: #4A148C;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-900 {
   border-color: #4A148C;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-A100 {
   color: #EA80FC;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-A100, .bg-purple-A100 .dropdown ul {
   background-color: #EA80FC;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-A100 {
   border-color: #EA80FC;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-A200 {
   color: #E040FB;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-A200, .bg-purple-A200 .dropdown ul {
   background-color: #E040FB;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-A200 {
   border-color: #E040FB;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-A400 {
   color: #D500F9;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-A400, .bg-purple-A400 .dropdown ul {
   background-color: #D500F9;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-A400 {
   border-color: #D500F9;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .purple-A700 {
   color: #AA00FF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-purple-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-purple-A700, .bg-purple-A700 .dropdown ul {
   background-color: #AA00FF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-purple-A700 {
   border-color: #AA00FF;
 }
@@ -810,237 +810,237 @@ a.bg-hover-purple:hover, ul.bg-hover-purple > li > a:hover {
   color: #673AB7;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-deep-purple {
+/* line 328, ../sass/components/_colors.scss */
+.bg-deep-purple, .bg-deep-purple .dropdown ul {
   background-color: #673AB7 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-deep-purple {
   border-color: #673AB7;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-deep-purple:hover, ul.hover-border-deep-purple > li > a:hover {
   border-color: #673AB7;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-deep-purple:hover, ul.hover-deep-purple > li > a:hover {
   color: #673AB7;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-deep-purple:hover, ul.bg-hover-deep-purple > li > a:hover {
   background: #673AB7 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-50 {
   color: #EDE7F6;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-50, .bg-deep-purple-50 .dropdown ul {
   background-color: #EDE7F6;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-50 {
   border-color: #EDE7F6;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-100 {
   color: #D1C4E9;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-100, .bg-deep-purple-100 .dropdown ul {
   background-color: #D1C4E9;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-100 {
   border-color: #D1C4E9;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-200 {
   color: #B39DDB;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-200, .bg-deep-purple-200 .dropdown ul {
   background-color: #B39DDB;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-200 {
   border-color: #B39DDB;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-300 {
   color: #9575CD;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-300, .bg-deep-purple-300 .dropdown ul {
   background-color: #9575CD;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-300 {
   border-color: #9575CD;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-400 {
   color: #7E57C2;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-400, .bg-deep-purple-400 .dropdown ul {
   background-color: #7E57C2;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-400 {
   border-color: #7E57C2;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-500 {
   color: #673AB7;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-500, .bg-deep-purple-500 .dropdown ul {
   background-color: #673AB7;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-500 {
   border-color: #673AB7;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-600 {
   color: #5E35B1;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-600, .bg-deep-purple-600 .dropdown ul {
   background-color: #5E35B1;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-600 {
   border-color: #5E35B1;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-700 {
   color: #512DA8;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-700, .bg-deep-purple-700 .dropdown ul {
   background-color: #512DA8;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-700 {
   border-color: #512DA8;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-800 {
   color: #4527A0;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-800, .bg-deep-purple-800 .dropdown ul {
   background-color: #4527A0;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-800 {
   border-color: #4527A0;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-900 {
   color: #311B92;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-900, .bg-deep-purple-900 .dropdown ul {
   background-color: #311B92;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-900 {
   border-color: #311B92;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-A100 {
   color: #B388FF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-A100, .bg-deep-purple-A100 .dropdown ul {
   background-color: #B388FF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-A100 {
   border-color: #B388FF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-A200 {
   color: #7C4DFF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-A200, .bg-deep-purple-A200 .dropdown ul {
   background-color: #7C4DFF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-A200 {
   border-color: #7C4DFF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-A400 {
   color: #651FFF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-A400, .bg-deep-purple-A400 .dropdown ul {
   background-color: #651FFF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-A400 {
   border-color: #651FFF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-purple-A700 {
   color: #6200EA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-purple-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-purple-A700, .bg-deep-purple-A700 .dropdown ul {
   background-color: #6200EA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-purple-A700 {
   border-color: #6200EA;
 }
@@ -1050,237 +1050,237 @@ a.bg-hover-deep-purple:hover, ul.bg-hover-deep-purple > li > a:hover {
   color: #3F51B5;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-indigo {
+/* line 328, ../sass/components/_colors.scss */
+.bg-indigo, .bg-indigo .dropdown ul {
   background-color: #3F51B5 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-indigo {
   border-color: #3F51B5;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-indigo:hover, ul.hover-border-indigo > li > a:hover {
   border-color: #3F51B5;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-indigo:hover, ul.hover-indigo > li > a:hover {
   color: #3F51B5;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-indigo:hover, ul.bg-hover-indigo > li > a:hover {
   background: #3F51B5 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-50 {
   color: #E8EAF6;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-50, .bg-indigo-50 .dropdown ul {
   background-color: #E8EAF6;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-50 {
   border-color: #E8EAF6;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-100 {
   color: #C5CAE9;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-100, .bg-indigo-100 .dropdown ul {
   background-color: #C5CAE9;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-100 {
   border-color: #C5CAE9;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-200 {
   color: #9FA8DA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-200, .bg-indigo-200 .dropdown ul {
   background-color: #9FA8DA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-200 {
   border-color: #9FA8DA;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-300 {
   color: #7986CB;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-300, .bg-indigo-300 .dropdown ul {
   background-color: #7986CB;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-300 {
   border-color: #7986CB;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-400 {
   color: #5C6BC0;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-400, .bg-indigo-400 .dropdown ul {
   background-color: #5C6BC0;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-400 {
   border-color: #5C6BC0;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-500 {
   color: #3F51B5;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-500, .bg-indigo-500 .dropdown ul {
   background-color: #3F51B5;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-500 {
   border-color: #3F51B5;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-600 {
   color: #3949AB;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-600, .bg-indigo-600 .dropdown ul {
   background-color: #3949AB;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-600 {
   border-color: #3949AB;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-700 {
   color: #303F9F;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-700, .bg-indigo-700 .dropdown ul {
   background-color: #303F9F;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-700 {
   border-color: #303F9F;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-800 {
   color: #283593;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-800, .bg-indigo-800 .dropdown ul {
   background-color: #283593;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-800 {
   border-color: #283593;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-900 {
   color: #1A237E;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-900, .bg-indigo-900 .dropdown ul {
   background-color: #1A237E;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-900 {
   border-color: #1A237E;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-A100 {
   color: #8C9EFF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-A100, .bg-indigo-A100 .dropdown ul {
   background-color: #8C9EFF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-A100 {
   border-color: #8C9EFF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-A200 {
   color: #536DFE;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-A200, .bg-indigo-A200 .dropdown ul {
   background-color: #536DFE;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-A200 {
   border-color: #536DFE;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-A400 {
   color: #3D5AFE;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-A400, .bg-indigo-A400 .dropdown ul {
   background-color: #3D5AFE;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-A400 {
   border-color: #3D5AFE;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .indigo-A700 {
   color: #304FFE;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-indigo-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-indigo-A700, .bg-indigo-A700 .dropdown ul {
   background-color: #304FFE;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-indigo-A700 {
   border-color: #304FFE;
 }
@@ -1290,237 +1290,237 @@ a.bg-hover-indigo:hover, ul.bg-hover-indigo > li > a:hover {
   color: #2196F3;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-blue {
+/* line 328, ../sass/components/_colors.scss */
+.bg-blue, .bg-blue .dropdown ul {
   background-color: #2196F3 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-blue {
   border-color: #2196F3;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-blue:hover, ul.hover-border-blue > li > a:hover {
   border-color: #2196F3;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-blue:hover, ul.hover-blue > li > a:hover {
   color: #2196F3;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-blue:hover, ul.bg-hover-blue > li > a:hover {
   background: #2196F3 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-50 {
   color: #E3F2FD;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-50, .bg-blue-50 .dropdown ul {
   background-color: #E3F2FD;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-50 {
   border-color: #E3F2FD;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-100 {
   color: #BBDEFB;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-100, .bg-blue-100 .dropdown ul {
   background-color: #BBDEFB;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-100 {
   border-color: #BBDEFB;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-200 {
   color: #90CAF9;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-200, .bg-blue-200 .dropdown ul {
   background-color: #90CAF9;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-200 {
   border-color: #90CAF9;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-300 {
   color: #64B5F6;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-300, .bg-blue-300 .dropdown ul {
   background-color: #64B5F6;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-300 {
   border-color: #64B5F6;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-400 {
   color: #42A5F5;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-400, .bg-blue-400 .dropdown ul {
   background-color: #42A5F5;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-400 {
   border-color: #42A5F5;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-500 {
   color: #2196F3;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-500, .bg-blue-500 .dropdown ul {
   background-color: #2196F3;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-500 {
   border-color: #2196F3;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-600 {
   color: #1E88E5;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-600, .bg-blue-600 .dropdown ul {
   background-color: #1E88E5;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-600 {
   border-color: #1E88E5;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-700 {
   color: #1976D2;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-700, .bg-blue-700 .dropdown ul {
   background-color: #1976D2;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-700 {
   border-color: #1976D2;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-800 {
   color: #1565C0;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-800, .bg-blue-800 .dropdown ul {
   background-color: #1565C0;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-800 {
   border-color: #1565C0;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-900 {
   color: #0D47A1;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-900, .bg-blue-900 .dropdown ul {
   background-color: #0D47A1;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-900 {
   border-color: #0D47A1;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-A100 {
   color: #82B1FF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-A100, .bg-blue-A100 .dropdown ul {
   background-color: #82B1FF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-A100 {
   border-color: #82B1FF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-A200 {
   color: #448AFF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-A200, .bg-blue-A200 .dropdown ul {
   background-color: #448AFF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-A200 {
   border-color: #448AFF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-A400 {
   color: #2979FF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-A400, .bg-blue-A400 .dropdown ul {
   background-color: #2979FF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-A400 {
   border-color: #2979FF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-A700 {
   color: #2962FF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-A700, .bg-blue-A700 .dropdown ul {
   background-color: #2962FF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-A700 {
   border-color: #2962FF;
 }
@@ -1530,237 +1530,237 @@ a.bg-hover-blue:hover, ul.bg-hover-blue > li > a:hover {
   color: #03A9F4;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-light-blue {
+/* line 328, ../sass/components/_colors.scss */
+.bg-light-blue, .bg-light-blue .dropdown ul {
   background-color: #03A9F4 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-light-blue {
   border-color: #03A9F4;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-light-blue:hover, ul.hover-border-light-blue > li > a:hover {
   border-color: #03A9F4;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-light-blue:hover, ul.hover-light-blue > li > a:hover {
   color: #03A9F4;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-light-blue:hover, ul.bg-hover-light-blue > li > a:hover {
   background: #03A9F4 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-50 {
   color: #E1F5FE;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-50, .bg-light-blue-50 .dropdown ul {
   background-color: #E1F5FE;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-50 {
   border-color: #E1F5FE;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-100 {
   color: #B3E5FC;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-100, .bg-light-blue-100 .dropdown ul {
   background-color: #B3E5FC;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-100 {
   border-color: #B3E5FC;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-200 {
   color: #81D4FA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-200, .bg-light-blue-200 .dropdown ul {
   background-color: #81D4FA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-200 {
   border-color: #81D4FA;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-300 {
   color: #4FC3F7;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-300, .bg-light-blue-300 .dropdown ul {
   background-color: #4FC3F7;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-300 {
   border-color: #4FC3F7;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-400 {
   color: #29B6F6;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-400, .bg-light-blue-400 .dropdown ul {
   background-color: #29B6F6;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-400 {
   border-color: #29B6F6;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-500 {
   color: #03A9F4;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-500, .bg-light-blue-500 .dropdown ul {
   background-color: #03A9F4;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-500 {
   border-color: #03A9F4;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-600 {
   color: #039BE5;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-600, .bg-light-blue-600 .dropdown ul {
   background-color: #039BE5;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-600 {
   border-color: #039BE5;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-700 {
   color: #0288D1;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-700, .bg-light-blue-700 .dropdown ul {
   background-color: #0288D1;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-700 {
   border-color: #0288D1;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-800 {
   color: #0277BD;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-800, .bg-light-blue-800 .dropdown ul {
   background-color: #0277BD;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-800 {
   border-color: #0277BD;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-900 {
   color: #01579B;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-900, .bg-light-blue-900 .dropdown ul {
   background-color: #01579B;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-900 {
   border-color: #01579B;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-A100 {
   color: #80D8FF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-A100, .bg-light-blue-A100 .dropdown ul {
   background-color: #80D8FF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-A100 {
   border-color: #80D8FF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-A200 {
   color: #40C4FF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-A200, .bg-light-blue-A200 .dropdown ul {
   background-color: #40C4FF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-A200 {
   border-color: #40C4FF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-A400 {
   color: #00B0FF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-A400, .bg-light-blue-A400 .dropdown ul {
   background-color: #00B0FF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-A400 {
   border-color: #00B0FF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-blue-A700 {
   color: #0091EA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-blue-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-blue-A700, .bg-light-blue-A700 .dropdown ul {
   background-color: #0091EA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-blue-A700 {
   border-color: #0091EA;
 }
@@ -1770,237 +1770,237 @@ a.bg-hover-light-blue:hover, ul.bg-hover-light-blue > li > a:hover {
   color: #00BCD4;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-cyan {
+/* line 328, ../sass/components/_colors.scss */
+.bg-cyan, .bg-cyan .dropdown ul {
   background-color: #00BCD4 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-cyan {
   border-color: #00BCD4;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-cyan:hover, ul.hover-border-cyan > li > a:hover {
   border-color: #00BCD4;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-cyan:hover, ul.hover-cyan > li > a:hover {
   color: #00BCD4;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-cyan:hover, ul.bg-hover-cyan > li > a:hover {
   background: #00BCD4 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-50 {
   color: #E0F7FA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-50, .bg-cyan-50 .dropdown ul {
   background-color: #E0F7FA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-50 {
   border-color: #E0F7FA;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-100 {
   color: #B2EBF2;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-100, .bg-cyan-100 .dropdown ul {
   background-color: #B2EBF2;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-100 {
   border-color: #B2EBF2;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-200 {
   color: #80DEEA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-200, .bg-cyan-200 .dropdown ul {
   background-color: #80DEEA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-200 {
   border-color: #80DEEA;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-300 {
   color: #4DD0E1;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-300, .bg-cyan-300 .dropdown ul {
   background-color: #4DD0E1;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-300 {
   border-color: #4DD0E1;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-400 {
   color: #26C6DA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-400, .bg-cyan-400 .dropdown ul {
   background-color: #26C6DA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-400 {
   border-color: #26C6DA;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-500 {
   color: #00BCD4;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-500, .bg-cyan-500 .dropdown ul {
   background-color: #00BCD4;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-500 {
   border-color: #00BCD4;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-600 {
   color: #00ACC1;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-600, .bg-cyan-600 .dropdown ul {
   background-color: #00ACC1;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-600 {
   border-color: #00ACC1;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-700 {
   color: #0097A7;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-700, .bg-cyan-700 .dropdown ul {
   background-color: #0097A7;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-700 {
   border-color: #0097A7;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-800 {
   color: #00838F;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-800, .bg-cyan-800 .dropdown ul {
   background-color: #00838F;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-800 {
   border-color: #00838F;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-900 {
   color: #006064;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-900, .bg-cyan-900 .dropdown ul {
   background-color: #006064;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-900 {
   border-color: #006064;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-A100 {
   color: #84FFFF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-A100, .bg-cyan-A100 .dropdown ul {
   background-color: #84FFFF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-A100 {
   border-color: #84FFFF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-A200 {
   color: #18FFFF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-A200, .bg-cyan-A200 .dropdown ul {
   background-color: #18FFFF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-A200 {
   border-color: #18FFFF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-A400 {
   color: #00E5FF;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-A400, .bg-cyan-A400 .dropdown ul {
   background-color: #00E5FF;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-A400 {
   border-color: #00E5FF;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .cyan-A700 {
   color: #00B8D4;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-cyan-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-cyan-A700, .bg-cyan-A700 .dropdown ul {
   background-color: #00B8D4;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-cyan-A700 {
   border-color: #00B8D4;
 }
@@ -2010,237 +2010,237 @@ a.bg-hover-cyan:hover, ul.bg-hover-cyan > li > a:hover {
   color: #009688;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-teal {
+/* line 328, ../sass/components/_colors.scss */
+.bg-teal, .bg-teal .dropdown ul {
   background-color: #009688 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-teal {
   border-color: #009688;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-teal:hover, ul.hover-border-teal > li > a:hover {
   border-color: #009688;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-teal:hover, ul.hover-teal > li > a:hover {
   color: #009688;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-teal:hover, ul.bg-hover-teal > li > a:hover {
   background: #009688 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-50 {
   color: #E0F2F1;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-50, .bg-teal-50 .dropdown ul {
   background-color: #E0F2F1;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-50 {
   border-color: #E0F2F1;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-100 {
   color: #B2DFDB;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-100, .bg-teal-100 .dropdown ul {
   background-color: #B2DFDB;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-100 {
   border-color: #B2DFDB;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-200 {
   color: #80CBC4;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-200, .bg-teal-200 .dropdown ul {
   background-color: #80CBC4;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-200 {
   border-color: #80CBC4;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-300 {
   color: #4DB6AC;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-300, .bg-teal-300 .dropdown ul {
   background-color: #4DB6AC;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-300 {
   border-color: #4DB6AC;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-400 {
   color: #26A69A;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-400, .bg-teal-400 .dropdown ul {
   background-color: #26A69A;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-400 {
   border-color: #26A69A;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-500 {
   color: #009688;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-500, .bg-teal-500 .dropdown ul {
   background-color: #009688;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-500 {
   border-color: #009688;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-600 {
   color: #00897B;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-600, .bg-teal-600 .dropdown ul {
   background-color: #00897B;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-600 {
   border-color: #00897B;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-700 {
   color: #00796B;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-700, .bg-teal-700 .dropdown ul {
   background-color: #00796B;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-700 {
   border-color: #00796B;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-800 {
   color: #00695C;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-800, .bg-teal-800 .dropdown ul {
   background-color: #00695C;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-800 {
   border-color: #00695C;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-900 {
   color: #004D40;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-900, .bg-teal-900 .dropdown ul {
   background-color: #004D40;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-900 {
   border-color: #004D40;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-A100 {
   color: #A7FFEB;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-A100, .bg-teal-A100 .dropdown ul {
   background-color: #A7FFEB;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-A100 {
   border-color: #A7FFEB;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-A200 {
   color: #64FFDA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-A200, .bg-teal-A200 .dropdown ul {
   background-color: #64FFDA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-A200 {
   border-color: #64FFDA;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-A400 {
   color: #1DE9B6;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-A400, .bg-teal-A400 .dropdown ul {
   background-color: #1DE9B6;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-A400 {
   border-color: #1DE9B6;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .teal-A700 {
   color: #00BFA5;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-teal-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-teal-A700, .bg-teal-A700 .dropdown ul {
   background-color: #00BFA5;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-teal-A700 {
   border-color: #00BFA5;
 }
@@ -2250,237 +2250,237 @@ a.bg-hover-teal:hover, ul.bg-hover-teal > li > a:hover {
   color: #4CAF50;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-green {
+/* line 328, ../sass/components/_colors.scss */
+.bg-green, .bg-green .dropdown ul {
   background-color: #4CAF50 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-green {
   border-color: #4CAF50;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-green:hover, ul.hover-border-green > li > a:hover {
   border-color: #4CAF50;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-green:hover, ul.hover-green > li > a:hover {
   color: #4CAF50;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-green:hover, ul.bg-hover-green > li > a:hover {
   background: #4CAF50 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-50 {
   color: #E8F5E9;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-50, .bg-green-50 .dropdown ul {
   background-color: #E8F5E9;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-50 {
   border-color: #E8F5E9;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-100 {
   color: #C8E6C9;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-100, .bg-green-100 .dropdown ul {
   background-color: #C8E6C9;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-100 {
   border-color: #C8E6C9;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-200 {
   color: #A5D6A7;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-200, .bg-green-200 .dropdown ul {
   background-color: #A5D6A7;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-200 {
   border-color: #A5D6A7;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-300 {
   color: #81C784;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-300, .bg-green-300 .dropdown ul {
   background-color: #81C784;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-300 {
   border-color: #81C784;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-400 {
   color: #66BB6A;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-400, .bg-green-400 .dropdown ul {
   background-color: #66BB6A;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-400 {
   border-color: #66BB6A;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-500 {
   color: #4CAF50;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-500, .bg-green-500 .dropdown ul {
   background-color: #4CAF50;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-500 {
   border-color: #4CAF50;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-600 {
   color: #43A047;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-600, .bg-green-600 .dropdown ul {
   background-color: #43A047;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-600 {
   border-color: #43A047;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-700 {
   color: #388E3C;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-700, .bg-green-700 .dropdown ul {
   background-color: #388E3C;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-700 {
   border-color: #388E3C;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-800 {
   color: #2E7D32;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-800, .bg-green-800 .dropdown ul {
   background-color: #2E7D32;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-800 {
   border-color: #2E7D32;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-900 {
   color: #1B5E20;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-900, .bg-green-900 .dropdown ul {
   background-color: #1B5E20;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-900 {
   border-color: #1B5E20;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-A100 {
   color: #B9F6CA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-A100, .bg-green-A100 .dropdown ul {
   background-color: #B9F6CA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-A100 {
   border-color: #B9F6CA;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-A200 {
   color: #69F0AE;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-A200, .bg-green-A200 .dropdown ul {
   background-color: #69F0AE;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-A200 {
   border-color: #69F0AE;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-A400 {
   color: #00E676;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-A400, .bg-green-A400 .dropdown ul {
   background-color: #00E676;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-A400 {
   border-color: #00E676;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .green-A700 {
   color: #00C853;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-green-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-green-A700, .bg-green-A700 .dropdown ul {
   background-color: #00C853;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-green-A700 {
   border-color: #00C853;
 }
@@ -2490,237 +2490,237 @@ a.bg-hover-green:hover, ul.bg-hover-green > li > a:hover {
   color: #8BC34A;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-light-green {
+/* line 328, ../sass/components/_colors.scss */
+.bg-light-green, .bg-light-green .dropdown ul {
   background-color: #8BC34A !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-light-green {
   border-color: #8BC34A;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-light-green:hover, ul.hover-border-light-green > li > a:hover {
   border-color: #8BC34A;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-light-green:hover, ul.hover-light-green > li > a:hover {
   color: #8BC34A;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-light-green:hover, ul.bg-hover-light-green > li > a:hover {
   background: #8BC34A !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-50 {
   color: #F1F8E9;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-50, .bg-light-green-50 .dropdown ul {
   background-color: #F1F8E9;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-50 {
   border-color: #F1F8E9;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-100 {
   color: #DCEDC8;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-100, .bg-light-green-100 .dropdown ul {
   background-color: #DCEDC8;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-100 {
   border-color: #DCEDC8;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-200 {
   color: #C5E1A5;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-200, .bg-light-green-200 .dropdown ul {
   background-color: #C5E1A5;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-200 {
   border-color: #C5E1A5;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-300 {
   color: #AED581;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-300, .bg-light-green-300 .dropdown ul {
   background-color: #AED581;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-300 {
   border-color: #AED581;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-400 {
   color: #9CCC65;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-400, .bg-light-green-400 .dropdown ul {
   background-color: #9CCC65;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-400 {
   border-color: #9CCC65;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-500 {
   color: #8BC34A;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-500, .bg-light-green-500 .dropdown ul {
   background-color: #8BC34A;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-500 {
   border-color: #8BC34A;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-600 {
   color: #7CB342;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-600, .bg-light-green-600 .dropdown ul {
   background-color: #7CB342;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-600 {
   border-color: #7CB342;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-700 {
   color: #689F38;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-700, .bg-light-green-700 .dropdown ul {
   background-color: #689F38;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-700 {
   border-color: #689F38;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-800 {
   color: #558B2F;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-800, .bg-light-green-800 .dropdown ul {
   background-color: #558B2F;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-800 {
   border-color: #558B2F;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-900 {
   color: #33691E;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-900, .bg-light-green-900 .dropdown ul {
   background-color: #33691E;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-900 {
   border-color: #33691E;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-A100 {
   color: #CCFF90;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-A100, .bg-light-green-A100 .dropdown ul {
   background-color: #CCFF90;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-A100 {
   border-color: #CCFF90;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-A200 {
   color: #B2FF59;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-A200, .bg-light-green-A200 .dropdown ul {
   background-color: #B2FF59;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-A200 {
   border-color: #B2FF59;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-A400 {
   color: #76FF03;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-A400, .bg-light-green-A400 .dropdown ul {
   background-color: #76FF03;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-A400 {
   border-color: #76FF03;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .light-green-A700 {
   color: #64DD17;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-light-green-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-light-green-A700, .bg-light-green-A700 .dropdown ul {
   background-color: #64DD17;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-light-green-A700 {
   border-color: #64DD17;
 }
@@ -2730,237 +2730,237 @@ a.bg-hover-light-green:hover, ul.bg-hover-light-green > li > a:hover {
   color: #CDDC39;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-lime {
+/* line 328, ../sass/components/_colors.scss */
+.bg-lime, .bg-lime .dropdown ul {
   background-color: #CDDC39 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-lime {
   border-color: #CDDC39;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-lime:hover, ul.hover-border-lime > li > a:hover {
   border-color: #CDDC39;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-lime:hover, ul.hover-lime > li > a:hover {
   color: #CDDC39;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-lime:hover, ul.bg-hover-lime > li > a:hover {
   background: #CDDC39 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-50 {
   color: #F9FBE7;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-50, .bg-lime-50 .dropdown ul {
   background-color: #F9FBE7;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-50 {
   border-color: #F9FBE7;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-100 {
   color: #F0F4C3;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-100, .bg-lime-100 .dropdown ul {
   background-color: #F0F4C3;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-100 {
   border-color: #F0F4C3;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-200 {
   color: #E6EE9C;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-200, .bg-lime-200 .dropdown ul {
   background-color: #E6EE9C;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-200 {
   border-color: #E6EE9C;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-300 {
   color: #DCE775;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-300, .bg-lime-300 .dropdown ul {
   background-color: #DCE775;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-300 {
   border-color: #DCE775;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-400 {
   color: #D4E157;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-400, .bg-lime-400 .dropdown ul {
   background-color: #D4E157;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-400 {
   border-color: #D4E157;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-500 {
   color: #CDDC39;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-500, .bg-lime-500 .dropdown ul {
   background-color: #CDDC39;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-500 {
   border-color: #CDDC39;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-600 {
   color: #C0CA33;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-600, .bg-lime-600 .dropdown ul {
   background-color: #C0CA33;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-600 {
   border-color: #C0CA33;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-700 {
   color: #AFB42B;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-700, .bg-lime-700 .dropdown ul {
   background-color: #AFB42B;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-700 {
   border-color: #AFB42B;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-800 {
   color: #9E9D24;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-800, .bg-lime-800 .dropdown ul {
   background-color: #9E9D24;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-800 {
   border-color: #9E9D24;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-900 {
   color: #827717;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-900, .bg-lime-900 .dropdown ul {
   background-color: #827717;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-900 {
   border-color: #827717;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-A100 {
   color: #F4FF81;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-A100, .bg-lime-A100 .dropdown ul {
   background-color: #F4FF81;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-A100 {
   border-color: #F4FF81;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-A200 {
   color: #EEFF41;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-A200, .bg-lime-A200 .dropdown ul {
   background-color: #EEFF41;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-A200 {
   border-color: #EEFF41;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-A400 {
   color: #C6FF00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-A400, .bg-lime-A400 .dropdown ul {
   background-color: #C6FF00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-A400 {
   border-color: #C6FF00;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .lime-A700 {
   color: #AEEA00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-lime-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-lime-A700, .bg-lime-A700 .dropdown ul {
   background-color: #AEEA00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-lime-A700 {
   border-color: #AEEA00;
 }
@@ -2970,237 +2970,237 @@ a.bg-hover-lime:hover, ul.bg-hover-lime > li > a:hover {
   color: #FFEB3B;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-yellow {
+/* line 328, ../sass/components/_colors.scss */
+.bg-yellow, .bg-yellow .dropdown ul {
   background-color: #FFEB3B !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-yellow {
   border-color: #FFEB3B;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-yellow:hover, ul.hover-border-yellow > li > a:hover {
   border-color: #FFEB3B;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-yellow:hover, ul.hover-yellow > li > a:hover {
   color: #FFEB3B;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-yellow:hover, ul.bg-hover-yellow > li > a:hover {
   background: #FFEB3B !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-50 {
   color: #FFFDE7;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-50, .bg-yellow-50 .dropdown ul {
   background-color: #FFFDE7;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-50 {
   border-color: #FFFDE7;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-100 {
   color: #FFF9C4;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-100, .bg-yellow-100 .dropdown ul {
   background-color: #FFF9C4;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-100 {
   border-color: #FFF9C4;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-200 {
   color: #FFF59D;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-200, .bg-yellow-200 .dropdown ul {
   background-color: #FFF59D;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-200 {
   border-color: #FFF59D;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-300 {
   color: #FFF176;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-300, .bg-yellow-300 .dropdown ul {
   background-color: #FFF176;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-300 {
   border-color: #FFF176;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-400 {
   color: #FFEE58;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-400, .bg-yellow-400 .dropdown ul {
   background-color: #FFEE58;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-400 {
   border-color: #FFEE58;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-500 {
   color: #FFEB3B;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-500, .bg-yellow-500 .dropdown ul {
   background-color: #FFEB3B;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-500 {
   border-color: #FFEB3B;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-600 {
   color: #FDD835;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-600, .bg-yellow-600 .dropdown ul {
   background-color: #FDD835;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-600 {
   border-color: #FDD835;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-700 {
   color: #FBC02D;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-700, .bg-yellow-700 .dropdown ul {
   background-color: #FBC02D;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-700 {
   border-color: #FBC02D;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-800 {
   color: #F9A825;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-800, .bg-yellow-800 .dropdown ul {
   background-color: #F9A825;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-800 {
   border-color: #F9A825;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-900 {
   color: #F57F17;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-900, .bg-yellow-900 .dropdown ul {
   background-color: #F57F17;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-900 {
   border-color: #F57F17;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-A100 {
   color: #FFFF8D;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-A100, .bg-yellow-A100 .dropdown ul {
   background-color: #FFFF8D;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-A100 {
   border-color: #FFFF8D;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-A200 {
   color: #FFFF00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-A200, .bg-yellow-A200 .dropdown ul {
   background-color: #FFFF00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-A200 {
   border-color: #FFFF00;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-A400 {
   color: #FFEA00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-A400, .bg-yellow-A400 .dropdown ul {
   background-color: #FFEA00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-A400 {
   border-color: #FFEA00;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .yellow-A700 {
   color: #FFD600;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-yellow-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-yellow-A700, .bg-yellow-A700 .dropdown ul {
   background-color: #FFD600;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-yellow-A700 {
   border-color: #FFD600;
 }
@@ -3210,237 +3210,237 @@ a.bg-hover-yellow:hover, ul.bg-hover-yellow > li > a:hover {
   color: #FFC107;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-amber {
+/* line 328, ../sass/components/_colors.scss */
+.bg-amber, .bg-amber .dropdown ul {
   background-color: #FFC107 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-amber {
   border-color: #FFC107;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-amber:hover, ul.hover-border-amber > li > a:hover {
   border-color: #FFC107;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-amber:hover, ul.hover-amber > li > a:hover {
   color: #FFC107;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-amber:hover, ul.bg-hover-amber > li > a:hover {
   background: #FFC107 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-50 {
   color: #FFF8E1;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-50, .bg-amber-50 .dropdown ul {
   background-color: #FFF8E1;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-50 {
   border-color: #FFF8E1;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-100 {
   color: #FFECB3;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-100, .bg-amber-100 .dropdown ul {
   background-color: #FFECB3;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-100 {
   border-color: #FFECB3;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-200 {
   color: #FFE082;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-200, .bg-amber-200 .dropdown ul {
   background-color: #FFE082;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-200 {
   border-color: #FFE082;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-300 {
   color: #FFD54F;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-300, .bg-amber-300 .dropdown ul {
   background-color: #FFD54F;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-300 {
   border-color: #FFD54F;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-400 {
   color: #FFCA28;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-400, .bg-amber-400 .dropdown ul {
   background-color: #FFCA28;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-400 {
   border-color: #FFCA28;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-500 {
   color: #FFC107;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-500, .bg-amber-500 .dropdown ul {
   background-color: #FFC107;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-500 {
   border-color: #FFC107;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-600 {
   color: #FFB300;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-600, .bg-amber-600 .dropdown ul {
   background-color: #FFB300;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-600 {
   border-color: #FFB300;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-700 {
   color: #FFA000;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-700, .bg-amber-700 .dropdown ul {
   background-color: #FFA000;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-700 {
   border-color: #FFA000;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-800 {
   color: #FF8F00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-800, .bg-amber-800 .dropdown ul {
   background-color: #FF8F00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-800 {
   border-color: #FF8F00;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-900 {
   color: #FF6F00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-900, .bg-amber-900 .dropdown ul {
   background-color: #FF6F00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-900 {
   border-color: #FF6F00;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-A100 {
   color: #FFE57F;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-A100, .bg-amber-A100 .dropdown ul {
   background-color: #FFE57F;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-A100 {
   border-color: #FFE57F;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-A200 {
   color: #FFD740;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-A200, .bg-amber-A200 .dropdown ul {
   background-color: #FFD740;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-A200 {
   border-color: #FFD740;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-A400 {
   color: #FFC400;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-A400, .bg-amber-A400 .dropdown ul {
   background-color: #FFC400;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-A400 {
   border-color: #FFC400;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .amber-A700 {
   color: #FFAB00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-amber-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-amber-A700, .bg-amber-A700 .dropdown ul {
   background-color: #FFAB00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-amber-A700 {
   border-color: #FFAB00;
 }
@@ -3450,237 +3450,237 @@ a.bg-hover-amber:hover, ul.bg-hover-amber > li > a:hover {
   color: #FF9800;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-orange {
+/* line 328, ../sass/components/_colors.scss */
+.bg-orange, .bg-orange .dropdown ul {
   background-color: #FF9800 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-orange {
   border-color: #FF9800;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-orange:hover, ul.hover-border-orange > li > a:hover {
   border-color: #FF9800;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-orange:hover, ul.hover-orange > li > a:hover {
   color: #FF9800;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-orange:hover, ul.bg-hover-orange > li > a:hover {
   background: #FF9800 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-50 {
   color: #FFF3E0;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-50, .bg-orange-50 .dropdown ul {
   background-color: #FFF3E0;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-50 {
   border-color: #FFF3E0;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-100 {
   color: #FFE0B2;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-100, .bg-orange-100 .dropdown ul {
   background-color: #FFE0B2;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-100 {
   border-color: #FFE0B2;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-200 {
   color: #FFCC80;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-200, .bg-orange-200 .dropdown ul {
   background-color: #FFCC80;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-200 {
   border-color: #FFCC80;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-300 {
   color: #FFB74D;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-300, .bg-orange-300 .dropdown ul {
   background-color: #FFB74D;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-300 {
   border-color: #FFB74D;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-400 {
   color: #FFA726;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-400, .bg-orange-400 .dropdown ul {
   background-color: #FFA726;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-400 {
   border-color: #FFA726;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-500 {
   color: #FF9800;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-500, .bg-orange-500 .dropdown ul {
   background-color: #FF9800;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-500 {
   border-color: #FF9800;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-600 {
   color: #FB8C00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-600, .bg-orange-600 .dropdown ul {
   background-color: #FB8C00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-600 {
   border-color: #FB8C00;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-700 {
   color: #F57C00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-700, .bg-orange-700 .dropdown ul {
   background-color: #F57C00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-700 {
   border-color: #F57C00;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-800 {
   color: #EF6C00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-800, .bg-orange-800 .dropdown ul {
   background-color: #EF6C00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-800 {
   border-color: #EF6C00;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-900 {
   color: #E65100;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-900, .bg-orange-900 .dropdown ul {
   background-color: #E65100;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-900 {
   border-color: #E65100;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-A100 {
   color: #FFD180;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-A100, .bg-orange-A100 .dropdown ul {
   background-color: #FFD180;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-A100 {
   border-color: #FFD180;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-A200 {
   color: #FFAB40;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-A200, .bg-orange-A200 .dropdown ul {
   background-color: #FFAB40;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-A200 {
   border-color: #FFAB40;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-A400 {
   color: #FF9100;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-A400, .bg-orange-A400 .dropdown ul {
   background-color: #FF9100;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-A400 {
   border-color: #FF9100;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .orange-A700 {
   color: #FF6D00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-orange-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-orange-A700, .bg-orange-A700 .dropdown ul {
   background-color: #FF6D00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-orange-A700 {
   border-color: #FF6D00;
 }
@@ -3690,237 +3690,237 @@ a.bg-hover-orange:hover, ul.bg-hover-orange > li > a:hover {
   color: #FF5722;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-deep-orange {
+/* line 328, ../sass/components/_colors.scss */
+.bg-deep-orange, .bg-deep-orange .dropdown ul {
   background-color: #FF5722 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-deep-orange {
   border-color: #FF5722;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-deep-orange:hover, ul.hover-border-deep-orange > li > a:hover {
   border-color: #FF5722;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-deep-orange:hover, ul.hover-deep-orange > li > a:hover {
   color: #FF5722;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-deep-orange:hover, ul.bg-hover-deep-orange > li > a:hover {
   background: #FF5722 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-50 {
   color: #FBE9E7;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-50, .bg-deep-orange-50 .dropdown ul {
   background-color: #FBE9E7;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-50 {
   border-color: #FBE9E7;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-100 {
   color: #FFCCBC;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-100, .bg-deep-orange-100 .dropdown ul {
   background-color: #FFCCBC;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-100 {
   border-color: #FFCCBC;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-200 {
   color: #FFAB91;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-200, .bg-deep-orange-200 .dropdown ul {
   background-color: #FFAB91;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-200 {
   border-color: #FFAB91;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-300 {
   color: #FF8A65;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-300, .bg-deep-orange-300 .dropdown ul {
   background-color: #FF8A65;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-300 {
   border-color: #FF8A65;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-400 {
   color: #FF7043;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-400, .bg-deep-orange-400 .dropdown ul {
   background-color: #FF7043;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-400 {
   border-color: #FF7043;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-500 {
   color: #FF5722;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-500, .bg-deep-orange-500 .dropdown ul {
   background-color: #FF5722;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-500 {
   border-color: #FF5722;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-600 {
   color: #F4511E;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-600, .bg-deep-orange-600 .dropdown ul {
   background-color: #F4511E;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-600 {
   border-color: #F4511E;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-700 {
   color: #E64A19;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-700, .bg-deep-orange-700 .dropdown ul {
   background-color: #E64A19;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-700 {
   border-color: #E64A19;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-800 {
   color: #D84315;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-800, .bg-deep-orange-800 .dropdown ul {
   background-color: #D84315;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-800 {
   border-color: #D84315;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-900 {
   color: #BF360C;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-900, .bg-deep-orange-900 .dropdown ul {
   background-color: #BF360C;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-900 {
   border-color: #BF360C;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-A100 {
   color: #FF9E80;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-A100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-A100, .bg-deep-orange-A100 .dropdown ul {
   background-color: #FF9E80;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-A100 {
   border-color: #FF9E80;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-A200 {
   color: #FF6E40;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-A200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-A200, .bg-deep-orange-A200 .dropdown ul {
   background-color: #FF6E40;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-A200 {
   border-color: #FF6E40;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-A400 {
   color: #FF3D00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-A400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-A400, .bg-deep-orange-A400 .dropdown ul {
   background-color: #FF3D00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-A400 {
   border-color: #FF3D00;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .deep-orange-A700 {
   color: #DD2C00;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-deep-orange-A700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-deep-orange-A700, .bg-deep-orange-A700 .dropdown ul {
   background-color: #DD2C00;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-deep-orange-A700 {
   border-color: #DD2C00;
 }
@@ -3930,177 +3930,177 @@ a.bg-hover-deep-orange:hover, ul.bg-hover-deep-orange > li > a:hover {
   color: #795548;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-brown {
+/* line 328, ../sass/components/_colors.scss */
+.bg-brown, .bg-brown .dropdown ul {
   background-color: #795548 !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-brown {
   border-color: #795548;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-brown:hover, ul.hover-border-brown > li > a:hover {
   border-color: #795548;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-brown:hover, ul.hover-brown > li > a:hover {
   color: #795548;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-brown:hover, ul.bg-hover-brown > li > a:hover {
   background: #795548 !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-50 {
   color: #EFEBE9;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-50, .bg-brown-50 .dropdown ul {
   background-color: #EFEBE9;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-50 {
   border-color: #EFEBE9;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-100 {
   color: #D7CCC8;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-100, .bg-brown-100 .dropdown ul {
   background-color: #D7CCC8;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-100 {
   border-color: #D7CCC8;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-200 {
   color: #BCAAA4;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-200, .bg-brown-200 .dropdown ul {
   background-color: #BCAAA4;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-200 {
   border-color: #BCAAA4;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-300 {
   color: #A1887F;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-300, .bg-brown-300 .dropdown ul {
   background-color: #A1887F;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-300 {
   border-color: #A1887F;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-400 {
   color: #8D6E63;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-400, .bg-brown-400 .dropdown ul {
   background-color: #8D6E63;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-400 {
   border-color: #8D6E63;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-500 {
   color: #795548;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-500, .bg-brown-500 .dropdown ul {
   background-color: #795548;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-500 {
   border-color: #795548;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-600 {
   color: #6D4C41;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-600, .bg-brown-600 .dropdown ul {
   background-color: #6D4C41;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-600 {
   border-color: #6D4C41;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-700 {
   color: #5D4037;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-700, .bg-brown-700 .dropdown ul {
   background-color: #5D4037;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-700 {
   border-color: #5D4037;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-800 {
   color: #4E342E;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-800, .bg-brown-800 .dropdown ul {
   background-color: #4E342E;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-800 {
   border-color: #4E342E;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .brown-900 {
   color: #3E2723;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-brown-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-brown-900, .bg-brown-900 .dropdown ul {
   background-color: #3E2723;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-brown-900 {
   border-color: #3E2723;
 }
@@ -4110,177 +4110,177 @@ a.bg-hover-brown:hover, ul.bg-hover-brown > li > a:hover {
   color: #9E9E9E;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-grey {
+/* line 328, ../sass/components/_colors.scss */
+.bg-grey, .bg-grey .dropdown ul {
   background-color: #9E9E9E !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-grey {
   border-color: #9E9E9E;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-grey:hover, ul.hover-border-grey > li > a:hover {
   border-color: #9E9E9E;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-grey:hover, ul.hover-grey > li > a:hover {
   color: #9E9E9E;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-grey:hover, ul.bg-hover-grey > li > a:hover {
   background: #9E9E9E !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-50 {
   color: #FAFAFA;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-50, .bg-grey-50 .dropdown ul {
   background-color: #FAFAFA;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-50 {
   border-color: #FAFAFA;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-100 {
   color: #F5F5F5;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-100, .bg-grey-100 .dropdown ul {
   background-color: #F5F5F5;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-100 {
   border-color: #F5F5F5;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-200 {
   color: #EEEEEE;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-200, .bg-grey-200 .dropdown ul {
   background-color: #EEEEEE;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-200 {
   border-color: #EEEEEE;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-300 {
   color: #E0E0E0;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-300, .bg-grey-300 .dropdown ul {
   background-color: #E0E0E0;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-300 {
   border-color: #E0E0E0;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-400 {
   color: #BDBDBD;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-400, .bg-grey-400 .dropdown ul {
   background-color: #BDBDBD;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-400 {
   border-color: #BDBDBD;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-500 {
   color: #9E9E9E;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-500, .bg-grey-500 .dropdown ul {
   background-color: #9E9E9E;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-500 {
   border-color: #9E9E9E;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-600 {
   color: #757575;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-600, .bg-grey-600 .dropdown ul {
   background-color: #757575;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-600 {
   border-color: #757575;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-700 {
   color: #616161;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-700, .bg-grey-700 .dropdown ul {
   background-color: #616161;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-700 {
   border-color: #616161;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-800 {
   color: #424242;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-800, .bg-grey-800 .dropdown ul {
   background-color: #424242;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-800 {
   border-color: #424242;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .grey-900 {
   color: #212121;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-grey-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-grey-900, .bg-grey-900 .dropdown ul {
   background-color: #212121;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-grey-900 {
   border-color: #212121;
 }
@@ -4290,257 +4290,257 @@ a.bg-hover-grey:hover, ul.bg-hover-grey > li > a:hover {
   color: #607D8B;
 }
 
-/* line 326, ../sass/components/_colors.scss */
-.bg-blue-gray {
+/* line 328, ../sass/components/_colors.scss */
+.bg-blue-gray, .bg-blue-gray .dropdown ul {
   background-color: #607D8B !important;
 }
 
-/* line 329, ../sass/components/_colors.scss */
+/* line 332, ../sass/components/_colors.scss */
 .border-blue-gray {
   border-color: #607D8B;
 }
 
-/* line 332, ../sass/components/_colors.scss */
+/* line 335, ../sass/components/_colors.scss */
 a.hover-border-blue-gray:hover, ul.hover-border-blue-gray > li > a:hover {
   border-color: #607D8B;
 }
 
-/* line 335, ../sass/components/_colors.scss */
+/* line 338, ../sass/components/_colors.scss */
 a.hover-blue-gray:hover, ul.hover-blue-gray > li > a:hover {
   color: #607D8B;
 }
 
-/* line 338, ../sass/components/_colors.scss */
+/* line 341, ../sass/components/_colors.scss */
 a.bg-hover-blue-gray:hover, ul.bg-hover-blue-gray > li > a:hover {
   background: #607D8B !important;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-50 {
   color: #ECEFF1;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-50 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-50, .bg-blue-gray-50 .dropdown ul {
   background-color: #ECEFF1;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-50 {
   border-color: #ECEFF1;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-100 {
   color: #CFD8DC;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-100 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-100, .bg-blue-gray-100 .dropdown ul {
   background-color: #CFD8DC;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-100 {
   border-color: #CFD8DC;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-200 {
   color: #B0BEC5;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-200 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-200, .bg-blue-gray-200 .dropdown ul {
   background-color: #B0BEC5;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-200 {
   border-color: #B0BEC5;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-300 {
   color: #90A4AE;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-300 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-300, .bg-blue-gray-300 .dropdown ul {
   background-color: #90A4AE;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-300 {
   border-color: #90A4AE;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-400 {
   color: #78909C;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-400 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-400, .bg-blue-gray-400 .dropdown ul {
   background-color: #78909C;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-400 {
   border-color: #78909C;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-500 {
   color: #607D8B;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-500 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-500, .bg-blue-gray-500 .dropdown ul {
   background-color: #607D8B;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-500 {
   border-color: #607D8B;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-600 {
   color: #546E7A;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-600 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-600, .bg-blue-gray-600 .dropdown ul {
   background-color: #546E7A;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-600 {
   border-color: #546E7A;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-700 {
   color: #455A64;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-700 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-700, .bg-blue-gray-700 .dropdown ul {
   background-color: #455A64;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-700 {
   border-color: #455A64;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-800 {
   color: #37474F;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-800 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-800, .bg-blue-gray-800 .dropdown ul {
   background-color: #37474F;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-800 {
   border-color: #37474F;
 }
 
-/* line 342, ../sass/components/_colors.scss */
+/* line 345, ../sass/components/_colors.scss */
 .blue-gray-900 {
   color: #263238;
 }
 
-/* line 345, ../sass/components/_colors.scss */
-.bg-blue-gray-900 {
+/* line 349, ../sass/components/_colors.scss */
+.bg-blue-gray-900, .bg-blue-gray-900 .dropdown ul {
   background-color: #263238;
 }
 
-/* line 349, ../sass/components/_colors.scss */
+/* line 354, ../sass/components/_colors.scss */
 .border-blue-gray-900 {
   border-color: #263238;
 }
 
-/* line 358, ../sass/components/_colors.scss */
+/* line 363, ../sass/components/_colors.scss */
 .dark-primary {
   color: rgba(0, 0, 0, 0.87) !important;
 }
 
-/* line 361, ../sass/components/_colors.scss */
+/* line 366, ../sass/components/_colors.scss */
 a.dark-primary-hover:hover, a.dark-primary-hover.active {
   color: rgba(0, 0, 0, 0.87) !important;
 }
 
-/* line 358, ../sass/components/_colors.scss */
+/* line 363, ../sass/components/_colors.scss */
 .dark-secondary {
   color: rgba(0, 0, 0, 0.54) !important;
 }
 
-/* line 361, ../sass/components/_colors.scss */
+/* line 366, ../sass/components/_colors.scss */
 a.dark-secondary-hover:hover, a.dark-secondary-hover.active {
   color: rgba(0, 0, 0, 0.54) !important;
 }
 
-/* line 358, ../sass/components/_colors.scss */
+/* line 363, ../sass/components/_colors.scss */
 .dark-hint {
   color: rgba(0, 0, 0, 0.38) !important;
 }
 
-/* line 361, ../sass/components/_colors.scss */
+/* line 366, ../sass/components/_colors.scss */
 a.dark-hint-hover:hover, a.dark-hint-hover.active {
   color: rgba(0, 0, 0, 0.38) !important;
 }
 
-/* line 358, ../sass/components/_colors.scss */
+/* line 363, ../sass/components/_colors.scss */
 .dark-divider {
   color: rgba(0, 0, 0, 0.12) !important;
 }
 
-/* line 361, ../sass/components/_colors.scss */
+/* line 366, ../sass/components/_colors.scss */
 a.dark-divider-hover:hover, a.dark-divider-hover.active {
   color: rgba(0, 0, 0, 0.12) !important;
 }
 
-/* line 358, ../sass/components/_colors.scss */
+/* line 363, ../sass/components/_colors.scss */
 .light-primary {
   color: white !important;
 }
 
-/* line 361, ../sass/components/_colors.scss */
+/* line 366, ../sass/components/_colors.scss */
 a.light-primary-hover:hover, a.light-primary-hover.active {
   color: white !important;
 }
 
-/* line 358, ../sass/components/_colors.scss */
+/* line 363, ../sass/components/_colors.scss */
 .light-secondary {
   color: rgba(255, 255, 255, 0.7) !important;
 }
 
-/* line 361, ../sass/components/_colors.scss */
+/* line 366, ../sass/components/_colors.scss */
 a.light-secondary-hover:hover, a.light-secondary-hover.active {
   color: rgba(255, 255, 255, 0.7) !important;
 }
 
-/* line 358, ../sass/components/_colors.scss */
+/* line 363, ../sass/components/_colors.scss */
 .light-hint {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* line 361, ../sass/components/_colors.scss */
+/* line 366, ../sass/components/_colors.scss */
 a.light-hint-hover:hover, a.light-hint-hover.active {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* line 358, ../sass/components/_colors.scss */
+/* line 363, ../sass/components/_colors.scss */
 .light-divider {
   color: rgba(255, 255, 255, 0.12) !important;
 }
 
-/* line 361, ../sass/components/_colors.scss */
+/* line 366, ../sass/components/_colors.scss */
 a.light-divider-hover:hover, a.light-divider-hover.active {
   color: rgba(255, 255, 255, 0.12) !important;
 }
@@ -9580,7 +9580,6 @@ ul.nav li.dropdown ul {
   position: absolute;
   margin-top: -1px;
   z-index: 97;
-  background: #843177;
   left: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   width: 100%;
