@@ -3,38 +3,19 @@
 class Esel
 {
     /**
-     * Twig Enviroment variable.
+     * Template Renderer.
      *
-     * @var Twig_Environment
+     * @var EselRenderer
      */
-    private $twig = null;
-    /**
-     * Data that goes to template.
-     *
-     * @var array
-     */
-    private $data = array();
+    public $renderer = null;
 
     /**
      * Loading vendor classes.
      */
     private function init()
     {
-        require_once SL_CORE.'vendor/autoload.php';
-        Twig_Autoloader::register();
-        $loader = new Twig_Loader_Filesystem(array(SL_TEMPLATES, SL_PAGES, SL_TESTS.'tpl'));
-        $this->twig = new Twig_Environment($loader, array('cache' => SL_TEMPLATES_CACHE, 'debug' => true));
-        $this->twig->addExtension(new Twig_Extension_Debug());
-        $this->twig->registerUndefinedFunctionCallback(function ($functionName) {
-            $tmp = null;
-            if (preg_match('/([^_]+)_(.*)/', $functionName, $tmp)) {
-                $module = $this->loadModule($tmp[1]);
-
-                return new Twig_SimpleFunction($functionName, $tmp[1].'::'.$tmp[2]);
-            }
-
-            return false;
-        });
+        require_once SL_CORE.'classes/EselRenderer.php';
+        $this->renderer = new EselRenderer();
     }
     public function __construct()
     {
@@ -60,20 +41,15 @@ class Esel
 
         return htmlspecialchars($var);
     }
-
     /**
-     * Renders given template file.
-     *
-     * @param string $filename
-     *
-     * @return string $output
+     * Remove multiple stashes
+     * @param  string $path Path to fix
+     * @return string $path With no repetative slashes
      */
-    public function render($filename)
-    {
-        $output = $this->twig->render($filename, $this->data);
-
-        return $output;
+    public static function fixPath($path){
+      return preg_replace('/(\/){2,}/i', '/', $path);
     }
+
     /**
      * Sets up corresponding header and redirects to sprecified url.
      *
@@ -107,7 +83,7 @@ class Esel
      *
      * @return string $template Template file
      */
-    public function route($uri, $sendHeaders = true)
+    public function route($uri, $sendHeaders = 1)
     {
         if (preg_match("/index(\/?)/", $uri)) {
             $rootUri = preg_replace('/(\/){2,}/i', '/', (preg_replace("/index(\/?)/", '', $uri).'/'));
@@ -117,13 +93,13 @@ class Esel
             $uri = $rootUri;
         }
         if (!preg_match('/\/$/', $uri) || (preg_match('/\/\//', $uri))) {
-            $realUri = preg_replace('/(\/){2,}/i', '/', ($uri.'/'));
+            $realUri = self::fixPath($uri.'/');
             if ($sendHeaders) {
                 self::respondWithCode(301, $realUri);
             }
             $uri = $realUri;
         }
-        $this->data['uri'] = $uri;
+        $this->renderer->setData('uri',self::fixPath("/".$uri));
         if (empty($uri) || ($uri == '/')) {
             $uri = 'index';
         }
@@ -155,7 +131,7 @@ class Esel
         }
 
         $template = $this->route($uri);
-        $output = $this->render($template);
+        $output = $this->renderer->render($template);
 
         return $output;
     }
@@ -177,38 +153,14 @@ class Esel
      *
      * @param string $moduleName
      */
-    public function loadModule($moduleName)
+    public static function loadModule($moduleName)
     {
         require_once SL_CORE.'/classes/EselModule.php';
-        if (SL_DEV||EselModule::isSafe($moduleName)) {
+        if (SL_DEV || EselModule::isSafe($moduleName)) {
             require_once SL_MODULES.$moduleName.'/Module.php';
         }
     }
-    /**
-     * Adds data to the array that template gets.
-     *
-     * @param mixed $key
-     * @param mixed $value
-     */
-    public function addData($key, $value)
-    {
-        $this->data[$key] = $value;
-    }
-    /**
-     * Retuns array of data or it's element if key specified.
-     *
-     * @param mixed $key
-     *
-     * @return mixed $data
-     */
-    public function getData($key = null)
-    {
-        if ($key === null) {
-            return $this->data;
-        }
 
-        return $this->data[$key];
-    }
     /**
      * Idiorm wrapper.
      *
@@ -218,35 +170,42 @@ class Esel
      */
     public static function for_table($table)
     {
+        self::connect();
 
-            self::connect();
-            return ORM::for_table(SL_DB_PREFIX.$table);
-
+        return ORM::for_table(SL_DB_PREFIX.$table);
     }
-
-    public static function connect(){
-      if (!class_exists('ORM')) {
-          require_once SL_CORE.'lib/idiorm.php';
-      }
-      ORM::configure(SL_DB_TYPE.':host='.SL_DB_HOST.';dbname='.SL_DB_NAME);
-      ORM::configure('username', SL_DB_USER);
-      ORM::configure('password', SL_DB_PASS);
+    /**
+     * Connects to the database
+     * @return Exception if failed
+     */
+    public static function connect()
+    {
+        if (!class_exists('ORM')) {
+            require_once SL_CORE.'lib/idiorm.php';
+        }
+        ORM::configure(SL_DB_TYPE.':host='.SL_DB_HOST.';dbname='.SL_DB_NAME);
+        ORM::configure('username', SL_DB_USER);
+        ORM::configure('password', SL_DB_PASS);
     }
-
+    /**
+     * Creates specified table with configured prefix
+     * @param  String $table   Name of the table to be created without prefix
+     * @param  Array $columns Array of pairs "column_name"=>"TYPE(SIZE) |NOT| NULL DEFAULT ..."
+     * @return Exception if failed
+     */
     public static function create_table($table, $columns)
     {
-        if(empty($columns)){
-          throw new Exception("Cannot create table '.$table.'- no columns provived");
+        if (empty($columns)) {
+            throw new Exception("Cannot create table '.$table.'- no columns provived");
         }
         $sql = '
         CREATE TABLE IF NOT EXISTS `'.SL_DB_PREFIX.$table.'` (
         `id` int(11) NOT NULL auto_increment, ';
-        foreach ($columns as $column=>$properties) {
-          $sql.='`'.$column.'` '.$properties.', ';
+        foreach ($columns as $column => $properties) {
+            $sql .= '`'.$column.'` '.$properties.', ';
         }
         $sql .= 'PRIMARY KEY  (`id`));';
         self::connect();
         ORM::raw_execute($sql);
-
     }
 }

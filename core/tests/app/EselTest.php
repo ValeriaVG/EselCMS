@@ -35,14 +35,14 @@ class EselTest extends TestCase
     /**
      * Test renderer.
      *
-     * @covers Esel::render
+     * @covers EselRenderer::render
      */
     public function testCanRenderTwigTemplate()
     {
 
         //{{ 2 + 3}}!
         $templateFile = 'test.twig';
-        $this->assertEquals('5!', trim($this->Esel->render($templateFile)));
+        $this->assertEquals('5!', trim($this->Esel->renderer->render($templateFile)));
     }
 
     /**
@@ -133,15 +133,15 @@ class EselTest extends TestCase
         /**
          * Tesing data adding.
          *
-         * @covers Esel::addData
-         * @covers Esel::getData
+         * @covers EselRenderer::setData
+         * @covers EselRenderer::getData
          */
-        public function testCanAddData()
+        public function testCanSetData()
         {
-          $this->Esel->addData("test","data");
-          $data=$this->Esel->getData("test");
+          $this->Esel->renderer->setData("test","data");
+          $data=$this->Esel->renderer->getData("test");
           $this->assertEquals("data",$data);
-          $this->assertEquals(array("test"=>"data"),$this->Esel->getData());
+          $this->assertEquals(array("test"=>"data"),$this->Esel->renderer->getData());
 
         }
         /**

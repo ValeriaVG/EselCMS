@@ -10,7 +10,7 @@ class EselPage{
       throw new Exception("Page doesn't exist at ".$relativePath);
     }
     $url=preg_replace("/(\/|)((index|)\.html)/","",$relativePath);
-    return str_replace("//","/","/".$url."/");
+    return Esel::fixPath("/".$url."/");
   }
 
   public static function getTemplate($page){
