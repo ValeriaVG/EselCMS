@@ -7,7 +7,7 @@ class EselPage{
 
   public static function makeUrl($relativePath){
     if(!file_exists(SL_PAGES.$relativePath)){
-      throw new Exception("Page doesn't exist at ".$relativePath);
+      throw new Exception("Page doesn't exist at ".SL_PAGES.$relativePath);
     }
     $url=preg_replace("/(\/|)((index|)\.html)/","",$relativePath);
     return Esel::fixPath("/".$url."/");

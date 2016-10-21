@@ -15,9 +15,10 @@ function getPages(dir,start,limit){
     method:"POST",
     data:{"dir":dir,"start":start,"limit":limit,"all":1},
     success:function(res){
+      console.log(res);
       var p=[];
       var i=0;
-      res.data.pages.forEach(function(v){
+      res.data.items.forEach(function(v){
         p[i]=v;
         p[i].active=new RegExp(p[i].path+"$").test(document.location.href);
         i++;

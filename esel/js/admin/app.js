@@ -58,7 +58,7 @@ var app=new Vue({
 });
 
 
-if($("#page-edit").size==1){
+if($("#page-edit").size()==1){
 var pEdit=new Vue({
   el: "#page-edit",
   data: {

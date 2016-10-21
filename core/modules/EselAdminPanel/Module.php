@@ -34,60 +34,33 @@ class EselAdminPanel extends EselModule
     public static function getPagesList($dir = '', $start = 0, $limit = 10, $all = 0)
     {
         self::beforeLoad();
-        $path = str_replace('//', '/', SL_PAGES.$dir.'/');
-        $list = array('count' => 0, 'pages' => array());
-        if (!is_dir($path)) {
-            return $list;
-        }
         $pattern = '*.html';
         if ($all == 1) {
             $pattern = '*';
         }
 
-        $iterator = new GlobIterator($path.$pattern, FilesystemIterator::SKIP_DOTS);
-        try {
-            $list['count'] = $iterator->count();
-        } catch (Exception $e) {
-            return $list;
-        }
-        if ($list['count'] == 0) {
-            return $list;
-        }
-        if ($start >= $list['count']) {
-            $start = 0;
-        }
-        $iterator->seek($start);
-
-        $thisFile = 0;
-
-        while ($iterator->valid()) {
-            $curr = $iterator->current();
-            $file = $curr->getFilename();
-
-            if (($thisFile >= $limit) && ($limit > 0)) {
-                break;
-            }
-
-            ++$thisFile;
-            $iterator->next();
-            $page = new EselPage();
-
-            $page->name = $file;
-            $page->folder = is_dir($path.$file);
-            $page->path = $dir.$file;
-            if ($page->folder) {
-                $page->path .= '/';
-            } else {
-                $m = array();
-                if (preg_match('/{# @name (.+)? #}/', file_get_contents($path.$file), $m)) {
-                    $page->name = $m[1];
-                }
-            }
-            $page->url = $page->makeUrl($dir.$file);
-            array_push($list['pages'], $page);
-        }
-
-        return $list;
+        $constructPages=function($iterator){
+          $curr=$iterator->current();
+          $file=$curr->getFilename();
+          $path=Esel::fixPath($curr->getPath()."/".$file);
+          $page = new EselPage();
+          $page->name = $file;
+          $page->folder = is_dir($path);
+          $page->path = Esel::fixPath(str_replace(SL_PAGES,"/",$path));
+          if ($page->folder) {
+              $page->path .= '/';
+          } else {
+              $tmp = array();
+              if (preg_match('/{# @name (.+)? #}/', file_get_contents($path), $tmp)) {
+                  $page->name = $tmp[1];
+              }
+          }
+          $page->url = $page->makeUrl($page->path);
+          return $page;
+        };
+        Esel::loadModule("EselPaginator");
+        $folder=Esel::fixPath(SL_PAGES."/".$dir."/");
+        return EselPaginator::getList($folder,$pattern,$start,$limit,$constructPages);
     }
     /**
      * Templates pager
@@ -99,50 +72,40 @@ class EselAdminPanel extends EselModule
     public static function getTplList($dir = '', $start = 0, $limit = 0)
     {
         self::beforeLoad();
-        $path = SL_TEMPLATES.$dir;
-        $list = array('count' => 0, 'templates' => array());
+
         $pattern = '/*.twig';
-        $iterator = new GlobIterator($path.$pattern, FilesystemIterator::SKIP_DOTS);
-        try {
-            $list['count'] = $iterator->count();
-        } catch (Exception $e) {
-            return $list;
-        }
-        $iterator->seek($start);
+        $path = Esel::fixPath(SL_TEMPLATES.$dir);
+        $constructTpls=function($iterator){
+          $tpl=null;
+          $curr=$iterator->current();
+          $file=$curr->getFilename();
+          $path=Esel::fixPath($curr->getPath()."/".$file);
 
-        $thisFile = 0;
+          $template = file_get_contents($path);
+          if (!preg_match('/{# @hidden #}/', $template)) {
+              $tpl = new stdClass();
+              $tpl->name = $file;
+              $tmp = array();
+              if (preg_match('/{# @name (.+)? #}/', $template, $tmp)) {
+                  $tpl->name = $tmp[1];
+              }
+              $tpl->path = ltrim(Esel::fixPath(str_replace(SL_TEMPLATES,"/",$path)),"/");
 
-        while ($iterator->valid()) {
-            $curr = $iterator->current();
-            $file = $curr->getFilename();
+          }
 
-            if (($thisFile >= $limit) && ($limit > 0)) {
-                break;
-            }
 
-            ++$thisFile;
-            $iterator->next();
-            $template = file_get_contents($path.$file);
-            if (!preg_match('/{# @hidden #}/', $template)) {
-                $tpl = new stdClass();
-                $tpl->name = $file;
-                $m = array();
-                if (preg_match('/{# @name (.+)? #}/', $template, $m)) {
-                    $tpl->name = $m[1];
-                }
-                $tpl->path = $dir.$file;
-                array_push($list['templates'], $tpl);
-            }
-        }
-
-        //scan subfolders
+          return $tpl;
+        };
+        Esel::loadModule("EselPaginator");
+        $list=EselPaginator::getList($path,$pattern,$start,$limit,$constructTpls);
         foreach (glob($path.'/*', GLOB_ONLYDIR | GLOB_NOSORT) as $ndir) {
             $nlist = self::getTplList(str_replace($path, '', $ndir).'/', $start, $limit);
             $list['count'] += $nlist['count'];
-            $list['templates'] = array_merge($nlist['templates'], $list['templates']);
+            $list['items'] = array_merge($nlist['items'], $list['items']);
         }
-
         return $list;
+
+
     }
     /**
      * Page data parser
@@ -174,9 +137,9 @@ class EselAdminPanel extends EselModule
             $pageData->name = 'New Page';
             $pageData->new = true;
         }
-        $m = array();
-        if (preg_match('/{# @name (.+)? #}/', file_get_contents(SL_PAGES.$page), $m)) {
-            $pageData->name = $m[1];
+        $tmp = array();
+        if (preg_match('/{# @name (.+)? #}/', file_get_contents(SL_PAGES.$page), $tmp)) {
+            $pageData->name = $tmp[1];
         }
         if (!empty($pageData->template)) {
             $pageData->fields = EselPage::getTemplateBlocks($pageData->template);

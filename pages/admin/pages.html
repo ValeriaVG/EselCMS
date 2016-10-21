@@ -26,12 +26,14 @@
             <input type="text" name="url" v-model="url" value="{{ page.url }}">
             <input type="hidden" name="path" v-model="path" value="{{ page.path }}">
         </div>
-        {% if tpls.templates|length!=0 %}
+  
+        {% if tpls.items|length!=0 %}
         <div class="col tablet-4">
             <label> Page template:</label>
             <select name="template" v-on:change="changeTemplate()">
             <option value="">No template</option>
-            {% for tpl in tpls.templates %}
+
+            {% for tpl in tpls.items %}
             <option value="{{ tpl.path }}" {% if tpl.path == page.template %}selected{% endif %}>{{ tpl.name }}</option>
             {% endfor %}
           </select>

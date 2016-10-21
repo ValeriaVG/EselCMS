@@ -63,7 +63,7 @@ class EselAdminPanelTest extends TestCase
     public function testCanGetPagesList()
     {
       $list = EselAdminPanel::getPagesList('__test/');
-      $this->assertEquals('Test Page', $list["pages"][0]->name);
+      $this->assertEquals('Test Page', $list["items"][0]->name);
     }
 
     /**
@@ -72,8 +72,8 @@ class EselAdminPanelTest extends TestCase
     public function testCanGetTplList()
     {
       $list = EselAdminPanel::getTplList();
-      $this->assertEquals('Base Layout', $list["templates"][0]->name);
-      $this->assertEquals('base.twig', $list["templates"][0]->path);
+      $this->assertEquals('Base Layout', $list["items"][0]->name);
+      $this->assertEquals('base.twig', $list["items"][0]->path);
     }
 
     /**
