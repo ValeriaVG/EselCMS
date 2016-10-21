@@ -50,6 +50,7 @@ Roadmap
   - [x] Database support
 
 - [ ] Modules
+  - [x] Files paginator
   - [ ] Admin panel
     - [x] Resources tree
     - [x] CRUD pages
