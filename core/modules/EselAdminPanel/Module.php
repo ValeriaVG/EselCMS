@@ -18,15 +18,28 @@ class EselAdminPanel extends EselModule
     public static function getPagesList($dir = '', $start = 0, $limit = 20, $all = 0)
     {
         self::beforeLoad();
-        $path = SL_PAGES.$dir;
+        $path = str_replace("//","/",SL_PAGES.$dir."/");
         $list = array('count' => 0, 'pages' => array());
-        $pattern = '/*.html';
+        if(!is_dir($path)){
+          return $list;
+        }
+        $pattern = '*.html';
         if ($all == 1) {
-            $pattern = '/*';
+            $pattern = '*';
         }
 
         $iterator = new GlobIterator($path.$pattern, FilesystemIterator::SKIP_DOTS);
+        try{
         $list['count'] = $iterator->count();
+      }catch(Exception $e){
+         return $list;
+      }
+        if($list['count']==0){
+          return $list;
+        }
+        if($start>=$list['count']){
+          $start=0;
+        }
         $iterator->seek($start);
 
         $thisFile = 0;
