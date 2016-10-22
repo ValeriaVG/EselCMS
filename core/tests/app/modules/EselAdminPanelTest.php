@@ -116,6 +116,9 @@ class EselAdminPanelTest extends TestCase
 
     public function testCanLoggedIn()
     {
+      $_POST['login']="admin";
+      $_POST['password']="password";
+      EselAdminPanel::LogIn();
         $this->assertTrue(EselAdminPanel::isLoggedIn());
     }
 

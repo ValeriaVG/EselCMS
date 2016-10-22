@@ -11976,7 +11976,13 @@ html body .tablet-and-less-show {
   display: block;
 }
 /* line 6, ../sass/components/_form.scss */
-.form input[type=text], .form input[type=tel], .form input[type=email], .form input, .form select[type=text], .form select[type=tel], .form select[type=email], .form select {
+.form input[type=email],
+.form input[type=email],
+.form input[type=number],
+.form input[type=password],
+.form input[type=tel],
+.form input[type=text],
+.form select {
   border: 1px solid rgba(0, 0, 0, 0.12);
   padding-left: 12.5px;
   padding-right: 12.5px;
@@ -11985,7 +11991,7 @@ html body .tablet-and-less-show {
   box-sizing: border-box;
   height: 37.5px;
 }
-/* line 16, ../sass/components/_form.scss */
+/* line 22, ../sass/components/_form.scss */
 .form textarea {
   border: 1px solid rgba(0, 0, 0, 0.12);
   width: 100%;

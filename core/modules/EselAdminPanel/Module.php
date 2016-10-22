@@ -1,7 +1,5 @@
 <?php
-
-error_reporting(-1);
-ini_set('display_errors', true);
+session_start();
 class EselAdminPanel extends EselModule
 {
     /**
@@ -11,14 +9,41 @@ class EselAdminPanel extends EselModule
      */
     public static function beforeLoad()
     {
-        if (true) {
+        if (self::isLoggedIn()) {
             require_once SL_MODULES.'EselAdminPanel/EselPage.php';
         }
     }
 
     public static function isLoggedIn()
     {
-        return true;
+      $sessionName=md5(SL_ADMIN_NAME.SL_SECRET);
+      $sessionValue=md5($_SERVER['REMOTE_ADDR'].SL_ADMIN_PASSWORD.SL_SECRET);
+        if(isset($_SESSION[$sessionName])&&($_SESSION[$sessionName]==$sessionValue)){
+          return true;
+        }
+
+        if(isset($_COOKIE[$sessionName])&&($_COOKIE[$sessionName]==$sessionValue)){
+          return true;
+        }
+
+        return false;
+    }
+
+    public static function LogIn()
+    {
+        if((!isset($_POST['login']))||(!isset($_POST['password']))){
+          throw new Exception("Not enough paramaters");
+        }
+
+        if(($_POST['login']!=SL_ADMIN_NAME)||(md5($_POST['password'])!=SL_ADMIN_PASSWORD)){
+          throw new Exception("Invalid credentials");
+        }
+        $sessionName=md5(SL_ADMIN_NAME.SL_SECRET);
+        $sessionValue=md5($_SERVER['REMOTE_ADDR'].SL_ADMIN_PASSWORD.SL_SECRET);
+        $_SESSION[$sessionName]=$sessionValue;
+        if(isset($_POST['rememberme'])){
+          setcookie($sessionName, $sessionValue, time()+60*60*24*30, "/");
+        }
     }
 
     /**

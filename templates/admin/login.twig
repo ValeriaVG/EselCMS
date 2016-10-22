@@ -1,5 +1,29 @@
 {# @hidden #}
 {% extends "admin/base.twig" %}
 {% block wrapper %}
-login panel
+    <div class="bg-blue-gray-50" style="position:fixed;width:100%;height:100%">
+        <div class="row" style="top:-50%;transform:translateY(50%);">
+            <div class="col desktop-4 tablet-6" style="float:none;margin:0 auto;">
+                <div class="segment bg-white">
+                    <p class="text-center"><img src="/vendor/img/tinylogo.png"></p>
+                    <form class="form" method="post" action="/actions/EselAdminPanel/logIn">
+                        <label>Login:</label>
+                        <input type="text" name="login">
+                        <label>Password:</label>
+                        <input type="password" name="password">
+                        <div class="row">
+
+                            <div class="col phone-8">
+                                <label class="leader"><input type="checkbox" name="remember">
+                                    Remember Me</label>
+                            </div>
+                            <div class="col phone-4 text-right">
+                                <button class="btn big btn-teal leader-half">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
