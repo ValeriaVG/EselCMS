@@ -70,7 +70,7 @@ class EselModule
         unlink(SL_CORE.'hash/'.$hash);
     }
 
-    public static function isSafe($moduleName,$throw=true)
+    public static function isSafe($moduleName,$throw=1)
     {
         $hash = self::calculateHash(SL_MODULES.$moduleName.'/');
         if ((!$hash) || (!file_exists(SL_CORE.'hash/'.$hash))) {
@@ -84,9 +84,10 @@ class EselModule
         return md5($moduleName.SL_SECRET.$hash) === $result;
     }
 
-
+// @codeCoverageIgnoreStart
     public function install()
     {
-        //If needed
+        return true;
     }
+  // @codeCoverageIgnoreEnd
 }

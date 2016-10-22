@@ -12,6 +12,7 @@ class EselBasicModule extends EselModule{
     if(!empty($_GET["name"])){
       return Esel::clear($_GET["name"]);
     }
+    return "";
   }
 
   public static function sendWithSlash($text){

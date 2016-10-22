@@ -65,6 +65,8 @@ Roadmap
   - [ ] Filter
   - [ ] Search
 
+- [ ] Installer
+
 
 *But stay tuned! It won't take long!*
 

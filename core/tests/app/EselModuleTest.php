@@ -94,6 +94,7 @@ class EselModuleTest extends TestCase
         $basicHashFile = EselModule::setSafe('EselBasicModule');
         $this->assertTrue(file_exists($basicHashFile));
         $this->assertTrue(EselModule::isSafe('EselBasicModule'));
+        $this->assertFalse(EselModule::isSafe('ModuleDoesntExists',false));
     }
 
     /**

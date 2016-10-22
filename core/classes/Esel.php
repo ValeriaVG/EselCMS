@@ -42,12 +42,15 @@ class Esel
         return htmlspecialchars($var);
     }
     /**
-     * Remove multiple stashes
-     * @param  string $path Path to fix
+     * Remove multiple stashes.
+     *
+     * @param string $path Path to fix
+     *
      * @return string $path With no repetative slashes
      */
-    public static function fixPath($path){
-      return preg_replace('/(\/){2,}/i', '/', $path);
+    public static function fixPath($path)
+    {
+        return preg_replace('/(\/){2,}/i', '/', $path);
     }
 
     /**
@@ -85,12 +88,19 @@ class Esel
      */
     public function route($uri, $sendHeaders = 1)
     {
-        if (preg_match("/index(\/?)/", $uri)) {
-            $rootUri = preg_replace('/(\/){2,}/i', '/', (preg_replace("/index(\/?)/", '', $uri).'/'));
+        if (empty($uri) || ($uri == '/')) {
+            $this->renderer->setData('uri', '/');
+
+            return 'index.html';
+        }
+
+        if (preg_match('/^([\/]*)index([\/]*)$/', $uri)) {
+            $this->renderer->setData('uri', '/');
             if ($sendHeaders) {
-                self::respondWithCode(301, $rootUri);
+                self::respondWithCode(301, '/');
             }
-            $uri = $rootUri;
+
+            return 'index.html';
         }
         if (!preg_match('/\/$/', $uri) || (preg_match('/\/\//', $uri))) {
             $realUri = self::fixPath($uri.'/');
@@ -99,14 +109,8 @@ class Esel
             }
             $uri = $realUri;
         }
-        $this->renderer->setData('uri',self::fixPath("/".$uri));
-        if (empty($uri) || ($uri == '/')) {
-            $uri = 'index';
-        }
+        $this->renderer->setData('uri', self::fixPath('/'.$uri));
 
-        if (is_dir(SL_PAGES.$uri)) {
-            return $uri.'index.html';
-        }
         $template = preg_replace("/(\/){1}$/", '', $uri).'.html';
 
         if (!file_exists(SL_PAGES.$template)) {
@@ -175,22 +179,27 @@ class Esel
         return ORM::for_table(SL_DB_PREFIX.$table);
     }
     /**
-     * Connects to the database
+     * Connects to the database.
+     *
      * @return Exception if failed
      */
     public static function connect()
     {
+        // @codeCoverageIgnoreStart
         if (!class_exists('ORM')) {
             require_once SL_CORE.'lib/idiorm.php';
         }
+        // @codeCoverageIgnoreEnd
         ORM::configure(SL_DB_TYPE.':host='.SL_DB_HOST.';dbname='.SL_DB_NAME);
         ORM::configure('username', SL_DB_USER);
         ORM::configure('password', SL_DB_PASS);
     }
     /**
-     * Creates specified table with configured prefix
-     * @param  String $table   Name of the table to be created without prefix
-     * @param  Array $columns Array of pairs "column_name"=>"TYPE(SIZE) |NOT| NULL DEFAULT ..."
+     * Creates specified table with configured prefix.
+     *
+     * @param string $table   Name of the table to be created without prefix
+     * @param array  $columns Array of pairs "column_name"=>"TYPE(SIZE) |NOT| NULL DEFAULT ..."
+     *
      * @return Exception if failed
      */
     public static function create_table($table, $columns)

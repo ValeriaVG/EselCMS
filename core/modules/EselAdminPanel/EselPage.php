@@ -9,7 +9,10 @@ class EselPage{
     if(!file_exists(SL_PAGES.$relativePath)){
       throw new Exception("Page doesn't exist at ".SL_PAGES.$relativePath);
     }
-    $url=preg_replace("/(\/|)((index|)\.html)/","",$relativePath);
+    if(preg_match("/^(\/|)index\.html$/",$relativePath)){
+      return "/";
+    }
+    $url=preg_replace("/(\.html)/","",$relativePath);
     return Esel::fixPath("/".$url."/");
   }
 

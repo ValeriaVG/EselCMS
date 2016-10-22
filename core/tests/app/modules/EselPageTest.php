@@ -10,8 +10,8 @@ class EselPageTest extends TestCase
  * @expectedExceptionMessage Page doesn't exist
  */
   public function testCanMakeUrl(){
-    $this->assertEquals("/docs/",EselPage::makeUrl("docs/index.html"));
-    $this->assertEquals("/docs/",EselPage::makeUrl("/docs/index.html"));
+    $this->assertEquals("/docs/",EselPage::makeUrl("docs.html"));
+    $this->assertEquals("/docs/",EselPage::makeUrl("/docs.html"));
     $this->assertEquals("/docs/meet-modules/",EselPage::makeUrl("/docs/meet-modules.html"));
     $this->assertEquals("/docs/meet-modules/",EselPage::makeUrl("docs/meet-modules.html"));
     $this->assertEquals("/",EselPage::makeUrl("/index.html"));
@@ -29,7 +29,7 @@ class EselPageTest extends TestCase
 
   public function testGetPageBlocks(){
     $this->assertEquals(array("textcontent"=>'<h1>Welcome to Docs!</h1>
-        <a href="/docs/meet-modules/">Meet modules</a>'),EselPage::getPageBlocks("docs/index.html"));
+        <a href="/docs/meet-modules/">Meet modules</a>'),EselPage::getPageBlocks("docs.html"));
   }
 
 

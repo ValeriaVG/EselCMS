@@ -72,13 +72,13 @@ class EselTest extends TestCase
         $pageUri = 'docs/meet-modules/';
         $this->assertEquals('docs/meet-modules.html', $this->Esel->route($pageUri));
         $dirUri = 'docs/';
-        $this->assertEquals('docs/index.html', $this->Esel->route($dirUri));
+        $this->assertEquals('docs.html', $this->Esel->route($dirUri));
         $indexUri = 'index';
         $this->assertEquals('index.html', $this->Esel->route($indexUri));
         $noSlashUri = 'docs';
-        $this->assertEquals('docs/index.html', $this->Esel->route($noSlashUri));
+        $this->assertEquals('docs.html', $this->Esel->route($noSlashUri));
         $twoOrMoreSlashesUri = 'docs///////';
-        $this->assertEquals('docs/index.html', $this->Esel->route($twoOrMoreSlashesUri));
+        $this->assertEquals('docs.html', $this->Esel->route($twoOrMoreSlashesUri));
         $badUri = 'i-dont-exist-for-sure-cause-i-am-just-too-bad-like-justin-bieber-song/';
         $pageNotFound = $this->Esel->route($badUri);
         $this->assertEquals('404.html', $pageNotFound);
@@ -144,12 +144,29 @@ class EselTest extends TestCase
           $this->assertEquals(array("test"=>"data"),$this->Esel->renderer->getData());
 
         }
-        /**
-         * Testing database connection
-         * @covers Esel::for_table
-         */
-        public function testCanDB(){
-          $data=$this->Esel->for_table("test")->find_one()->data;
-          $this->assertEquals("test",$data);
+
+
+        public function testCanFixPath(){
+          $this->assertEquals("/path/to/a/file/",$this->Esel->fixPath("//path/to///a/file//"));
         }
+
+
+        public function testCanDB(){
+          $this->Esel->connect();
+          ORM::raw_execute("DROP TABLE IF EXISTS sl_created_table");
+          $this->Esel->create_table("created_table",array("data"=>"VARCHAR(25) NULL DEFAULT NULL"));
+          $test=$this->Esel->for_table("created_table")->create();
+          $test->data="works";
+          $test->save();
+          $res=$this->Esel->for_table("created_table")->find_one();
+          $this->assertEquals("works",$res->data);
+          try{
+            $this->Esel->create_table("crap_table",array());
+          }catch(Exception $e){
+            $this->assertEquals("Cannot create table '.crap_table.'- no columns provived",$e->getMessage());
+          }
+
+        }
+
+
 }

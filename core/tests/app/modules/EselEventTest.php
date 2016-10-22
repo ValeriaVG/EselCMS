@@ -32,12 +32,14 @@ class EselEventTest extends TestCase
     }
 
     /**
-     *
+     * @covers EselEvent::install
      * @covers EselEvent::addListener
+     * @covers EselEvent::invoke
      */
     public function testCanAddEvent(){
-      $this->module=$this->Esel->loadModule("EselEvent");
 
+      $this->module=$this->Esel->loadModule("EselEvent");
+      Esel::for_table('events')->where_equal('event','TestEvent')->delete_many();
       EselEvent::addListener("TestEvent","EselBasicModule::AddNumbers");
       $event=Esel::for_table("events")->where('event','TestEvent')->findOne();
       $this->assertEquals($event->get("method"),"EselBasicModule::AddNumbers");

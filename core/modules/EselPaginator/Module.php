@@ -11,12 +11,15 @@ class EselPaginator extends EselModule
         }
 
         $iterator = new GlobIterator(Esel::fixPath($dir."/".$pattern), FilesystemIterator::SKIP_DOTS);
+        // @codeCoverageIgnoreStart
         try {
             $list['count'] = $iterator->count();
+
         } catch (Exception $e) {
-          print_r($e->getMessage());
+
             return $list;
         }
+        // @codeCoverageIgnoreEnd
         if ($list['count'] == 0) {
             return $list;
         }
