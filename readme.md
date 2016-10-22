@@ -64,8 +64,10 @@ Roadmap
   - [ ] Cart
   - [ ] Filter
   - [ ] Search
+  - [ ] Multi-language
 
 - [ ] Installer
+- [ ] Documentation
 
 
 *But stay tuned! It won't take long!*

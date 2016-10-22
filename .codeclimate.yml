@@ -16,7 +16,7 @@ engines:
     checks:
       Controversial/Superglobals:
         enabled: false
-      Identical code:
+      CleanCode/StaticAccess:
         enabled: false
   rubocop:
     enabled: false
