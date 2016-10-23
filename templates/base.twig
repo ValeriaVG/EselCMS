@@ -2,160 +2,60 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="msapplication-tap-highlight" content="no">
-    <title>Welcome to Esel</title>
-    <meta name="description" content="">
-    <base href="/">
-    <link rel="stylesheet" href="/vendor/css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--[if lt IE 9]>
-       <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-     <![endif]-->
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="msapplication-tap-highlight" content="no">
+        <title>Welcome to Esel</title>
+        <meta name="description" content="">
+        <base href="/">
+        <link rel="stylesheet" href="/public/css/esel.min.css">
 
-<body>
-    <div id="app" v-cloak>
-        <nav class="pattern dark_matter" v-bind:class="[color, tone]">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="/" class="brand-logo"><img src="/vendor/img/tinylogo.png" alt="EselCMS"></a>
-                    <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+        <!--[if lt IE 9]> <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+    </head>
 
-                    <ul class="right hide-on-med-and-down">
-                        <li {% if uri=="/" %}class="active" {% endif %}><a href="/" v-bind:class="headfont">Mainpage</a></li>
-                        <li {% if uri=="/docs/" %}class="active" {% endif %}><a href="/docs/" v-bind:class="headfont">Documentation</a></li>
-                        <li {% if uri=="/docs/meet-modules/" %}class="active" {% endif %}><a href="/docs/meet-modules/" v-bind:class="headfont">Modules</a></li>
-                    </ul>
-                    <ul class="side-nav" v-bind:class="[color,tone]" id="mobile-nav">
-                        <li {% if uri=="/" %}class="active" {% endif %}><a href="/" v-bind:class="headfont">Mainpage</a></li>
-                        <li {% if uri=="/docs/" %}class="active" {% endif %}><a href="/docs/" v-bind:class="headfont">Documentation</a></li>
-                        <li {% if uri=="/docs/meet-modules/" %}class="active" {% endif %}><a href="/docs/meet-modules/" v-bind:class="headfont">Modules</a></li>
-                    </ul>
+    <body>
+        <div id="app" v-cloak>
+            <nav class="bg-blue-gray-800 pattern dark_matter">
+                <span class="btn transparent float-left" style="padding: 12px 12.5px;cursor:default;"><img src="/public/img/tinylogo.png" style="max-height:100%"></span>
+                <button class=" light-primary btn transparent tablet-and-less-show" data-toggle="slide" data-target="#menu">
+                    <i class="fa fa-bars"></i>
+                </button>
 
-                </div>
-            </div>
-        </nav>
+                <ul class="inline-menu nav light bordered tablet-to-list tablet-and-less-hide" id="menu">
 
-        <div class="content-holder">
-            {# @editor richText #}
-            {% block content %}{% endblock %}
-        </div>
-        <footer class="page-footer pattern dark_matter" v-bind:class="[color, tone]">
-            <div class="container">
-                <div class="row">
-                    <div class="col l4 s12">
-                        <span class="h3" v-bind:class="headfont">Not sure still?</span>
-                        <p v-bind:class="font">Dont' worry. We left some useful links here.</p>
-                        <p v-bind:class="font">All tools we use are pretty simple, we made sure they are.</p>
-                        <p v-bind:class="font">So give it a try!</p>
-                    </div>
-                    <div class="col l4 offset-l1 s12">
-                        <span class="h3" v-bind:class="headfont">Front-End</span>
+                    <li>
+                        <a href="/" {% if uri=="/" %} class="active" {% endif %}>Mainpage</a>
+                    </li>
+                    <li>
+                        <a href="/admin/">Admin panel</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/docs/" {% if uri=="/docs/" %} class="active" {% endif %}>Documentation</a>
                         <ul>
-                            <li><a v-bind:class="font" href="https://github.com/ValeriaVG/eselcms" target="_blank">EselCMS on GitHub</a></li>
-                            <li><a v-bind:class="font" href="https://vuejs.org/" target="_blank">Vue.js -The Progressive JavaScript Framework </a></li>
-                            <li><a v-bind:class="font" href="http://materializecss.com/" target="_blank">Materialize - A modern responsive front-end framework based on Material Design</a></li>
+                            <li>
+                                <a href="/docs/meet-modules/" {% if uri=="/docs/meet-modules/" %} class="active" {% endif %}>Meet modules</a>
+                            </li>
                         </ul>
-                    </div>
-                    <div class="col l3  s12">
-                        <span class="h3" v-bind:class="headfont">Back-End</span>
-                        <ul>
-                            <li><a v-bind:class="font" href="https://github.com/ValeriaVG/eselcms" target="_blank">EselCMS on GitHub</a></li>
-                            <li><a v-bind:class="font" href="http://twig.sensiolabs.org/" target="_blank">Twig</a></li>
-                            <li><a v-bind:class="font" href="http://j4mie.github.io/idiormandparis/" target="_blank">Idiorm - a minimalistic database toolkit</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <div class="content-holder">
+                {# @editor richText #}
+                {% block content %}{% endblock %}
             </div>
-            <div class="footer-copyright pattern dark_matter">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s6">
-                            &copy; 2016
-                        </div>
-                        <div class="col s6">
-                            <a class="right" v-bind:class="headfont" href="https://sl-design.ru/" target="_blank">Made by SL-DESIGN</a>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <div class="fixed-action-btn" style="bottom: 1.61803rem; right: 1.61803rem;">
-            <a class="btn-floating btn-large white ">
-                <i class="large material-icons grey-text">invert_colors</i>
-            </a>
-            <ul>
-                <li><a class="btn-floating pink dark_matter pattern" v-on:click="color= 'pink';"><i class="material-icons"></i></a></li>
 
-                <li><a class="btn-floating red dark_matter pattern" v-on:click="color= 'red'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating orange dark_matter pattern" v-on:click="color= 'orange'"><i class="material-icons"></i></a></li>
+        </body>
+        <script src="/public/js/vendor/vue.min.js"></script>
+        <script src="/public/js/vendor/jquery-3.1.1.min.js"></script>
+        <script src="/public/js/vendor/js.cookie.js"></script>
+        <script src="/public/js/vendor/esel.min.js"></script>
+        <script src="/public/js/vendor/singleparallax.js"></script>
+        <script src="/public/js/script.js"></script>
+        {% block scripts %}{% endblock %}
 
-                <li><a class="btn-floating green dark_matter pattern" v-on:click="color= 'green'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating blue dark_matter pattern" v-on:click="color= 'blue'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating purple dark_matter pattern" v-on:click="color= 'purple'"><i class="material-icons"></i></a></li>
-
-                <li><a class="btn-floating grey darken-3" v-on:click="color= 'grey'"><i class="material-icons"></i></a></li>
-            </ul>
-        </div>
-
-        <div class="fixed-action-btn" style="bottom: 1.61803rem; right: 115.76140000000001px;">
-            <a class="btn-floating btn-large white ">
-                <i class="large material-icons grey-text">settings_brightness</i>
-            </a>
-            <ul>
-                <li><a class="btn-floating lighten-3 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'lighten-3'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating lighten-2 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'lighten-2'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating lighten-1 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'lighten-1'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating dark_matter pattern" v-bind:class="[color]" v-on:click="tone= ''"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating darken-1 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'darken-1'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating darken-2 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'darken-2'"><i class="material-icons"></i></a></li>
-                <li><a class="btn-floating darken-3 dark_matter pattern" v-bind:class="[color]" v-on:click="tone= 'darken-3'"><i class="material-icons"></i></a></li>
-
-            </ul>
-        </div>
-
-        <div class="fixed-action-btn" style="bottom: 1.61803rem; right: 205.6343px;">
-            <a class="btn-floating btn-large white ">
-                <i class="large material-icons grey-text">subject</i>
-            </a>
-            <ul>
-                <li><a class="btn-floating bg-text text-lighten-1 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-lighten-1'">ABC</a></li>
-                <li><a class="btn-floating bg-text text-lighten-2 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-lighten-2'">ABC</a></li>
-                <li><a class="btn-floating bg-text text-lighten-3 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-lighten-3'">ABC</a></li>
-                <li><a class="btn-floating bg-text dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text'">ABC</a></li>
-                <li><a class="btn-floating bg-text text-darken-1 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-darken-1'">ABC</a></li>
-                <li><a class="btn-floating bg-text text-darken-2 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-darken-2'">ABC</a></li>
-                <li><a class="btn-floating bg-text text-darken-3 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="font= 'bg-text text-darken-3'">ABC</a></li>
-            </ul>
-        </div>
-
-        <div class="fixed-action-btn" style="bottom: 1.61803rem; right: 295.5072px;">
-            <a class="btn-floating btn-large white ">
-                <i class="large material-icons grey-text">polymer</i>
-            </a>
-            <ul>
-                <li><a class="btn-floating bg-text text-lighten-1 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-lighten-1'">ABC</a></li>
-                <li><a class="btn-floating bg-text text-lighten-2 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text lighten-2'">ABC</a></li>
-                <li><a class="btn-floating bg-text text-lighten-3 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-lighten-3'">ABC</a></li>
-                <li><a class="btn-floating bg-text dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text '">ABC</a></li>
-                <li><a class="btn-floating bg-text text-darken-1 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-darken-1'">ABC</a></li>
-                <li><a class="btn-floating bg-text text-darken-2 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-darken-2'">ABC</a></li>
-                <li><a class="btn-floating bg-text text-darken-3 dark_matter pattern" v-bind:class="[color,tone]" v-on:click="headfont= 'bg-text text-darken-3'">ABC</a></li>
-            </ul>
-        </div>
-    </div>
-</body>
-<script src="/vendor/js/vendor/vue.min.js"></script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="/vendor/js/vendor/materialize.min.js"></script>
-<script src="/vendor/js/vendor/js.cookie.js"></script>
-<script src="/vendor/js/app.js"></script>
-{% block scripts %} {% endblock %}
-
-</html>
+    </html>

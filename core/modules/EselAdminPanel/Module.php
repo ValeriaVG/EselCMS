@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once SL_MODULES.'EselAdminPanel/EselPage.php';
 class EselAdminPanel extends EselModule
 {
     /**
@@ -9,8 +10,8 @@ class EselAdminPanel extends EselModule
      */
     public static function beforeLoad()
     {
-        if (self::isLoggedIn()) {
-            require_once SL_MODULES.'EselAdminPanel/EselPage.php';
+        if (!self::isLoggedIn()) {
+          throw new Exception("Operation not permitted");
         }
     }
 
@@ -58,7 +59,7 @@ class EselAdminPanel extends EselModule
      */
     public static function getPagesList($dir = '', $start = 0, $limit = 10, $all = 0)
     {
-        self::beforeLoad();
+
         $pattern = '*.html';
         if ($all == 1) {
             $pattern = '*';

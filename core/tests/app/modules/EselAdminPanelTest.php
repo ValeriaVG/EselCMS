@@ -41,12 +41,30 @@ class EselAdminPanelTest extends TestCase
      */
     public function testBeforeLoad()
     {
+      try{
         EselAdminPanel::beforeLoad();
-        $this->assertTrue(class_exists('EselPage'));
+      }catch(Exception $e){
+        $this->assertEquals("Operation not permitted",$e->getMessage());
+      }
     }
+
+    private function logIn(){
+      $_POST['login']="admin";
+      $_POST['password']="password";
+      EselAdminPanel::LogIn();
+    }
+
+    public function testCanLogIn()
+    {
+      $this->logIn();
+        $this->assertTrue(EselAdminPanel::isLoggedIn());
+    }
+
 
     public function testCanSavePage()
     {
+      $this->logIn();
+
         //savePage($path,$template,$name,$fields=array(),$blocks=array())
       $this->assertEquals(EselAdminPanel::savePage('/__test/__test.html', 'base.twig', 'Test Page', array('content' => '<p>TEST PAGE</p>')), file_get_contents(SL_PAGES.'__test/__test.html'));
       $this->assertEquals(EselAdminPanel::savePage('/__test/test.htm', 'docs.twig', 'Draft Page', array('testcontent' => '<p>Draft</p>')), file_get_contents(SL_PAGES.'__test/test.htm'));
@@ -57,6 +75,7 @@ class EselAdminPanelTest extends TestCase
      */
     public function testCanGetPagesList()
     {
+
         $list = EselAdminPanel::getPagesList('__test/');
         $this->assertEquals('Test Page', $list['items'][0]->name);
 
@@ -69,6 +88,7 @@ class EselAdminPanelTest extends TestCase
      */
     public function testCanGetTplList()
     {
+      $this->logIn();
         $list = EselAdminPanel::getTplList();
         $this->assertEquals('Base Layout', $list['items'][0]->name);
         $this->assertEquals('base.twig', $list['items'][0]->path);
@@ -79,6 +99,7 @@ class EselAdminPanelTest extends TestCase
      */
     public function testCanGetPageData()
     {
+      $this->logIn();
         $data = EselAdminPanel::getPageData('__test/__test.html');
         $this->assertEquals('base.twig', $data->template);
 
@@ -103,6 +124,7 @@ class EselAdminPanelTest extends TestCase
 
     public function testCanDeletePage()
     {
+      $this->logIn();
         EselAdminPanel::savePage('__test/i/exist.html');
         EselAdminPanel::deletePage('__test/i/exist.html');
         $this->assertFalse(file_exists(SL_PAGES.'__test/i/exist.html'));
@@ -114,15 +136,10 @@ class EselAdminPanelTest extends TestCase
         }
     }
 
-    public function testCanLoggedIn()
-    {
-      $_POST['login']="admin";
-      $_POST['password']="password";
-      EselAdminPanel::LogIn();
-        $this->assertTrue(EselAdminPanel::isLoggedIn());
-    }
+
 
     public function testCanGetModulesList(){
+      $this->logIn();
       $modules=EselAdminPanel::getModulesList();
       foreach($modules['modules'] as $module ){
         if($module->name=="EselAdminPanel"){

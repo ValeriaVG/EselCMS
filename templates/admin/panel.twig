@@ -7,6 +7,7 @@
 
                 <ul class="inline-menu nav light bordered tablet-to-list tablet-and-less-hide" id="menu">
                       <li><a href="/admin/">Dashboard</a></li>
+                      <li><a href="/" target="_blank">View site</a></li>
                       <li><a href="/admin/modules/">Modules</a></li>
                       <li class="dropdown"><a href="/admin/">Some other stuff</a>
                         <ul><li><a href="#">More stuff</a></li>
@@ -70,13 +71,13 @@
 
 {% endblock %}
 {% block scripts %}
-    <script src="/vendor/js/admin/components/tinymce/tinymce.min.js"></script>
-    <script src="/vendor/js/vendor/vue.min.js"></script>
-    <script src="/vendor/js/admin/components/crumbs.js"></script>
-    <script src="/vendor/js/admin/components/tree.js"></script>
-    <script src="/vendor/js/admin/components/pagination.js"></script>
-    <script src="/vendor/js/admin/utils.js"></script>
-    <script src="/vendor/js/esel.js"></script>
-    <script src="/vendor/js/admin/app.js"></script>
+    <script src="/public/admin/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/public/js/vendor/vue.min.js"></script>
+    <script src="/public/admin/components/crumbs.js"></script>
+    <script src="/public/admin/components/tree.js"></script>
+    <script src="/public/admin/components/pagination.js"></script>
+    <script src="/public/admin/utils.js"></script>
+
+    <script src="/public/admin/app.js"></script>
 
 {% endblock %}

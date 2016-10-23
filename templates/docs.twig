@@ -1,12 +1,14 @@
 {% extends "base.twig" %}
 {# @name Text template #}
 {% block content %}
-<div class="white section">
-    <div class="row container">
+
+    <div class="container">
         {# @editor richText #}
         {% block textcontent %}
         {% endblock %}
+        <code class="block">
         {{EselBasicModule_showStats()|raw}}
+      </code>
     </div>
-</div>
+
 {% endblock %}

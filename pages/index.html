@@ -1,18 +1,13 @@
-{% extends "base.twig" %}{# @name Mainpage #}{% block content %}<div class="section white">
-<div class="row container">
+{% extends "base.twig" %}{# @name Mainpage #}{% block content %}
+<div class="container">
 <h1>Congratulations! It works!</h1>
 <p>Welcome on your brand new Esel site! <strong>You are awesome!</strong></p>
 <p>Don't know what to do now? Well, we can offer you some <a class="btn" href="../../docs/">docs</a></p>
 </div>
-</div>
-<div class="parallax-container">
-<div class="parallax felt pattern"><img src="../../vendor/img/logo.png" /></div>
-</div>
-<div class="section white">
-<div class="row container">
-<h2>Maybe you would like to change some colors?</h2>
-<p>Esel uses vuejs and materializecss for it's front-end</p>
-<p>Just click that ENOURMOUS button in the bottom right corner</p>
+
+<div class="singleparallax-window rhythm" data-singleparallax="scroll" data-image-src="/public/img/logo.png"></div>
+
+<div class="container">
 <h2>75 000 Lorem Ipsums</h2>
 {% set links = EselAdminPanel_getPagesList("/lipsum/",random(74900),100) %}
 <p>{{links.count}} files in a folder, showing 100 from random position</p>
@@ -21,4 +16,4 @@
 <p>{{EselBasicModule_showStats()|raw}}</p>
 <p>&nbsp;</p>
 </div>
-</div>{% endblock %}
+{% endblock %}

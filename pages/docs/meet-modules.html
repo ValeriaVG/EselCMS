@@ -2,7 +2,7 @@
 {% block textcontent %}
 <h1>Meet modules</h1>
 <p> This is what a  <code class="php">EselBasicModule_sendGreeting()</code> says: &laquo;<em>{{ EselBasicModule_sendGreeting() }}</em>&raquo;</p>
-<pre>
+<pre class="block">
 <code class="php">
   public static function sendGreeting(){
     return "Basic module sends its greeting!";
@@ -10,16 +10,16 @@
 </code>
 </pre>
 <p> What about variables? No problem!  <code class="php">EselBasicModule_addNumbers(2,2)</code>  says: &laquo;<em>{{ EselBasicModule_addNumbers(2,2) }}</em>&raquo;</p>
-<pre>
-<code class="php">
+<pre class="block">
+<code class="php block">
   public static function addNumbers($a,$b){
     return $a+$b;
   }
 </code>
 </pre>
 <p> And what about some dangerous stuff?! Click <a href="/docs/meet-modules/?name=hello get">here</a> or <a href="/docs/meet-modules/?name=%3Cscript%3Ealert%28%22hey%2Ci%27m+a+hacker%22%29%3C%2Fscript%3E">here</a> <code class="php">EselBasicModule_usesGet()</code>  says: &laquo;<em>{{ EselBasicModule_usesGet() }}</em>&raquo;</p>
-<pre>
-<code class="php">
+<pre class="block">
+<code class="php block" >
     public static function usesGet(){
       if(!empty($_GET["name"])){
         return Esel::clear($_GET["name"]);
