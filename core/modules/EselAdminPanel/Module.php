@@ -64,8 +64,8 @@ class EselAdminPanel extends EselModule
         if ($all == 1) {
             $pattern = '*';
         }
-
-        $constructPages = function ($iterator) {
+        $config=self::getConfig(__CLASS__);
+        $constructPages = function ($iterator) use ($config){
             $curr = $iterator->current();
             $file = $curr->getFilename();
             $path = Esel::fixPath($curr->getPath().'/'.$file);
@@ -73,6 +73,13 @@ class EselAdminPanel extends EselModule
             $page->name = $file;
             $page->folder = is_dir($path);
             $page->path = Esel::fixPath(str_replace(SL_PAGES, '/', $path));
+            if(isset($config->hidden_pages)){
+              foreach($config->hidden_pages as $pat){
+                if(($pat==$page->path)||preg_match($pat,$page->path)){
+                  $page->hidden=true;
+                }
+              }
+            }
             if ($page->folder) {
                 $page->path .= '/';
             } else {
@@ -277,5 +284,18 @@ class EselAdminPanel extends EselModule
         }
 
         return $list;
+    }
+
+
+    public static function makePagesDir($name,$dir='')
+    {
+        self::beforeLoad();
+        return mkdir(Esel::fixPath(SL_PAGES.$dir."/".$name),0755);
+      }
+
+    public static function removePagesDir($dir)
+    {
+      self::beforeLoad();
+      return rmdir(Esel::fixPath(SL_PAGES.$dir));
     }
 }

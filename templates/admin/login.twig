@@ -6,15 +6,15 @@
             <div class="col desktop-4 tablet-6" style="float:none;margin:0 auto;">
                 <div class="segment bg-white">
                     <p class="text-center"><img src="/public/img/tinylogo.png"></p>
-                    <form class="form" method="post" action="/actions/EselAdminPanel/logIn">
+                    <form class="form" method="post" action="/actions/EselAdminPanel/logIn" id="login">
                         <label>Login:</label>
-                        <input type="text" name="login">
+                        <input type="text" name="login" required>
                         <label>Password:</label>
-                        <input type="password" name="password">
+                        <input type="password" name="password" required>
                         <div class="row">
 
                             <div class="col phone-8">
-                                <label class="leader"><input type="checkbox" name="remember">
+                                <label class="leader"><input type="checkbox" name="rememberme">
                                     Remember Me</label>
                             </div>
                             <div class="col phone-4 text-right">
@@ -26,4 +26,33 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block scripts %}
+
+<script src="/public/js/vendor/jquery-validation/jquery.validate.min.js"></script>
+<script>
+
+var validator = $( ".form" ).validate({
+  submitHandler: function(form) {
+  $.ajax({
+    url:$(form).attr("action"),
+    data:$(form).serializeArray(),
+    method:"POST",
+    success:function(res){
+      if(res.success){
+        $.jGrowl("Success! Redirecting",{theme:"greened"});
+        document.location.href=document.location.href
+      }else{
+        $.jGrowl(res.message,{theme:"reded"});
+      }
+    }
+  });
+}
+
+});
+validator.form();
+$(".form label.error").remove();
+$(".form .error").removeClass("error");
+
+</script>
 {% endblock %}

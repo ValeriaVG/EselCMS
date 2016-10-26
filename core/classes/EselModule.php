@@ -11,6 +11,19 @@ class EselModule
         $this->Esel = &$Esel;
     }
 
+    public static function getConfig($class=""){
+      if(empty($class)){
+        $class=__CLASS__;
+      }
+      $cnfFile=SL_MODULES.$class."/config.json";
+      $config=new stdClass();
+      if(file_exists($cnfFile)){
+        $config=json_decode(file_get_contents($cnfFile));        
+      }
+      return $config;
+
+    }
+
     private static function calculateHash($directory = '')
     {
         if (empty($directory)) {

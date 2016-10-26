@@ -26,7 +26,7 @@
             <input type="text" name="url" v-model="url" value="{{ page.url }}">
             <input type="hidden" name="path" v-model="path" value="{{ page.path }}">
         </div>
-  
+
         {% if tpls.items|length!=0 %}
         <div class="col tablet-4">
             <label> Page template:</label>
@@ -50,7 +50,7 @@
 
 </div>
      {% for name,type in page.fields %}
-    <textarea name="blocks[{{ name }}]" class="{{ type }}" rows="10" id="block_{{ name }}" v-pre> {{ page.blocks[name]|raw }} </textarea> {% endfor %}
+    <textarea name="blocks[{{ name }}]" class="{{ type }}" id="block_{{ name }}" v-pre> {{ page.blocks[name]|raw }} </textarea> {% endfor %}
 </form>
 </div>
 <script>

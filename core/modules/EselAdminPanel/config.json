@@ -1,0 +1,30 @@
+{
+  "hidden_pages":[
+    "*admin*"
+  ],
+  "top_menu":[
+    {
+      "anchor":"Dashboard",
+      "url":"/admin/"
+    },
+    {
+      "anchor":"View site",
+      "url":"/",
+      "target":"_blank"
+    },
+    {
+      "anchor":"Modules",
+      "url":"/admin/modules/"
+    },
+    {
+      "anchor":"FileManager",
+      "url":"/admin/files/",
+      "children":[
+        {
+          "anchor":"Images",
+          "url":"/admin/files/images/"
+        }
+      ]
+    }
+  ]
+}

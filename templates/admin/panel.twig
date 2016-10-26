@@ -1,36 +1,51 @@
 {% extends "admin/base.twig" %}
 {# @hidden #}
 {% block wrapper %}
-<nav class="bg-blue-gray-800">
+    <nav class="bg-blue-gray-800">
 
-                <button class=" light-primary btn transparent tablet-and-less-show" data-toggle="slide" data-target="#menu"><i class="fa fa-bars"></i></button>
+        <button class=" light-primary btn transparent tablet-and-less-show" data-toggle="slide" data-target="#menu">
+            <i class="fa fa-bars"></i>
+        </button>
 
-                <ul class="inline-menu nav light bordered tablet-to-list tablet-and-less-hide" id="menu">
-                      <li><a href="/admin/">Dashboard</a></li>
-                      <li><a href="/" target="_blank">View site</a></li>
-                      <li><a href="/admin/modules/">Modules</a></li>
-                      <li class="dropdown"><a href="/admin/">Some other stuff</a>
-                        <ul><li><a href="#">More stuff</a></li>
-                          <li><a href="#">More stuff</a></li>
-                          <li><a href="#">More stuff</a></li></ul>
-                      </li>
-                </ul>
+        <ul class="inline-menu nav light bordered tablet-to-list tablet-and-less-hide" id="menu">
+            {% set config = EselAdminPanel_getConfig("EselAdminPanel") %}
+            {% set menu = config.top_menu %}
+            {% for item in menu %}
+                <li {% if item.children|length >0 %} class="dropdown" {% endif %}>
+                    <a href="{{item.url}}" target="{{item.target}}" {% if item.url==uri %} class="active" {% endif %}>{{item.anchor}}</a>
+                    {% if item.children | length > 0 %}
+                        <ul>
+                            {% for subitem in item.children %}
+                                <li>
+                                    <a href="{{subitem.url}}" target="{{subitem.target}}" {% if subitem.url==uri %} class="active" {% endif %}>{{subitem.anchor}}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
 
-</nav>
+    </nav>
     <div class="nomargin row" style="margin-bottom:0;">
         <div class="col desktop-2 tablet-4 phone-12 fullheight bg-blue-gray-50" id="app">
             <div>
                 {% verbatim %}
                     <div class="leader">
-                      <div class="trailer">
-                        <a class="btn btn-teal" title="Create new page in current folder" :href="new_page_url">
-    <i class="fa fa-file-text-o"></i></a>
-    <button class="btn btn-orange" title="Create new subfolder in current folder">
-  <i class="fa fa-folder-o"></i></button>
-                      </div>
+                        <div class="trailer">
+                            <a class="btn btn-teal" title="Create new page in current folder" :href="new_page_url">
+                                <i class="fa fa-file-text-o"></i>
+                            </a>
+                            <button class="btn btn-orange" title="Create new subfolder in current folder" v-on:click="newFolder()">
+                                <i class="fa fa-folder-o"></i>
+                            </button>
+
+                            <button v-if="((path!='/')&&(pages.length==0))" class="btn btn-red" title="Remove current folder" v-on:click="removeFolder()">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
                         <crumbs :wrp-class="'breadcrumbs'" :path="path"></crumbs>
                     </div>
-
 
                     <pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
 
@@ -40,31 +55,31 @@
             <div class="section">
                 <pages :pages="pages" :current_page="current_page"></pages>
             </div>
-              <pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
+            <pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
         </div>
 
         <div class="col desktop-10 tablet-8 phone-12 fullheight">
             {% block panel %}
-              <div id="dashboard" class="leader row">
-                <div class="col tablet-4">
-                  <div class="segment bg-amber-50">
-                    <h2>Welcome to Esel</h2>
-                    <p>There suppose to be some useful information</p>
-                  </div>
+                <div id="dashboard" class="leader row">
+                    <div class="col tablet-4">
+                        <div class="segment bg-amber-50">
+                            <h2>Welcome to Esel</h2>
+                            <p>There suppose to be some useful information</p>
+                        </div>
+                    </div>
+                    <div class="col tablet-4">
+                        <div class="segment bg-blue-50">
+                            <h2>Welcome to Esel</h2>
+                            <p>There suppose to be some useful information</p>
+                        </div>
+                    </div>
+                    <div class="col tablet-4">
+                        <div class="segment bg-teal-50">
+                            <h2>Welcome to Esel</h2>
+                            <p>There suppose to be some useful information</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col tablet-4">
-                  <div class="segment bg-blue-50">
-                    <h2>Welcome to Esel</h2>
-                    <p>There suppose to be some useful information</p>
-                  </div>
-                </div>
-                <div class="col tablet-4">
-                  <div class="segment bg-teal-50">
-                    <h2>Welcome to Esel</h2>
-                    <p>There suppose to be some useful information</p>
-                  </div>
-                </div>
-              </div>
             {% endblock %}
         </div>
     </div>

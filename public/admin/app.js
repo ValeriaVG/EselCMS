@@ -15,7 +15,7 @@ var app=new Vue({
         pages: [],
         path:(undefined!==$_get['page'])?cutPath($_get['page']):"/",
         offset:0,
-        limit:5,
+        limit:10,
         count:0,
     },
   created: function(){
@@ -52,6 +52,50 @@ var app=new Vue({
     },
     limit:function(val){
       getPages(this.path,this.offset,val);
+    }
+  },
+  methods:{
+    newFolder:function(){
+      console.log("New folder");
+      var d=this;
+      var name;
+      if(name=prompt("Enter Name")){
+      $.ajax({
+        url:"/actions/EselAdminPanel/makePagesDir",
+        data:{dir:d.path,name:name},
+        method:"post",
+        success:function(res){
+          console.log(res);
+
+          getPages(d.path,d.offset,d.limit);
+        }
+      });
+      }
+    },
+    removeFolder:function(){
+      console.log("Remove folder");
+      var d=this;
+
+      $.ajax({
+        url:"/actions/EselAdminPanel/removePagesDir",
+        data:{dir:d.path},
+        method:"post",
+        success:function(res){
+          console.log(res);
+      if(res.success){
+        $.jGrowl("Folder was deleted",{theme:"tealed",header:"Done!"});
+          var patharr=d.path.split("/").pop();
+          var path="/";
+          if(patharr.length>0){
+            path=patharr.join("/");
+          }
+          app.path=path;
+        }else{
+          $.jGrowl(res.message,{theme:"reded",header:"Error!"});
+        }
+        }
+      });
+
     }
   }
 
@@ -110,6 +154,7 @@ var pEdit=new Vue({
               if((data.old_path!=data.path)&&(res.success)){
                 document.location.href=document.location.href.replace(/\?page=(.*)/,"?page="+data.path);
               }
+              $.jGrowl("Page was successfully saved", {header:"Saved", theme: 'tealed' });
             }
 
         }
@@ -195,5 +240,22 @@ function fixFullHeight() {
 fixFullHeight();
 
 
-  tinymce.init({ selector:'.richText' });
+  tinymce.init({
+  selector:'.richText',
+  plugins: [
+     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+     'searchreplace wordcount visualblocks visualchars code fullscreen',
+     'insertdatetime media nonbreaking save table contextmenu directionality',
+     'emoticons template paste textcolor colorpicker textpattern imagetools codesample'
+   ],
+   toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+   toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
+   image_advtab: true,
+   templates: [
+     { title: 'Test template 1', content: 'Test 1' },
+     { title: 'Test template 2', content: 'Test 2' }
+   ],
+   content_css: [
+     '/public/css/esel.min.css'
+   ]});
   $(".dropdown").dropdown();
