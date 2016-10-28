@@ -21,4 +21,6 @@ define("SL_DB_PREFIX","sl_");
 define("SL_ADMIN_NAME","admin");
 define("SL_ADMIN_PASSWORD","5f4dcc3b5aa765d61d8327deb882cf99");
 
+define("SL_LANGUAGE","en");
 define("SL_DEV",false);
+define("SL_HIDE_CORE_MODULES",false);// If TRUE hides modules starting with Esel

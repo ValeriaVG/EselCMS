@@ -44,7 +44,7 @@ class EselAdminPanelTest extends TestCase
       try{
         EselAdminPanel::beforeLoad();
       }catch(Exception $e){
-        $this->assertEquals("Operation not permitted",$e->getMessage());
+        $this->assertEquals("This action is not permitted",$e->getMessage());
       }
     }
 
@@ -107,7 +107,7 @@ class EselAdminPanelTest extends TestCase
           $dataNully = EselAdminPanel::getPageData();
           $this->fail("Page was not defined but exception was not raised!");
         }catch(Exception $e){
-          $this->assertEquals('You must define a page', $e->getMessage());
+          $this->assertEquals('Page is not specified', $e->getMessage());
         }
         $_GET['template']="docs.twig";
         $_GET['page']='__test/__test.html';

@@ -15,7 +15,11 @@ class Esel
     private function init()
     {
         require_once SL_CORE.'classes/EselRenderer.php';
+        require_once SL_CORE.'classes/EselLexicon.php';
+
         $this->renderer = new EselRenderer();
+        $this->lexicon = new EselLexicon($this);
+
     }
     public function __construct()
     {
@@ -202,16 +206,20 @@ class Esel
      *
      * @return Exception if failed
      */
-    public static function create_table($table, $columns)
+    public static function create_table($table, $columns,$extra="")
     {
         if (empty($columns)) {
-            throw new Exception("Cannot create table '.$table.'- no columns provived");
+            throw new Exception(EselLexicon::get("cannot_create_table",array("table"=>$table)));
         }
         $sql = '
         CREATE TABLE IF NOT EXISTS `'.SL_DB_PREFIX.$table.'` (
         `id` int(11) NOT NULL auto_increment, ';
         foreach ($columns as $column => $properties) {
             $sql .= '`'.$column.'` '.$properties.', ';
+        }
+
+        if(empty(!$extra)){
+        $sql .= $extra.",";
         }
         $sql .= 'PRIMARY KEY  (`id`));';
         self::connect();

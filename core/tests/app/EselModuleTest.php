@@ -109,4 +109,17 @@ class EselModuleTest extends TestCase
         $this->assertEquals('EselBasicModule is not installed', $e->getMessage());
         EselModule::setSafe('EselBasicModule');
     }
+
+    public function testCanGetConfig(){
+      $config=EselModule::getConfig("EselAdminPanel");
+      $this->assertTrue(count((array) $config)>0);
+
+      $config=EselModule::getConfig();
+      $this->assertTrue(count((array) $config)==0);
+    }
+
+    public function testCanGetLexicon(){
+      $hello=EselModule::getLexicon("EselBasicModule::test","hello",array("name"=>"World!"),"ru");
+      $this->assertEquals("Привет, World!",$hello);
+    }
 }

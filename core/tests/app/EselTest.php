@@ -45,6 +45,14 @@ class EselTest extends TestCase
         $this->assertEquals('5!', trim($this->Esel->renderer->render($templateFile)));
     }
 
+    public function testCanRenderString()
+    {
+
+        //{{ 2 + 3}}!
+
+        $this->assertEquals('5!', trim($this->Esel->renderer->renderString(" {{ a + b }}!", array("a"=>2,"b"=>3))));
+    }
+
     /**
      * Test sanitizer
      *
@@ -154,7 +162,7 @@ class EselTest extends TestCase
         public function testCanDB(){
           $this->Esel->connect();
           ORM::raw_execute("DROP TABLE IF EXISTS sl_created_table");
-          $this->Esel->create_table("created_table",array("data"=>"VARCHAR(25) NULL DEFAULT NULL"));
+          $this->Esel->create_table("created_table",array("data"=>"VARCHAR(25) NULL DEFAULT NULL"),"INDEX (data)");
           $test=$this->Esel->for_table("created_table")->create();
           $test->data="works";
           $test->save();
@@ -163,7 +171,7 @@ class EselTest extends TestCase
           try{
             $this->Esel->create_table("crap_table",array());
           }catch(Exception $e){
-            $this->assertEquals("Cannot create table '.crap_table.'- no columns provived",$e->getMessage());
+            $this->assertEquals("Cannot create table crap_table - no columns provived",$e->getMessage());
           }
 
         }

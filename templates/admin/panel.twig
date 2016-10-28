@@ -2,6 +2,7 @@
 {# @hidden #}
 {% block wrapper %}
     <nav class="bg-blue-gray-800">
+      <span class="btn transparent float-left" style="padding:12px 12.5px 0;cursor:default;"><img src="/public/img/tinylogo.png" style="max-height:100%"></span>
 
         <button class=" light-primary btn transparent tablet-and-less-show" data-toggle="slide" data-target="#menu">
             <i class="fa fa-bars"></i>
@@ -86,13 +87,13 @@
 
 {% endblock %}
 {% block scripts %}
-    <script src="/public/admin/vendor/tinymce/tinymce.min.js"></script>
-    <script src="/public/js/vendor/vue.min.js"></script>
-    <script src="/public/admin/components/crumbs.js"></script>
-    <script src="/public/admin/components/tree.js"></script>
-    <script src="/public/admin/components/pagination.js"></script>
+    <script src="/public/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/public/vendor/vue.min.js"></script>
+    <script src="/public/vendor/custom-alert.min.js"></script>
+    <script src="/public/admin/common.js"></script>
     <script src="/public/admin/utils.js"></script>
-
+    <script src="/public/admin/api.js"></script>
+    <script src="/public/admin/components.js"></script>
     <script src="/public/admin/app.js"></script>
-
+    <script src="/public/admin/page.js"></script>
 {% endblock %}

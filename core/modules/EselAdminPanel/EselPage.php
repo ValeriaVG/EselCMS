@@ -7,7 +7,8 @@ class EselPage{
 
   public static function makeUrl($relativePath){
     if(!file_exists(SL_PAGES.$relativePath)){
-      throw new Exception("Page doesn't exist at ".SL_PAGES.$relativePath);
+      throw new Exception(EselModule::getLexicon("EselAdminPanel","page_doesnt_exist",array("relativePath"=>SL_PAGES.$relativePath)));
+
     }
     if(preg_match("/^(\/|)index\.html$/",$relativePath)){
       return "/";
@@ -43,8 +44,21 @@ class EselPage{
     $blocks=array();
     $file=file_get_contents(SL_TEMPLATES.$template);
     if(preg_match_all('/{# @editor (.*?) #}\s*{% block (.*?) %}(.*?){% endblock %}/s',$file,$matches,PREG_SET_ORDER)){
-      foreach($matches as $field){
-        $blocks[$field[2]]=trim($field[1]);
+      foreach($matches as $match){
+        $field=new stdClass();
+        $field->name=trim($match[2]);
+        $field->type=trim($match[1]);
+        $field->label="";
+        $field->hint="";
+        $tmp=array();
+        if(preg_match('/{# @label (.*?) #}/s',$match[3],$tmp)){
+        $field->label=$tmp[1];
+        }
+        $tmp=array();
+        if(preg_match('/{# @hint (.*?) #}/s',$match[3],$tmp)){
+        $field->hint=$tmp[1];
+        }
+        $blocks[trim($match[2])]=$field;
       }
     }
     return $blocks;

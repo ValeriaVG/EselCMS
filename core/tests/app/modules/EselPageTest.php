@@ -28,13 +28,13 @@ class EselPageTest extends TestCase
   }
 
   public function testGetPageBlocks(){
-    $this->assertEquals(array("textcontent"=>'<h1>Welcome to Docs!</h1>
-        <a href="/docs/meet-modules/">Meet modules</a>'),EselPage::getPageBlocks("docs.html"));
+    $this->assertEquals(array("content"=>'<p>TEST PAGE</p>'),EselPage::getPageBlocks("__test/__test.html"));
   }
 
 
   public function testGetTemplateBlocks(){
-    $this->assertEquals(array("content"=>"richText"),EselPage::getTemplateBlocks("base.twig"));
+    $block=EselPage::getTemplateBlocks("docs.twig");
+    $this->assertEquals("richText",$block['textcontent']->type);
   }
 
 

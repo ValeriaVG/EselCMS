@@ -1,0 +1,10 @@
+{
+  "smtp":false,
+  "smtp_host":"localhost",
+  "smtp_port":587,
+  "smtp_username":"name",
+  "smtp_password":"pass",
+  "smtp_encrypt":"TLS/SSL/",
+  "from_name":"name",
+  "from_email":"info@sl-design.ru"
+}

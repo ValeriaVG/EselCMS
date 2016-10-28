@@ -49,11 +49,14 @@
     <div v-pre>
 
 </div>
-     {% for name,type in page.fields %}
-    <textarea name="blocks[{{ name }}]" class="{{ type }}" id="block_{{ name }}" v-pre> {{ page.blocks[name]|raw }} </textarea> {% endfor %}
+     {% for field in page.fields %}
+      {% include 'admin/fields/' ~ field.type ~'.twig' with {field:field,value:page.blocks[field.name]} %}
+    {% endfor %}
 </form>
 </div>
+
 <script>
+
 //To prevent firefox from filling it
 document.getElementById("page-form").reset();
 window.old_path="{{ page.path }}";

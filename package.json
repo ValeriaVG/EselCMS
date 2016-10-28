@@ -1,0 +1,33 @@
+{
+  "name": "esel",
+  "version": "1.0.0",
+  "description": "EselCMS front end",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeriaVG/eselcms.git"
+  },
+  "keywords": [
+    "cms",
+    "php",
+    "js",
+    "vue"
+  ],
+  "author": "Valeria Viana Gusmao <valeria.viana.gusmao@gmail.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/ValeriaVG/eselcms/issues"
+  },
+  "homepage": "https://github.com/ValeriaVG/eselcms#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "karma": "^1.3.0"
+  }
+}

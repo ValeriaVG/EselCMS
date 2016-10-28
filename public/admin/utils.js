@@ -1,6 +1,21 @@
+var tmp, updateQueryStringParameter;
+
+tmp = document.location.search.replace("?", "").split("&");
+
+window.$_get = [];
+
+$(tmp).each(function() {
+  var v;
+  v = this.split("=");
+  if (v.length === 2) {
+    return window.$_get[v[0]] = v[1];
+  }
+});
+
 Array.prototype.clean = function(deleteValue) {
-  for (var i = 0; i < this.length; i++) {
-    if (this[i] == deleteValue) {
+  var i, j, ref;
+  for (i = j = 0, ref = this.length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
+    if (this[i] === deleteValue) {
       this.splice(i, 1);
       i--;
     }
@@ -8,75 +23,27 @@ Array.prototype.clean = function(deleteValue) {
   return this;
 };
 
-function getPages(dir,start,limit){
-  console.log([dir,start,limit]);
-  $.ajax({
-    url:"/actions/EselAdminPanel/getPagesList",
-    method:"POST",
-    data:{"dir":dir,"start":start,"limit":limit,"all":1},
-    success:function(res){
-      console.log(res);
-      var p=[];
-      var i=0;
-      res.data.items.forEach(function(v){
-        p[i]=v;
-        p[i].active=new RegExp(p[i].path+"$").test(document.location.href);
-        i++;
-      });
-      app.pages=p;
+window.cutPath = function(url) {
+  return url.replace(/[^\/]+\.html$/, "");
+};
 
-      app.count=res.data.count;
-      $(".in-loading").removeClass("in-loading");
-    }
-  }).always(function(res){
-    console.log(res);
-  });
-}
 
-function cutPath(url){
-return url.replace(/[^\/]+\.html$/,"");
-}
-/**
- * http://stackoverflow.com/a/6021027/2010837
+/*
+  updateQueryStringParameter copied from
+  http://stackoverflow.com/a/6021027/2010837
+  and translated to coffeescript
  */
-function updateQueryStringParameter(uri, key, value) {
-  var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-  var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+
+updateQueryStringParameter = function(uri, key, value) {
+  var re, separator;
+  re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+  separator = "&";
+  if (uri.indexOf('?') === -1) {
+    separator = "?";
+  }
   if (uri.match(re)) {
     return uri.replace(re, '$1' + key + "=" + value + '$2');
-  }
-  else {
+  } else {
     return uri + separator + key + "=" + value;
   }
-}
-
-
-/**
- * Istall modules
- */
-
-function install(module){
-  $.ajax({
-    url:"/actions/EselAdminPanel/setSafe",
-    method:"POST",
-    data:{"moduleName":module},
-    success:function(res){
-      if(res.success){
-        document.location.href=document.location.href;
-      }
-    }
-  });
-}
-
-function uninstall(module){
-  $.ajax({
-    url:"/actions/EselAdminPanel/setUnsafe",
-    method:"POST",
-    data:{"moduleName":module},
-    success:function(res){
-      if(res.success){
-        document.location.href=document.location.href;
-      }
-    }
-  });
-}
+};

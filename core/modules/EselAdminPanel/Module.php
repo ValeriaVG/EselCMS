@@ -11,7 +11,7 @@ class EselAdminPanel extends EselModule
     public static function beforeLoad()
     {
         if (!self::isLoggedIn()) {
-          throw new Exception("Operation not permitted");
+          throw new Exception(self::getLexicon("EselAdminPanel","action_forbiden"));
         }
     }
 
@@ -33,11 +33,11 @@ class EselAdminPanel extends EselModule
     public static function LogIn()
     {
         if((!isset($_POST['login']))||(!isset($_POST['password']))){
-          throw new Exception("Not enough paramaters");
+          throw new Exception(self::getLexicon("EselAdminPanel","no_enough_parameters"));
         }
 
         if(($_POST['login']!=SL_ADMIN_NAME)||(md5($_POST['password'])!=SL_ADMIN_PASSWORD)){
-          throw new Exception("Invalid credentials");
+          throw new Exception(self::getLexicon("EselAdminPanel","wrong_credentials"));
         }
         $sessionName=md5(SL_ADMIN_NAME.SL_SECRET);
         $sessionValue=md5($_SERVER['REMOTE_ADDR'].SL_ADMIN_PASSWORD.SL_SECRET);
@@ -75,7 +75,7 @@ class EselAdminPanel extends EselModule
             $page->path = Esel::fixPath(str_replace(SL_PAGES, '/', $path));
             if(isset($config->hidden_pages)){
               foreach($config->hidden_pages as $pat){
-                if(($pat==$page->path)||preg_match($pat,$page->path)){
+                if(($pat==$page->path)||@preg_match($pat,$page->path)){
                   $page->hidden=true;
                 }
               }
@@ -153,7 +153,7 @@ class EselAdminPanel extends EselModule
         self::beforeLoad();
         if (empty($page)) {
             if (!isset($_GET['page'])) {
-                throw new Exception('You must define a page');
+                throw new Exception(self::getLexicon("EselAdminPanel","page_not_specified"));
             }
             $page = Esel::clear($_GET['page']);
         }
@@ -170,7 +170,7 @@ class EselAdminPanel extends EselModule
         $pageData->name = $page;
         if (is_dir(SL_PAGES.$page)) {
             $pageData->url .= 'new-page/';
-            $pageData->name = 'New Page';
+            $pageData->name = self::getLexicon("EselAdminPanel","new_page");
             $pageData->new = true;
         }
         $tmp = array();
@@ -180,7 +180,14 @@ class EselAdminPanel extends EselModule
         if (!empty($pageData->template)) {
             $pageData->fields = EselPage::getTemplateBlocks($pageData->template);
         }
-
+        $config=self::getConfig("EselAdminPanel");
+        if(isset($config->hidden_pages)){
+          foreach($config->hidden_pages as $pat){
+            if(($pat==$pageData->path)||@preg_match($pat,$pageData->path)){
+              $pageData->hidden=true;
+            }
+          }
+        }
         return $pageData;
     }
 
@@ -198,7 +205,7 @@ class EselAdminPanel extends EselModule
             return false;
         }
         if (is_dir($fullpath) || (!unlink($fullpath))) {
-            throw new Exception("Couldn't delete page ".$path);
+            throw new Exception(self::getLexicon("EselAdminPanel","couldnt_delete_page",array("path"=>$path)));
         }
 
         return true;
@@ -220,8 +227,9 @@ class EselAdminPanel extends EselModule
         if (empty($old_path)) {
             $old_path = $path;
         }
-
-        self::deletePage($old_path);
+        if(($old_path!="/")&&(!is_dir(SL_PAGES.$old_path))){
+          self::deletePage($old_path);
+        }
         $path = ltrim($path, '/');
         $page='';
         if(!empty($template)){
@@ -253,7 +261,7 @@ class EselAdminPanel extends EselModule
         }
 
         if (file_put_contents(SL_PAGES.$path, $page) === false) {
-            throw new Exception("Couldn't save file ".SL_PAGES.$path.' with '.$page);
+            throw new Exception(self::getLexicon("EselAdminPanel","couldnt_save_page",array("path"=>SL_PAGES.$path,"page"=>$page)));
         }
 
         return $page;
@@ -271,6 +279,9 @@ class EselAdminPanel extends EselModule
         $list['modules'] = array();
         foreach ($modules as $module) {
             if (($module != '.') && ($module != '..')) {
+                if(SL_HIDE_CORE_MODULES&&preg_match("/^Esel*/",$module)){
+                  continue;
+                }
                 $item = new stdClass();
                 $item->name = $module;
                 $item->status = EselModule::isSafe($module, false);
@@ -279,6 +290,7 @@ class EselAdminPanel extends EselModule
                     $item->description = file_get_contents(SL_MODULES.$module.'/description.txt');
                 }
                 ++$list['count'];
+
                 array_push($list['modules'], $item);
             }
         }
@@ -298,4 +310,6 @@ class EselAdminPanel extends EselModule
       self::beforeLoad();
       return rmdir(Esel::fixPath(SL_PAGES.$dir));
     }
+
+
 }

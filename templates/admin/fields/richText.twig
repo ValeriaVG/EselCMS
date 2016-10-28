@@ -1,0 +1,10 @@
+<div class="trailer">
+  {% if field.label!="" %}
+  <label>{{field.label}}</label>
+  {% endif %}
+  {% if field.hint!="" %}
+  <p class="dark-hint">{{field.hint}}</p>
+  {% endif %}
+
+  <textarea name="blocks[{{ field.name }}]" class="{{ field.type }}" id="block_{{ field.name }}" v-pre> {{ value }} </textarea>
+</div>

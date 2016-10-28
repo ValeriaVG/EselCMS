@@ -14,13 +14,14 @@ Vue.component 'pagination',
   props: ['page','limit','count']
   watch:
     page: (val)->
+      comp=this
       if val<=0
         val=1
-        this.page=val
-      if val>=Math.ceil(this.count/this.limit)
-        val=Math.ceil(this.count/this.limit)
-        this.page=val
-      this.$parent.$emit("pageChanged",val)
+        comp.page=val
+      if val>=Math.ceil(comp.count/comp.limit)
+        val=Math.ceil(comp.count/comp.limit)
+        comp.page=val
+      comp.$parent.$emit("pageChanged",val)
     limit: (val)->
       if val<=0
         val=1

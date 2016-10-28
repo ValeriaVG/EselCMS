@@ -1,7 +1,9 @@
 <?php
-class EselRenderer{
 
-  private $twig;
+class EselRenderer
+{
+    private $twig;
+
   /**
    * Data that goes to template.
    *
@@ -9,24 +11,33 @@ class EselRenderer{
    */
   private $data = array();
 
-  public function __construct(){
-    require_once SL_CORE.'vendor/autoload.php';
-    Twig_Autoloader::register();
-    $loader = new Twig_Loader_Filesystem(array(SL_TEMPLATES, SL_PAGES, SL_TESTS.'tpl'));
-    $this->twig = new Twig_Environment($loader, array('cache' => SL_TEMPLATES_CACHE, 'debug' => true));
-    $this->twig->addExtension(new Twig_Extension_Debug());
-    $this->twig->registerUndefinedFunctionCallback(function ($functionName) {
-        $tmp = null;
-        if (preg_match('/([^_]+)_(.*)/', $functionName, $tmp)) {
-            Esel::loadModule($tmp[1]);
-            return new Twig_SimpleFunction($functionName, $tmp[1].'::'.$tmp[2]);
-        }
+    public function __construct()
+    {
+        require_once SL_CORE.'vendor/autoload.php';
+        Twig_Autoloader::register();
+        $loader = new Twig_Loader_Filesystem(array(SL_TEMPLATES, SL_PAGES, SL_TESTS.'tpl'));
+        $this->twig = new Twig_Environment($loader, array('cache' => SL_TEMPLATES_CACHE, 'debug' => true));
 
-        return false;
-    });
-    return $this;
+        $this->twig->addExtension(new Twig_Extension_Debug());
+        $this->twig->registerUndefinedFunctionCallback(function ($functionName) {
+            $tmp = null;
+            if (preg_match('/([^_]+)_(.*)/', $functionName, $tmp)) {
+                Esel::loadModule($tmp[1]);
 
-  }
+                return new Twig_SimpleFunction($functionName, $tmp[1].'::'.$tmp[2]);
+            }
+
+            return false;
+        });
+
+        return $this;
+    }
+
+    public function renderString($string, $params = array())
+    {
+        $twig= new Twig_Environment(new Twig_Loader_String());
+        return $twig->render($string,$params);
+    }
 
   /**
    * Renders given template file.

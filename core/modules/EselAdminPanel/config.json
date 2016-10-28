@@ -1,6 +1,10 @@
 {
   "hidden_pages":[
-    "*admin*"
+    "*admin*",
+    "/lk.html",
+    "/user/verify.html",
+    "/user/forgot-password.html",
+    "/user/restore.html"
   ],
   "top_menu":[
     {
@@ -13,11 +17,15 @@
       "target":"_blank"
     },
     {
+      "anchor":"Users",
+      "url":"/admin/users/"
+    },
+    {
       "anchor":"Modules",
       "url":"/admin/modules/"
     },
     {
-      "anchor":"FileManager",
+      "anchor":"Filemanager",
       "url":"/admin/files/",
       "children":[
         {

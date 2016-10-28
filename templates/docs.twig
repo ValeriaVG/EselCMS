@@ -2,13 +2,17 @@
 {# @name Text template #}
 {% block content %}
 
+
     <div class="container">
         {# @editor richText #}
         {% block textcontent %}
+        {# @label Page content #}
+        {# @hint Please fill it with sense #}
         {% endblock %}
         <code class="block">
         {{EselBasicModule_showStats()|raw}}
       </code>
+
     </div>
 
 {% endblock %}
