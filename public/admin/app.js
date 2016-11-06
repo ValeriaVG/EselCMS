@@ -50,6 +50,9 @@ window.app = new Vue({
     }
   },
   methods: {
+    reload: function() {
+      return getPages(this.path, this.offset, this.limit);
+    },
     newFolder: function() {
       var d;
       d = this;

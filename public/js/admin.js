@@ -88,6 +88,9 @@ window.app = new Vue({
     }
   },
   methods: {
+    reload: function() {
+      return getPages(this.path, this.offset, this.limit);
+    },
     newFolder: function() {
       var d;
       d = this;
@@ -262,7 +265,10 @@ if ($("#page-edit").length > 0) {
           "old_path": window.old_path
         };
         return sl.ajax("EselAdminPanel", "savePage", data, function() {
+          var path;
           pEdit.saving = false;
+          path = app.path;
+          app.reload();
           if (data.old_path === !data.path) {
             document.location.href = document.location.href.replace(/\?page=(.*)/, "?page=" + data.path);
           }

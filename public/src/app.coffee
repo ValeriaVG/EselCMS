@@ -24,6 +24,7 @@ window.app= new Vue
         this.limit=limit
         getPages this.path,this.offset,this.limit
       )
+
     computed:
       current_page:()-> Math.floor(this.offset/this.limit)+1
       new_page_url:()-> "pages/?page="+this.path
@@ -37,6 +38,8 @@ window.app= new Vue
       limit:(val)->
         getPages this.path,this.offset,val
     methods:
+      reload:()->
+        getPages this.path,this.offset,this.limit
       newFolder:()->
         d=this
         sl.askTo 'Create a folder', 'Enter a folder name', (value)->

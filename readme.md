@@ -4,6 +4,8 @@
 
 > Everything should be made as simple as possible, but not simpler - *Albert Einstein*
 
+##Why yet another CMS?
+
 *Because there isn't anything like __THIS__ one.*
 
 All others are full of features that may be used one day, just like my mother's room.

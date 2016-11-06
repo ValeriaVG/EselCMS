@@ -29,6 +29,9 @@ if $("#page-edit").length>0
         sl.ajax("EselAdminPanel","savePage",data,
           ()->
             pEdit.saving=false
+
+            path=app.path
+            app.reload()
             if data.old_path is not data.path
               document.location.href = document.location.href.replace(/\?page=(.*)/,"?page="+data.path)
             $.jGrowl "Page was successfully saved", {header:"Saved", theme: 'tealed' }
