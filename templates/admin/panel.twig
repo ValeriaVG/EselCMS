@@ -1,11 +1,13 @@
 {% extends "admin/base.twig" %}
 {# @hidden #}
 {% block wrapper %}
-    <nav class="bg-blue-gray-800">
+<div class="loader" id="loader"><i class="fa fa-spinner fa-3x dark-hint fa-pulse" style="margin:0 auto;"></i></div>
+
+    <nav class="bg-blue-grey-800 clearfix">
       <span class="btn transparent float-left" style="padding:12px 12.5px 0;cursor:default;"><img src="/public/img/tinylogo.png" style="max-height:100%"></span>
 
-        <button class=" light-primary btn transparent tablet-and-less-show" data-toggle="slide" data-target="#menu">
-            <i class="fa fa-bars"></i>
+        <button class=" light-primary btn transparent tablet-and-less-show" style="padding:12px 12.5px 0;cursor:default;" data-toggle="slide" data-target="#menu">
+            <i class="fa fa-bars fa-2x"></i>
         </button>
 
         <ul class="inline-menu nav light bordered tablet-to-list tablet-and-less-hide" id="menu">
@@ -28,9 +30,13 @@
         </ul>
 
     </nav>
+
     <div class="nomargin row" style="margin-bottom:0;">
-        <div class="col desktop-2 tablet-4 phone-12 fullheight bg-blue-gray-50" id="app">
-            <div>
+
+        <div class="col desktop-2 tablet-4 phone-12 fullheight bg-blue-grey-50" >
+            {% block leftBlock %}
+            <div id="app">
+              <div>
                 {% verbatim %}
                     <div class="leader">
                         <div class="trailer">
@@ -51,12 +57,16 @@
                     <pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
 
                 {% endverbatim %}
+
+
             </div>
 
-            <div class="section">
-                <pages :pages="pages" :current_page="current_page"></pages>
+            <div class="dark section">
+                <pages :pages="pages" :current_page="current_page" :base="'pages/?page='"></pages>
             </div>
             <pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
+          </div>
+          {% endblock %}
         </div>
 
         <div class="col desktop-10 tablet-8 phone-12 fullheight">
@@ -95,5 +105,6 @@
     <script src="/public/admin/api.js"></script>
     <script src="/public/admin/components.js"></script>
     <script src="/public/admin/app.js"></script>
-    <script src="/public/admin/page.js"></script>
+<script src="/public/js/script.js"></script>
+    {% block morescripts %}{% endblock %}
 {% endblock %}

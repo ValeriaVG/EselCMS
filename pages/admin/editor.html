@@ -1,0 +1,42 @@
+{% extends "admin/tplpanel.twig" %}
+
+
+
+ {% block panel %} {% set file=EselAdminPanel_getFile() %}
+<div class="row" id="file-edit">
+    <div class="col tablet-8">
+        <h1 >{{file.name}}</h1>
+
+    </div>
+    <div class="col tablet-4 ">
+        <div class="leader-half text-right">
+            <button class="btn big btn-teal uppercase" v-on:click="saveFile()" :disabled="saving"><i :class="saving?'fa fa-spinner fa-spin fa-fw':'fa fa-save'" ></i> Save </button>
+            <button class="btn big btn-red uppercase" v-on:click="deleteFile()" :disabled="saving"><i class="fa fa-trash"></i> Delete </button>
+
+        </div>
+    </div>
+
+</div>
+<style>
+    #editor {
+        position: relative;
+        width: 100%;
+        height: 500px;
+    }
+</style>
+<div id="editor">{{file.contents}}</div>
+
+<script src="/public/admin/vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/public/admin/vendor/ace/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+</script>
+
+{% if file.type=="twig" %}
+<script src="/public/admin/vendor/ace/mode-twig.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    editor.session.setMode("ace/mode/twig");
+</script>
+{% endif %} {% endblock %}

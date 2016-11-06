@@ -59,15 +59,18 @@ Roadmap
     - [ ] CRUD templates
     - [x] Custom widgets support
     - [ ] File manager
+    - [ ] Lexicon editor
   - [ ] Events
   - [x] Mailer
   - [x] Web actions
+  - [ ] JS Lexicon
   - [ ] Goods
   - [ ] Gallery
   - [ ] Cart
   - [ ] Filter
   - [ ] Search
   - [ ] Multi-language
+
 
 - [ ] Installer
 - [ ] Documentation

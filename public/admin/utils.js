@@ -24,7 +24,11 @@ Array.prototype.clean = function(deleteValue) {
 };
 
 window.cutPath = function(url) {
-  return url.replace(/[^\/]+\.html$/, "");
+  return url.replace(/[^\/]+\.htm[l|]$/, "");
+};
+
+window.cutTplPath = function(url) {
+  return url.replace(/[^\/]+\.twig$/, "");
 };
 
 

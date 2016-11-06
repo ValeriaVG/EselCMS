@@ -1,8 +1,5 @@
 $ ()->
 
-
-  $(".dropdown").dropdown()
-
   tinymce.init
     selector:'.richText',
     plugins: [

@@ -19,6 +19,27 @@ window.getPages = function(dir, start, limit) {
   });
 };
 
+window.getTemplates = function(dir, start, limit) {
+  Cookies.set("tree-limit", limit);
+  return window.sl.ajax("EselAdminPanel", "getTplList", {
+    "dir": dir,
+    "start": start,
+    "limit": limit
+  }, function(res) {
+    var i, p;
+    i = 0;
+    p = [];
+    res.items.forEach(function(v) {
+      p[i] = v;
+      p[i].active = new RegExp(p[i].path + "$").test(document.location.href);
+      return i++;
+    });
+    window.templates.items = p;
+    window.templates.count = res.count;
+    return $(".in-loading").removeClass("in-loading");
+  });
+};
+
 
 /*
  Istall modules

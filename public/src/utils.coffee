@@ -11,7 +11,9 @@ Array.prototype.clean = (deleteValue)->
       i--
   return this;
 
-window.cutPath=(url)->url.replace /[^\/]+\.html$/,""
+window.cutPath=(url)->url.replace /[^\/]+\.htm[l|]$/,""
+
+window.cutTplPath=(url)->url.replace /[^\/]+\.twig$/,""
 ###
   updateQueryStringParameter copied from
   http://stackoverflow.com/a/6021027/2010837

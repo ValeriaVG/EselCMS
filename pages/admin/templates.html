@@ -1,0 +1,12 @@
+{% extends "admin/tplpanel.twig" %} {% block panel %}
+<h1>Templates management</h1>
+<p class="dark-secondary">Hidden templates are not shown in this list </p>
+
+{% set templates=EselAdminPanel_getTplList() %}
+
+{% for template in templates.items %}
+  <a href="/admin/editor/?template={{template.path}}">{{template.name}}</a><br>
+    {% endfor %}
+
+
+{% endblock %}

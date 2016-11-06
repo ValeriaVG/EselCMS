@@ -1,0 +1,39 @@
+{% extends "admin/panel.twig" %}
+{# @hidden #}
+{% block leftBlock %}
+<div id="templates-list">
+  <div>
+    {% verbatim %}
+        <div class="leader">
+            <div class="trailer">
+                <a class="btn btn-teal" title="Create new template in current folder" :href="new_file_url">
+                    <i class="fa fa-file-text-o"></i>
+                </a>
+                <button class="btn btn-orange" title="Create new subfolder in current folder" v-on:click="newFolder()">
+                    <i class="fa fa-folder-o"></i>
+                </button>
+
+                <button v-if="((path!='/')&&(items.length==0))" class="btn btn-red" title="Remove current folder" v-on:click="removeFolder()">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+            <crumbs :wrp-class="'breadcrumbs'" :path="path" ></crumbs>
+        </div>
+
+        <pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
+
+    {% endverbatim %}
+
+
+</div>
+
+<div class="dark section">
+    <pages :pages="items" :current_page="current_page" :base="'editor/?template='"></pages>
+</div>
+<pagination :page="current_page" :limit="limit" :offset="offset" :count="count"></pagination>
+</div>
+{% endblock %}
+{% block morescripts %}
+<script src="/public/admin/templates.js"></script>
+<script src="/public/admin/editor.js"></script>
+{% endblock %}

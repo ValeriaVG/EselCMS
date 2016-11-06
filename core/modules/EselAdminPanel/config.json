@@ -9,7 +9,17 @@
   "top_menu":[
     {
       "anchor":"Dashboard",
-      "url":"/admin/"
+      "url":"/admin/",
+      "children":[        
+        {
+          "anchor":"Modules",
+          "url":"/admin/modules/"
+        },
+        {
+          "anchor":"Templates",
+          "url":"/admin/templates/"
+        }
+      ]
     },
     {
       "anchor":"View site",
@@ -19,10 +29,6 @@
     {
       "anchor":"Users",
       "url":"/admin/users/"
-    },
-    {
-      "anchor":"Modules",
-      "url":"/admin/modules/"
     },
     {
       "anchor":"Filemanager",

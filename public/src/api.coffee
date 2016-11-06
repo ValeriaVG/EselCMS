@@ -11,7 +11,19 @@ window.getPages=(dir,start,limit)->
       window.app.count=res.count
       $(".in-loading").removeClass "in-loading"
 
-
+window.getTemplates=(dir,start,limit)->
+  Cookies.set("tree-limit",limit)
+  window.sl.ajax "EselAdminPanel","getTplList",{"dir":dir,"start":start,"limit":limit},
+    (res)->
+      i=0
+      p=[]
+      res.items.forEach (v)->
+        p[i]=v
+        p[i].active=new RegExp(p[i].path+"$").test(document.location.href)
+        i++
+      window.templates.items=p
+      window.templates.count=res.count
+      $(".in-loading").removeClass "in-loading"
 
 
 

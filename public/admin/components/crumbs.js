@@ -5,9 +5,7 @@
 Vue.component('crumbs', {
   template: '<ul :class="wrpClass"> <li v-for="node in nodes"> <a v-if="node.name==\'/\'" :href="node.name" v-on:click.prevent="selectNode(node)"> <i class="fa fa-home" aria-hidden="true"></i> </a> <a v-else :href="node.url" v-on:click.prevent="selectNode(node)">{{node.name}}</a> </li> </ul>',
   props: ['wrpClass', 'path'],
-  created: function() {
-    return console.log("Crumns created");
-  },
+  created: function() {},
   methods: {
     selectNode: function(node) {
       return this.$parent.$emit("selectNode", node);

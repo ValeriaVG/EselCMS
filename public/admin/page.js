@@ -17,7 +17,6 @@ if ($("#page-edit").length > 0) {
     methods: {
       savePage: function(btn) {
         var data;
-        this.saving = true;
         window.blocks = {};
         $('[name^="blocks["]').each(function() {
           var name, tmp, value;
@@ -39,7 +38,6 @@ if ($("#page-edit").length > 0) {
         };
         return sl.ajax("EselAdminPanel", "savePage", data, function() {
           var path;
-          pEdit.saving = false;
           path = app.path;
           app.reload();
           if (data.old_path === !data.path) {
@@ -52,7 +50,6 @@ if ($("#page-edit").length > 0) {
         });
       },
       copyPage: function(btn) {
-        this.saving = true;
         window.blocks = {};
         return $('[name^="blocks["]').each(function() {
           var data, name, tmp, value;
@@ -70,7 +67,6 @@ if ($("#page-edit").length > 0) {
             "blocks": window.blocks
           };
           return sl.ajax("EselAdminPanel", "savePage", data, function(res) {
-            pEdit.saving = false;
             if (data.old_path === !data.path) {
               document.location.href = document.location.href.replace(/\?page=(.*)/, "?page=" + data.path);
             }
@@ -82,11 +78,9 @@ if ($("#page-edit").length > 0) {
         });
       },
       deletePage: function(btn) {
-        pEdit.saving = true;
         return sl.ajax("EselAdminPanel", "deletePage", {
           "path": window.old_path
         }, function(data) {
-          pEdit.saving = false;
           setTimeout(function() {
             return document.location.href = document.location.href.replace(/[^\/]+\.html$/, "");
           }, 500);

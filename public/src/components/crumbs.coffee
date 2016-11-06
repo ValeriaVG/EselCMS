@@ -13,7 +13,7 @@ Vue.component 'crumbs',
   </li>
   </ul>'
   props: ['wrpClass','path']
-  created: ()-> console.log "Crumns created"
+  created: ()-> 
   methods:
     selectNode: (node)->
       this.$parent.$emit("selectNode",node)

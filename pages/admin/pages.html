@@ -5,10 +5,10 @@
       <a href="{{ page.url }}" target="_blank" v-text="name" class="h1" title="View page">{{page.name}}</a>
     </div>
 <div class="col tablet-4 ">
-  <div class="rhythm text-right">
+  <div class="leader-half text-right">
   <button class="btn big btn-teal uppercase" v-on:click="savePage()" :disabled="saving"><i :class="saving?'fa fa-spinner fa-spin fa-fw':'fa fa-save'" ></i> Save </button>
 {% if not page.new %}
-  <button class="btn big btn-blue-gray uppercase" v-on:click="copyPage()" :disabled="saving"><i class="fa fa-copy"></i> Copy </button>
+  <button class="btn big btn-blue-grey uppercase" v-on:click="copyPage()" :disabled="saving"><i class="fa fa-copy"></i> Copy </button>
   <button class="btn big btn-red uppercase" v-on:click="deletePage()" :disabled="saving"><i class="fa fa-trash"></i> Delete </button>
 {% endif %}
 </div>
@@ -61,4 +61,7 @@
 document.getElementById("page-form").reset();
 window.old_path="{{ page.path }}";
 </script>
+{% endblock %}
+{% block morescripts %}
+<script src="/public/admin/page.js"></script>
 {% endblock %}

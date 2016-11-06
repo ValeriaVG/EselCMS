@@ -6,7 +6,7 @@ window.app= new Vue
       pages: []
       path: (if $_get['page']? then cutPath($_get['page']) else "/")
       offset:0
-      limit:10
+      limit:Cookies.get("tree-limit")||10
       count:0
     created: ()->
       getPages this.path,this.offset,this.limit
@@ -21,6 +21,7 @@ window.app= new Vue
         getPages this.path,this.offset,this.limit
       )
       this.$on("limitChanged",(limit)->
+        Cookies.set("tree-limit",limit)
         this.limit=limit
         getPages this.path,this.offset,this.limit
       )

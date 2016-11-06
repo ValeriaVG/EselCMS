@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require_once SL_MODULES.'EselAdminPanel/EselPage.php';
 class EselAdminPanel extends EselModule
@@ -11,20 +12,24 @@ class EselAdminPanel extends EselModule
     public static function beforeLoad()
     {
         if (!self::isLoggedIn()) {
-          throw new Exception(self::getLexicon("EselAdminPanel","action_forbiden"));
+          if(defined("PHPUNIT_RUNNING")||(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')) {
+            throw new Exception(self::getLexicon('EselAdminPanel', 'action_forbiden'));
+          }
+          Esel::respondWithCode(403, '/admin/');
+
         }
     }
 
     public static function isLoggedIn()
     {
-      $sessionName=md5(SL_ADMIN_NAME.SL_SECRET);
-      $sessionValue=md5($_SERVER['REMOTE_ADDR'].SL_ADMIN_PASSWORD.SL_SECRET);
-        if(isset($_SESSION[$sessionName])&&($_SESSION[$sessionName]==$sessionValue)){
-          return true;
+        $sessionName = md5(SL_ADMIN_NAME.SL_SECRET);
+        $sessionValue = md5($_SERVER['REMOTE_ADDR'].SL_ADMIN_PASSWORD.SL_SECRET);
+        if (isset($_SESSION[$sessionName]) && ($_SESSION[$sessionName] == $sessionValue)) {
+            return true;
         }
 
-        if(isset($_COOKIE[$sessionName])&&($_COOKIE[$sessionName]==$sessionValue)){
-          return true;
+        if (isset($_COOKIE[$sessionName]) && ($_COOKIE[$sessionName] == $sessionValue)) {
+            return true;
         }
 
         return false;
@@ -32,18 +37,18 @@ class EselAdminPanel extends EselModule
 
     public static function LogIn()
     {
-        if((!isset($_POST['login']))||(!isset($_POST['password']))){
-          throw new Exception(self::getLexicon("EselAdminPanel","no_enough_parameters"));
+        if ((!isset($_POST['login'])) || (!isset($_POST['password']))) {
+            throw new Exception(self::getLexicon('EselAdminPanel', 'no_enough_parameters'));
         }
 
-        if(($_POST['login']!=SL_ADMIN_NAME)||(md5($_POST['password'])!=SL_ADMIN_PASSWORD)){
-          throw new Exception(self::getLexicon("EselAdminPanel","wrong_credentials"));
+        if (($_POST['login'] != SL_ADMIN_NAME) || (md5($_POST['password']) != SL_ADMIN_PASSWORD)) {
+            throw new Exception(self::getLexicon('EselAdminPanel', 'wrong_credentials'));
         }
-        $sessionName=md5(SL_ADMIN_NAME.SL_SECRET);
-        $sessionValue=md5($_SERVER['REMOTE_ADDR'].SL_ADMIN_PASSWORD.SL_SECRET);
-        $_SESSION[$sessionName]=$sessionValue;
-        if(isset($_POST['rememberme'])){
-          setcookie($sessionName, $sessionValue, time()+60*60*24*30, "/");
+        $sessionName = md5(SL_ADMIN_NAME.SL_SECRET);
+        $sessionValue = md5($_SERVER['REMOTE_ADDR'].SL_ADMIN_PASSWORD.SL_SECRET);
+        $_SESSION[$sessionName] = $sessionValue;
+        if (isset($_POST['rememberme'])) {
+            setcookie($sessionName, $sessionValue, time() + 60 * 60 * 24 * 30, '/');
         }
     }
 
@@ -59,13 +64,12 @@ class EselAdminPanel extends EselModule
      */
     public static function getPagesList($dir = '', $start = 0, $limit = 10, $all = 0)
     {
-
         $pattern = '*.html';
         if ($all == 1) {
             $pattern = '*';
         }
-        $config=self::getConfig(__CLASS__);
-        $constructPages = function ($iterator) use ($config){
+        $config = self::getConfig(__CLASS__);
+        $constructPages = function ($iterator) use ($config) {
             $curr = $iterator->current();
             $file = $curr->getFilename();
             $path = Esel::fixPath($curr->getPath().'/'.$file);
@@ -73,12 +77,12 @@ class EselAdminPanel extends EselModule
             $page->name = $file;
             $page->folder = is_dir($path);
             $page->path = Esel::fixPath(str_replace(SL_PAGES, '/', $path));
-            if(isset($config->hidden_pages)){
-              foreach($config->hidden_pages as $pat){
-                if(($pat==$page->path)||@preg_match($pat,$page->path)){
-                  $page->hidden=true;
+            if (isset($config->hidden_pages)) {
+                foreach ($config->hidden_pages as $pat) {
+                    if (($pat == $page->path) || @preg_match($pat, $page->path)) {
+                        $page->hidden = true;
+                    }
                 }
-              }
             }
             if ($page->folder) {
                 $page->path .= '/';
@@ -153,7 +157,7 @@ class EselAdminPanel extends EselModule
         self::beforeLoad();
         if (empty($page)) {
             if (!isset($_GET['page'])) {
-                throw new Exception(self::getLexicon("EselAdminPanel","page_not_specified"));
+                throw new Exception(self::getLexicon('EselAdminPanel', 'page_not_specified'));
             }
             $page = Esel::clear($_GET['page']);
         }
@@ -170,7 +174,7 @@ class EselAdminPanel extends EselModule
         $pageData->name = $page;
         if (is_dir(SL_PAGES.$page)) {
             $pageData->url .= 'new-page/';
-            $pageData->name = self::getLexicon("EselAdminPanel","new_page");
+            $pageData->name = self::getLexicon('EselAdminPanel', 'new_page');
             $pageData->new = true;
         }
         $tmp = array();
@@ -180,14 +184,15 @@ class EselAdminPanel extends EselModule
         if (!empty($pageData->template)) {
             $pageData->fields = EselPage::getTemplateBlocks($pageData->template);
         }
-        $config=self::getConfig("EselAdminPanel");
-        if(isset($config->hidden_pages)){
-          foreach($config->hidden_pages as $pat){
-            if(($pat==$pageData->path)||@preg_match($pat,$pageData->path)){
-              $pageData->hidden=true;
+        $config = self::getConfig('EselAdminPanel');
+        if (isset($config->hidden_pages)) {
+            foreach ($config->hidden_pages as $pat) {
+                if (($pat == $pageData->path) || @preg_match($pat, $pageData->path)) {
+                    $pageData->hidden = true;
+                }
             }
-          }
         }
+
         return $pageData;
     }
 
@@ -205,7 +210,7 @@ class EselAdminPanel extends EselModule
             return false;
         }
         if (is_dir($fullpath) || (!unlink($fullpath))) {
-            throw new Exception(self::getLexicon("EselAdminPanel","couldnt_delete_page",array("path"=>$path)));
+            throw new Exception(self::getLexicon('EselAdminPanel', 'couldnt_delete_page', array('path' => $path)));
         }
 
         return true;
@@ -221,20 +226,19 @@ class EselAdminPanel extends EselModule
      *
      * @return string compiled page
      */
-    public static function savePage($path, $template="", $name="", $blocks = array(), $fields = array(), $old_path = '')
+    public static function savePage($path, $template = '', $name = '', $blocks = array(), $fields = array(), $old_path = '')
     {
         $path = ltrim($path, '/');
         if (empty($old_path)) {
             $old_path = $path;
         }
-        if(($old_path!="/")&&(!is_dir(SL_PAGES.$old_path))){
-          self::deletePage($old_path);
+        if (($old_path != '/') && (!is_dir(SL_PAGES.$old_path))) {
+            self::deletePage($old_path);
         }
         $path = ltrim($path, '/');
-        $page='';
-        if(!empty($template)){
-
-          $page.= '{% extends "'.$template.'" %}';
+        $page = '';
+        if (!empty($template)) {
+            $page .= '{% extends "'.$template.'" %}';
         }
         if (!empty($name)) {
             $page .= '{# @name '.$name.' #}';
@@ -246,14 +250,14 @@ class EselAdminPanel extends EselModule
         }
 
         foreach ($fields as $key => $value) {
-          $tmp=explode("_",$key);
-          if(count($tmp==2)){
-            $table=$tmp[0];
-            $field=$tmp[1];
-            $entry=Esel::for_table($table)->create();
-            $entry->set($field,$value);
-            $entry->save();
-          }
+            $tmp = explode('_', $key);
+            if (count($tmp == 2)) {
+                $table = $tmp[0];
+                $field = $tmp[1];
+                $entry = Esel::for_table($table)->create();
+                $entry->set($field, $value);
+                $entry->save();
+            }
         }
         $folder = preg_replace("/[^\/]+\.htm(l|)$/", '', SL_PAGES.$path);
         if (!is_dir($folder)) {
@@ -261,7 +265,7 @@ class EselAdminPanel extends EselModule
         }
 
         if (file_put_contents(SL_PAGES.$path, $page) === false) {
-            throw new Exception(self::getLexicon("EselAdminPanel","couldnt_save_page",array("path"=>SL_PAGES.$path,"page"=>$page)));
+            throw new Exception(self::getLexicon('EselAdminPanel', 'couldnt_save_page', array('path' => SL_PAGES.$path, 'page' => $page)));
         }
 
         return $page;
@@ -279,8 +283,8 @@ class EselAdminPanel extends EselModule
         $list['modules'] = array();
         foreach ($modules as $module) {
             if (($module != '.') && ($module != '..')) {
-                if(SL_HIDE_CORE_MODULES&&preg_match("/^Esel*/",$module)){
-                  continue;
+                if (SL_HIDE_CORE_MODULES && preg_match('/^Esel*/', $module)) {
+                    continue;
                 }
                 $item = new stdClass();
                 $item->name = $module;
@@ -298,18 +302,29 @@ class EselAdminPanel extends EselModule
         return $list;
     }
 
-
-    public static function makePagesDir($name,$dir='')
+    public static function makePagesDir($name, $dir = '')
     {
         self::beforeLoad();
-        return mkdir(Esel::fixPath(SL_PAGES.$dir."/".$name),0755);
-      }
+
+        return mkdir(Esel::fixPath(SL_PAGES.$dir.'/'.$name), 0755);
+    }
 
     public static function removePagesDir($dir)
     {
-      self::beforeLoad();
-      return rmdir(Esel::fixPath(SL_PAGES.$dir));
+        self::beforeLoad();
+
+        return rmdir(Esel::fixPath(SL_PAGES.$dir));
     }
 
-
+    public static function getFile()
+    {
+        self::beforeLoad();
+        if (!empty($_GET['template'])) {
+            $res=new stdClass();
+            $res->contents=file_get_contents(SL_TEMPLATES.Esel::clear($_GET['template']));
+            $res->name=Esel::clear($_GET['template']);
+            $res->type="twig";
+            return $res;
+        }
+    }
 }
